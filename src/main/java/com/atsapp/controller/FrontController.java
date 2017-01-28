@@ -1,5 +1,7 @@
 package com.atsapp.controller;
 
+import java.io.IOException;
+
 import javax.mail.MessagingException;
 import javax.mail.internet.AddressException;
 
@@ -37,7 +39,7 @@ public class FrontController {
 		try {
 			message = "From our gmail plugin:  " + new GmailApiPlugin().send();
 	
-		} catch (Exception e) {
+		} catch (IOException e) {
 			message = e.getMessage();
 			 
 		}
