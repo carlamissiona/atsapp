@@ -297,6 +297,7 @@
           <section class="wrapper">
 
               <div class="row">
+              	<h2> ${message } </h2>
                   <div class="col-lg-9 main-chart">
                   
                   	<div class="row mtbox">
