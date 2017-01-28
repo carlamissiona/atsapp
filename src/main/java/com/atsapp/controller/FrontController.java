@@ -24,26 +24,22 @@ public class FrontController {
 		String message = "Are we connected " + new DataPlugin().connect();
 				
 		// contacts 
-		// company
+		// company 
 		// candidate 
 		
 		return new ModelAndView("home", "message", message);
 	}
-		
+		 
 	@RequestMapping("/email")
 	public ModelAndView clientList() {
 		  
 		String message ="!";
 		try {
 			message = "Email Page  " + new EmailPlugin().send();
-		} catch (AddressException e) {
+	
+		} catch (Exception e) {
 			message = e.getMessage();
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (MessagingException e) {
-			message = e.getMessage();
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			 
 		}
 		return new ModelAndView("clients/index", "message", message);
 	}
