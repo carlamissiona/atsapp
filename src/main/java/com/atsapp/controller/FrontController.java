@@ -36,13 +36,13 @@ public class FrontController {
 	public ModelAndView clientList() {
 		  
 		String message ="!";
-		try {
-			message = "From our gmail plugin:  " + new GmailApiPlugin().send();
-	
-		} catch (IOException e) {
-			message = e.getMessage();
-			 
-		}
+//		try {
+//			message = "From our gmail plugin:  " + new GmailApiPlugin().send();
+//	
+//		} catch (IOException e) {
+//			message = e.getMessage();
+//			 
+//		}
 		return new ModelAndView("clients/index", "message", message);
 	}
 	@RequestMapping("/client/edit")
