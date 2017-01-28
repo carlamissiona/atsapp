@@ -17,6 +17,13 @@
 			<artifactId>google-http-client</artifactId>
 			<version>1.16.0-rc</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>com.google.api.client</groupId>
+			<artifactId>google-api-client-json</artifactId>
+			<version>1.2.3-alpha</version>
+		</dependency>
+
 		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>mail</artifactId>
