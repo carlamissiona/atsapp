@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 public class DataPlugin {
 
-	public String connect(){
+	public static String connect(){
 		String url ="jdbc:mysql://127.3.148.130:3306/atsapp";
 		String dbuser ="adminiqXUYnu";
 		String dbpass ="en9nhRHBEEbu";
