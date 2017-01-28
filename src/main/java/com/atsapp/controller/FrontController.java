@@ -3,6 +3,7 @@ package com.atsapp.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import com.atsapp.resources.*;
  
 /*
  * author: Carla Missiona
@@ -16,7 +17,12 @@ public class FrontController {
 	@RequestMapping("/home")
 	public ModelAndView home() {
  
-		String message = "Signup / Login / Slider " ;
+		String message = "Are we connected " + new DataPlugin().connect();
+		
+		// contacts 
+		// company
+		// candidate 
+		
 		return new ModelAndView("home", "message", message);
 	}
 		
