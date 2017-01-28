@@ -46,6 +46,7 @@ public class EmailUtil {
 
 	      msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail, false));
 	      System.out.println("Message is ready");
+	     
     	  Transport.send(msg);  
 
 	      res ="EMail Sent Successfully!!";
