@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import com.atsapp.resources.*;
- 
+import com.atsapp.library.*;
 /*
  * author: Carla Missiona
  * 
@@ -15,10 +15,10 @@ public class FrontController {
      
 
 	@RequestMapping("/home")
-	public ModelAndView home() {
- 
-		String message = "Are we connected " + new DataPlugin().connect();
+	public ModelAndView home() {	
 		
+		String message = "Are we connected " + new DataPlugin().connect();
+				
 		// contacts 
 		// company
 		// candidate 
@@ -26,9 +26,10 @@ public class FrontController {
 		return new ModelAndView("home", "message", message);
 	}
 		
-	@RequestMapping("/client")
+	@RequestMapping("/email")
 	public ModelAndView clientList() {
-		String message = "client " ;
+		  
+		String message = "Email Page  " + new EmailPlugin().send();
 		return new ModelAndView("clients/index", "message", message);
 	}
 	@RequestMapping("/client/edit")
