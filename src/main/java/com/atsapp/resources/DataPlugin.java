@@ -22,13 +22,12 @@ public class DataPlugin {
 		    PreparedStatement pst = con.prepareStatement("Select * from contacts");
 		    
 		    ResultSet rs = pst.executeQuery();
-		    if(rs.getFetchSize() > 0 ){
+		    
 				    while (rs.next()) {
 				    	user = rs.getString("co_firstname");
 				    	email = rs.getString("co_email");
 				    }
 				    result = " User " + user + " email " + email;
-		    }
 		}catch(Exception e){
 			  System.out.println("Hey ");
 	    	  result = e.getMessage();
