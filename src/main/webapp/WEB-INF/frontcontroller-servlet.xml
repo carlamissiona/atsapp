@@ -12,6 +12,7 @@
  
 	<context:component-scan base-package="com.atsapp.controller" />
  
+
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="viewClass"
