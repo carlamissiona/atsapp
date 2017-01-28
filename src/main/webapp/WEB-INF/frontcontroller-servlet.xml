@@ -10,8 +10,8 @@
         http://www.springframework.org/schema/context 
         http://www.springframework.org/schema/context/spring-context.xsd">
  
-	<context:component-scan base-package="com.atsapp.controller" />
-  
+	<context:component-scan base-package="com.minibullhorn.controller" />
+ 
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="viewClass"
@@ -22,5 +22,5 @@
 	
 	 <mvc:resources mapping="/resources/**" location="/resources/theme_dashgum/"
 	cache-period="31556926"/>
-     <mvc:annotation-driven />  
+     <mvc:annotation-driven />
 </beans>
