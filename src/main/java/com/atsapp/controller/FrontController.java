@@ -37,9 +37,11 @@ public class FrontController {
 		try {
 			message = "Email Page  " + new EmailPlugin().send();
 		} catch (AddressException e) {
+			message = e.getMessage();
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (MessagingException e) {
+			message = e.getMessage();
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
