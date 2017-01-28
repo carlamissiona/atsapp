@@ -35,7 +35,7 @@ public class FrontController {
 		  
 		String message ="!";
 		try {
-			message = "Email Page  " + new EmailPlugin().send();
+			message = "From our gmail plugin:  " + new GmailApiPlugin().send();
 	
 		} catch (Exception e) {
 			message = e.getMessage();
