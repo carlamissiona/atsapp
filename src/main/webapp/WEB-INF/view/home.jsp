@@ -222,12 +222,12 @@
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-desktop"></i>
-                          <span>Clients</span>
+                          <span>Work</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="general.html">General</a></li>
-                          <li><a  href="buttons.html">Buttons</a></li>
-                          <li><a  href="panels.html">Panels</a></li>
+                          <li><a  href="general.html">Candidates</a></li>
+                          <li><a  href="buttons.html">Jobs</a></li>
+                          <li><a  href="panels.html">Companies</a></li>
                       </ul>
                   </li>
 
@@ -297,7 +297,7 @@
           <section class="wrapper">
 
               <div class="row">
-              	<h2> ${message } </h2>
+              	<h2> ${message} </h2>
                   <div class="col-lg-9 main-chart">
                   
                   	<div class="row mtbox">
@@ -306,7 +306,7 @@
 					  			<span class="li_heart"></span>
 					  			<h3>933</h3>
                   			</div>
-					  			<p>933 People liked your page the last 24hs. Whoohoo!</p>
+					  			<p>933 People who liked our service. Whoohoo!</p>
                   		</div>
                   		<div class="col-md-2 col-sm-2 box0">
                   			<div class="box1">

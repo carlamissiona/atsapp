@@ -14,18 +14,23 @@ public class DataPlugin {
 		String dbuser ="adminiqXUYnu";
 		String dbpass ="en9nhRHBEEbu";
 		String result = "";
+		String user = "";
+    	String email ="";
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection(url, dbuser,dbpass);
 		    PreparedStatement pst = con.prepareStatement("Select * from contacts");
 		    
 		    ResultSet rs = pst.executeQuery();
-		    if(rs.next()){
-		    	
-		    	result = rs.getObject(0).toString() ;
+		    if(rs.getFetchSize() > 0 ){
+				    while (rs.next()) {
+				    	user = rs.getString("co_firstname");
+				    	email = rs.getString("co_email");
+				    }
+				    result = " User " + user + " email " + email;
 		    }
 		}catch(Exception e){
-			System.out.println("Hey ");
+			  System.out.println("Hey ");
 	    	  result = e.getMessage();
 
 		}
