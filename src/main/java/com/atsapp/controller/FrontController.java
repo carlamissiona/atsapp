@@ -1,8 +1,12 @@
 package com.atsapp.controller;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.AddressException;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
 import com.atsapp.resources.*;
 import com.atsapp.library.*;
 /*
@@ -29,7 +33,16 @@ public class FrontController {
 	@RequestMapping("/email")
 	public ModelAndView clientList() {
 		  
-		String message = "Email Page  " + new EmailPlugin().send();
+		String message ="!";
+		try {
+			message = "Email Page  " + new EmailPlugin().send();
+		} catch (AddressException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (MessagingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return new ModelAndView("clients/index", "message", message);
 	}
 	@RequestMapping("/client/edit")

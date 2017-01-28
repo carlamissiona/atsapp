@@ -10,13 +10,12 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class EmailPlugin {
-	  
-	 
+	  	 
 		static Properties mailServerProperties;
 		static Session getMailSession;
 		static MimeMessage generateMailMessage;
 	 
-		public static String send() throws AddressException, MessagingException {
+		public String send() throws AddressException, MessagingException {
 			String res =" @";
 			// Step1
 			System.out.println("\n 1st ===> setup Mail Server Properties..");
