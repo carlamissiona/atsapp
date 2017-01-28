@@ -21,7 +21,7 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	
-	 <mvc:resources mapping="/resources/**" location="/resources/theme_dashgum/"
+	 <mvc:resources mapping="/assets/**" location="/resources/theme_dashgum/"
 	cache-period="31556926"/>
      <mvc:annotation-driven />
 </beans>
