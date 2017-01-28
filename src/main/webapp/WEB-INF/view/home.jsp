@@ -10,7 +10,7 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-	
+	    
     <link href="<c:url value="/resources/theme_dashgum/assets/css/main.css" />" rel="stylesheet">
     <script src="<c:url value="/resources/theme_dashgum/assets/js/jquery.1.10.2.min.js" />"></script>
     <script src="<c:url value="/resources/js/main.js" />"></script>
