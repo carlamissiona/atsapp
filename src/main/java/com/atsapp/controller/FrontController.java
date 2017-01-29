@@ -31,7 +31,7 @@ public class FrontController {
 		
 		return new ModelAndView("home", "message", message);
 	}
-		 
+		  
 	@RequestMapping("/email")
 	public ModelAndView clientList() {
 		  
