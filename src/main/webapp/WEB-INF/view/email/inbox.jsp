@@ -141,7 +141,7 @@
 					<!-- inbox dropdown start-->
 					<li id="header_inbox_bar" class="dropdown"><a
 						data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
-							<i class="fa fa-envelope-o"></i> <span class="badge bg-theme">5</span>
+							<i class="fa fa-envelope-o"></i>
 					</a>
 						<ul class="dropdown-menu extended inbox">
 							<div class="notify-arrow notify-arrow-green"></div>
@@ -674,14 +674,6 @@
             console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
         }
     
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	</script>
 
