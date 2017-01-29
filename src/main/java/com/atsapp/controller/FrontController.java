@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.atsapp.resources.*;
+import com.atsapp.resources.*; 
 import com.atsapp.library.*;
 /*
  * author: Carla Missiona
@@ -24,7 +24,7 @@ public class FrontController {
 	public ModelAndView home() {	
 		
 		String message = "Are we connected " + new DataPlugin().connect();
-				
+		
 		// contacts 
 		// company 
 		// candidate 
@@ -32,37 +32,69 @@ public class FrontController {
 		return new ModelAndView("home", "message", message);
 	}
 		  
-	@RequestMapping("/email")
-	public ModelAndView clientList() {
-		  
-		String message ="!";
-		try {
-			message = "From our gmail plugin:  " + new GmailApiPlugin().send();
-	
-		} catch (IOException e) {
-			message = e.getMessage();
-			 
-		}
+	@RequestMapping("/login")
+	public ModelAndView login() {	
+		
+		String message = "Are we connected " + new DataPlugin().connect();
+		ModelAndView mv = new ModelAndView("login");
+		mv.addObject("Message", "Hey burnt fishy");
+   
+		// contacts 
+		// company 
+		// candidate 
+		
+		return mv;
+	}
+	@RequestMapping("/calendar")
+	public ModelAndView calendar() {	
+		
+		String message = "Are we connected " + new DataPlugin().connect();
+		
+		// contacts 
+		// company 
+		// candidate 
+		
 		return new ModelAndView("clients/index", "message", message);
 	}
-	@RequestMapping("/client/edit")
-	public ModelAndView clientUpdate() {
-		String message = "client " ;
-		return new ModelAndView("clients/edit", "message", message);
+	@RequestMapping("/candidates")
+	public ModelAndView candidatelist() {	
+		
+		String message = "Are we connected " + new DataPlugin().connect();
+		
+		// contacts 
+		// company 
+		// candidate 
+		
+		return new ModelAndView("home", "message", message);
 	}
-	@RequestMapping("/candidate")
-	public ModelAndView candidateList() {
-		String message = "Signup / Login / Slide" ;
-		return new ModelAndView("candidate/index", "message", message);
+	@RequestMapping("/contacts")
+	public ModelAndView contactslist() {	
+		
+		String message = "Are we connected " + new DataPlugin().connect();
+		
+		// contacts 
+		// company 
+		// candidate 
+		
+		return new ModelAndView("home", "message", message);
 	}
-	@RequestMapping("/email/plugin")
-	public ModelAndView emailapp() {
- 
-		String message = "<br><div style='text-align:center;'>"
-				+ "<h3>********** Hello World, Spring MVC Tutorial</h3>This message is coming from CrunchifyHelloWorld.java **********</div><br><br>";
-				
-		return new ModelAndView("email", "message", message);
+	@RequestMapping("/jobs")
+	public ModelAndView jobslist() {	
+		
+		String message = "Are we connected " + new DataPlugin().connect();
+		
+		// contacts 
+		// company 
+		// candidate 
+		
+		return new ModelAndView("home", "message", message);
 	}
-	
+	@RequestMapping("/email/app")
+	public ModelAndView emails() {
+		  
+		
+		return new ModelAndView("clients/index");
+	}
+		
 	
 }
