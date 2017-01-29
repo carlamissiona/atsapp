@@ -125,13 +125,11 @@
                     </li>
                     <!-- settings end -->
                     <!-- inbox dropdown start-->
-                    <li id="header_inbox_bar" class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle"  id="authorize-button" href="index.html#">
-                            <i class="fa fa-envelope-o"></i>
-                           <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Authorize Email"></div>
-                        </a>
-                        
-                    </li>
+                   <li id="header_inbox_bar" class="dropdown tooltips" data-placement="right" data-original-title="Authorize Email"><a
+						data-toggle="dropdown" class="dropdown-toggle"
+						id="authorize-button" href="index.html#"> <i
+							class="fa fa-envelope-o"></i>
+					</a></li>
                     <!-- inbox dropdown end -->
                 </ul>
                 <!--  notification end -->
@@ -157,7 +155,7 @@
               	  <h5 class="centered">Marcel Newman</h5>
               	  	
                   <li class="mt">
-                      <a class="active" href="index.html">
+                      <a class="active" href="http://atsapp-devtuna.rhcloud.com/home">
                           <i class="fa fa-dashboard"></i>
                           <span>Dashboard</span>
                       </a>
@@ -212,7 +210,7 @@
           <section class="wrapper">
 
               <div class="row">
-              	<h2> ${message} </h2>
+              	
                   <div class="col-lg-9 main-chart">
                   
                   	<div class="row mtbox">
@@ -232,7 +230,7 @@
                   		</div>
                   		<div class="col-md-2 col-sm-2 box0">
                   			<div class="box1">
-					  			<span class="li_stack">Menu</span>
+					  			<span class="li_stack"></span>
 					  			<h3>23</h3>
                   			</div>
 					  			<p>You have 23 unread messages in your inbox.</p>

@@ -68,7 +68,7 @@
 					data-original-title="Toggle Navigation"></div>
 			</div>
 			<!--logo start-->
-			<a href="index.html" class="logo"><b>Mini Bullhorn { Page
+			<a href="index.html" class="logo"><b>{ Page
 					Title Bar }</b></a>
 			<!--logo end-->
 			<div class="nav notify-row" id="top_menu">
@@ -389,9 +389,9 @@
 					<!-- **********************************************************************************************************************************************************
       RIGHT SIDEBAR CONTENT
       *********************************************************************************************************************************************************** -->
-
+					<br>
 					<div class="col-lg-3 ds">
-
+			
 						<!-- USERS ONLINE SECTION -->
 						<h3>TEAM MEMBERS</h3>
 						<!-- First Member -->
