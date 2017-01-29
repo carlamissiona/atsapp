@@ -126,9 +126,9 @@
                     <!-- settings end -->
                     <!-- inbox dropdown start-->
                     <li id="header_inbox_bar" class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+                        <a data-toggle="dropdown" class="dropdown-toggle"  id="authorize-button" href="index.html#">
                             <i class="fa fa-envelope-o"></i>
-                            <span class="badge bg-theme" id="authorize-button">Open Email</span>
+                           <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Authorize Email"></div>
                         </a>
                         
                     </li>
@@ -169,10 +169,10 @@
                           <span>Work</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="general.html">Candidates</a></li>
-                          <li><a  href="buttons.html">Jobs</a></li>
-                          <li><a  href="panels.html">Companies</a></li>
-                          <li><a  href="panels.html">My Email</a></li>
+                          <li><a  href="http://atsapp-devtuna.rhcloud.com/candidates">Candidates</a></li>
+                          <li><a  href="http://atsapp-devtuna.rhcloud.com/jobs">Jobs</a></li>
+                          <li><a  href="http://atsapp-devtuna.rhcloud.com/companies">Companies</a></li>
+                          <li><a  href="http://atsapp-devtuna.rhcloud.com/email">My Email</a></li>
                       </ul>
                   </li>
 
@@ -190,44 +190,14 @@
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-book"></i>
-                          <span>Extra Pages</span>
+                          <span>Other Pages</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="blank.html">Blank Page</a></li>
-                          <li><a  href="login.html">Login</a></li>
+                          <li><a  href="http://atsapp-devtuna.rhcloud.com/login">Login</a></li>
                           <li><a  href="lock_screen.html">Lock Screen</a></li>
                       </ul>
                   </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-tasks"></i>
-                          <span>Forms</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="form_component.html">Form Components</a></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-th"></i>
-                          <span>Data Tables</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="basic_table.html">Basic Table</a></li>
-                          <li><a  href="responsive_table.html">Responsive Table</a></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class=" fa fa-bar-chart-o"></i>
-                          <span>Charts</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="morris.html">Morris</a></li>
-                          <li><a  href="chartjs.html">Chartjs</a></li>
-                      </ul>
-                  </li>
-
+                  
               </ul>
               <!-- sidebar menu end-->
           </div>
@@ -262,7 +232,7 @@
                   		</div>
                   		<div class="col-md-2 col-sm-2 box0">
                   			<div class="box1">
-					  			<span class="li_stack"></span>
+					  			<span class="li_stack">Menu</span>
 					  			<h3>23</h3>
                   			</div>
 					  			<p>You have 23 unread messages in your inbox.</p>
@@ -410,7 +380,7 @@
         $(document).ready(function () {
         var unique_id = $.gritter.add({
             // (string | mandatory) the heading of the notification
-            title: 'Welcome to Dashgum!',
+            title: 'Welcome to Company Name',
             // (string | mandatory) the text inside the notification
             text: 'Hover me to enable the Close Button. You can hide the left sidebar clicking on the button next to the logo. Free version for <a href="http://blacktie.co" target="_blank" style="color:#ffd777">BlackTie.co</a>.',
             // (string | optional) the image to display on the left

@@ -54,18 +54,18 @@ public class FrontController {
 		// company 
 		// candidate 
 		
-		return new ModelAndView("clients/index", "message", message);
+		return new ModelAndView("other/calendar", "message", message);
 	}
 	@RequestMapping("/candidates")
 	public ModelAndView candidatelist() {	
 		
-		String message = "Are we connected " + new DataPlugin().connect();
+		String message = "Candidates Lists";
 		
 		// contacts 
 		// company 
 		// candidate 
 		
-		return new ModelAndView("home", "message", message);
+		return new ModelAndView("candidates/list", "message", message);
 	}
 	@RequestMapping("/contacts")
 	public ModelAndView contactslist() {	
@@ -76,7 +76,7 @@ public class FrontController {
 		// company 
 		// candidate 
 		
-		return new ModelAndView("home", "message", message);
+		return new ModelAndView("contacts/list", "message", message);
 	}
 	@RequestMapping("/jobs")
 	public ModelAndView jobslist() {	
@@ -87,7 +87,7 @@ public class FrontController {
 		// company 
 		// candidate 
 		
-		return new ModelAndView("home", "message", message);
+		return new ModelAndView("jobs/list", "message", message);
 	}
 	@RequestMapping("/email")
 	public ModelAndView emails() {

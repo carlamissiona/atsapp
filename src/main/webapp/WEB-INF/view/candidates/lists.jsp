@@ -17,7 +17,8 @@
 	rel="stylesheet">
 <script
 	src="<c:url value="/resources/theme_dashgum/assets/js/jquery.1.10.2.min.js" />"></script>
-<script src="<c:url value="/resources/js/main.js" />"></script>
+<script
+	src="<c:url value="/resources/theme_dashgum/assets/js/main.js" />"></script>
 
 <title>Company Name Mini ATS</title>
 
@@ -140,40 +141,12 @@
 					<!-- settings end -->
 					<!-- inbox dropdown start-->
 					<li id="header_inbox_bar" class="dropdown"><a
-						data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
-							<i class="fa fa-envelope-o"></i>
-					</a>
-						<ul class="dropdown-menu extended inbox">
-							<div class="notify-arrow notify-arrow-green"></div>
-							<li>
-								<p class="green">You have 5 new messages</p>
-							</li>
-							<li><a href="index.html#"> <span class="photo"><img
-										alt="avatar" src="assets/ui-zac.jpg"></span> <span
-									class="subject"> <span class="from">Zac Snider</span> <span
-										class="time">Just now</span>
-								</span> <span class="message"> Hi mate, how is everything? </span>
-							</a></li>
-							<li><a href="index.html#"> <span class="photo"><img
-										alt="avatar" src="assets/ui-divya.jpg"></span> <span
-									class="subject"> <span class="from">Divya Manian</span>
-										<span class="time">40 mins.</span>
-								</span> <span class="message"> Hi, I need your help with this. </span>
-							</a></li>
-							<li><a href="index.html#"> <span class="photo"><img
-										alt="avatar" src="assets/ui-danro.jpg"></span> <span
-									class="subject"> <span class="from">Dan Rogers</span> <span
-										class="time">2 hrs.</span>
-								</span> <span class="message"> Love your new Dashboard. </span>
-							</a></li>
-							<li><a href="index.html#"> <span class="photo"><img
-										alt="avatar" src="assets/ui-sherman.jpg"></span> <span
-									class="subject"> <span class="from">Dj Sherman</span> <span
-										class="time">4 hrs.</span>
-								</span> <span class="message"> Please, answer asap. </span>
-							</a></li>
-							<li><a href="index.html#">See all messages</a></li>
-						</ul></li>
+						data-toggle="dropdown" class="dropdown-toggle"
+						id="authorize-button" href="index.html#"> <i
+							class="fa fa-envelope-o"></i>
+							<div class="fa fa-bars tooltips" data-placement="right"
+								data-original-title="Authorize Email"></div>
+					</a></li>
 					<!-- inbox dropdown end -->
 				</ul>
 				<!--  notification end -->
@@ -246,50 +219,14 @@
 			<section class="wrapper">
 
 				<div class="row">
-					
+
 					<div class="col-lg-9 main-chart">
 
 						<div class="row mtbox">
-							<div class="col-md-2 col-sm-2 col-md-offset-1 box0">
-								<div class="box1">
-									<span class="li_heart"></span>
-									<h3>933</h3>
-								</div>
-								<p>933 People who liked our service. Whoohoo!</p>
-							</div>
-							<div class="col-md-2 col-sm-2 box0">
-								<div class="box1">
-									<span class="li_cloud"></span>
-									<h3>+48</h3>
-								</div>
-								<p>48 New files were added in your cloud storage.</p>
-							</div>
-							<div class="col-md-2 col-sm-2 box0">
-								<div class="box1">
-									<span class="li_stack"></span>
-									<h3>23</h3>
-								</div>
-								<p>You have 23 unread messages in your inbox.</p>
-							</div>
-							<div class="col-md-2 col-sm-2 box0">
-								<div class="box1">
-									<span class="li_news"></span>
-									<h3>+10</h3>
-								</div>
-								<p>More than 10 news were added in your reader.</p>
-							</div>
-							<div class="col-md-2 col-sm-2 box0">
-								<div class="box1">
-									<span class="li_data"></span>
-									<h3>OK!</h3>
-								</div>
-								<p>Your server is working perfectly. Relax & enjoy.</p>
-							</div>
-
+							<h3>Candidates List</h3>
 						</div>
 						<!-- /row mt -->
-
-						<!-- Email Table  -->
+												<!-- Email Table  -->
 						<div class="row mt">
 							<div class="col-lg-12">
 								<div class="content-panel">
@@ -445,7 +382,8 @@
 						</div>
 						<!-- /row -->
 
-
+					
+	
 					</div>
 					<!-- /col-lg-9 END SECTION MIDDLE -->
 
@@ -455,9 +393,9 @@
       *********************************************************************************************************************************************************** -->
 
 					<div class="col-lg-3 ds">
-						<!--COMPLETED ACTIONS DONUTS CHART-->
+
 						<!-- USERS ONLINE SECTION -->
-						<h3>THE CREW</h3>
+						<h3>TEAM MEMBERS</h3>
 						<!-- First Member -->
 						<div class="desc">
 							<div class="thumb">
@@ -601,7 +539,7 @@
 							var unique_id = $.gritter
 									.add({
 										// (string | mandatory) the heading of the notification
-										title : 'Welcome to Dashgum!',
+										title : 'Welcome to Company Name',
 										// (string | mandatory) the text inside the notification
 										text : 'Hover me to enable the Close Button. You can hide the left sidebar clicking on the button next to the logo. Free version for <a href="http://blacktie.co" target="_blank" style="color:#ffd777">BlackTie.co</a>.',
 										// (string | optional) the image to display on the left
@@ -619,12 +557,6 @@
 	</script>
 
 	<script type="application/javascript">
-		
-		
-		
-		
-		
-		
 		
         $(document).ready(function () {
             $("#date-popover").popover({html: true, trigger: "manual"});
@@ -659,148 +591,12 @@
             console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
         }
     
-	
-	
-	
-	
-	
-	
-	</script>
-
-	<!-- Email -->
-	<p>Gmail API Quickstart</p>
-
-	<!--Add buttons to initiate auth sequence and sign out-->
-	<button id="authorize-button" style="display: none;">Authorize</button>
-	<button id="signout-button" style="display: none;">Sign Out</button>
-
-	<pre id="content"></pre>
-
-	<script type="text/javascript">
-		// Client ID and API key from the Developer Console
-		var CLIENT_ID = '44908189323-581ggnn44jq7rqaj7aa5gf36jik855b3.apps.googleusercontent.com';
-
-		// Array of API discovery doc URLs for APIs used by the quickstart
-		var DISCOVERY_DOCS = [ "https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest" ];
-
-		// Authorization scopes required by the API; multiple scopes can be
-		// included, separated by spaces.
-		var SCOPES = 'https://www.googleapis.com/auth/gmail.readonly';
-
-		var authorizeButton = document.getElementById('authorize-button');
-		var signoutButton = document.getElementById('signout-button');
-
-		/**
-		 *  On load, called to load the auth2 library and API client library.
-		 */
-		function handleClientLoad() {
-			gapi.load('client:auth2', initClient);
-		}
-
-		/**
-		 *  Initializes the API client library and sets up sign-in state
-		 *  listeners.
-		 */
-		function initClient() {
-			gapi.client
-					.init({
-						discoveryDocs : DISCOVERY_DOCS,
-						clientId : CLIENT_ID,
-						scope : SCOPES
-					})
-					.then(
-							function() {
-								// Listen for sign-in state changes.
-								gapi.auth2.getAuthInstance().isSignedIn
-										.listen(updateSigninStatus);
-
-								// Handle the initial sign-in state.
-								updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn
-										.get());
-								authorizeButton.onclick = handleAuthClick;
-								signoutButton.onclick = handleSignoutClick;
-							});
-		}
-
-		/**
-		 *  Called when the signed in status changes, to update the UI
-		 *  appropriately. After a sign-in, the API is called.
-		 */
-		function updateSigninStatus(isSignedIn) {
-			if (isSignedIn) {
-				authorizeButton.style.display = 'none';
-				signoutButton.style.display = 'block';
-
-				//listMessages(userId, query, callback) ;
-				listMessages("me", "", "");
-
-				// listLabels();
-			} else {
-				authorizeButton.style.display = 'block';
-				signoutButton.style.display = 'none';
-			}
-		}
-
-		/**
-		 *  Sign in the user upon button click.
-		 */
-		function handleAuthClick(event) {
-			gapi.auth2.getAuthInstance().signIn();
-		}
-
-		/**
-		 *  Sign out the user upon button click.
-		 */
-		function handleSignoutClick(event) {
-			gapi.auth2.getAuthInstance().signOut();
-		}
-
-		/**
-		 * Append a pre element to the body containing the given message
-		 * as its text node. Used to display the results of the API call.
-		 *
-		 * @param {string} message Text to be placed in pre element.
-		 */
-		function appendPre(message) {
-			var pre = document.getElementById('content');
-			var textContent = document.createTextNode(message + '\n');
-			pre.appendChild(textContent);
-		}
-
-		function listMessages(userId, query, callback) {
-			var getPageOfMessages = function(request, result) {
-				request.execute(function(resp) {
-					result = result.concat(resp.messages);
-					var nextPageToken = resp.nextPageToken;
-					if (nextPageToken) {
-						request = gapi.client.gmail.users.messages.list({
-							'userId' : userId,
-							'pageToken' : nextPageToken,
-							'q' : query
-						});
-						getPageOfMessages(request, result);
-						console.log("These are msgs ");
-						console.log(result);
-					} else {
-
-						//callback(result);
-					}
-				});
-			};
-			var initialRequest = gapi.client.gmail.users.messages.list({
-				'userId' : userId,
-				'q' : query
-			});
-
-			getPageOfMessages(initialRequest, []);
-		}
 	</script>
 
 	<script async defer src="https://apis.google.com/js/api.js"
 		onload="this.onload=function(){};handleClientLoad()"
 		onreadystatechange="if (this.readyState === 'complete') this.onload()">
-		
-	</script>
-</body>
+		</body>
 
-</html>
+		</html>
+	
