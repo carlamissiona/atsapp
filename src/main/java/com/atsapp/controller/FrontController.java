@@ -89,11 +89,11 @@ public class FrontController {
 		
 		return new ModelAndView("home", "message", message);
 	}
-	@RequestMapping("/email/app")
+	@RequestMapping("/email")
 	public ModelAndView emails() {
 		  
 		
-		return new ModelAndView("clients/index");
+		return new ModelAndView("email/inbox");
 	}
 		
 	

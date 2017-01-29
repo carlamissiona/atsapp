@@ -67,11 +67,7 @@
 						<input type="text" class="form-control" placeholder="User ID"
 							autofocus> <br> <input type="password"
 							class="form-control" placeholder="Password"> <label
-							class="checkbox"> <span class="pull-right"> <a
-								data-toggle="modal" href="login.html#myModal"> Forgot
-									Password?</a>
-
-						</span>
+							class="checkbox"> 
 						</label>
 						<button class="btn btn-theme btn-block" href="index.html"
 							type="submit">
