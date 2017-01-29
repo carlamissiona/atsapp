@@ -55,13 +55,13 @@ public class FrontController {
 		String message = "Signup / Login / Slide" ;
 		return new ModelAndView("candidate/index", "message", message);
 	}
-	@RequestMapping("/company")
-	public ModelAndView companyList() {
+	@RequestMapping("/email/plugin")
+	public ModelAndView emailapp() {
  
 		String message = "<br><div style='text-align:center;'>"
 				+ "<h3>********** Hello World, Spring MVC Tutorial</h3>This message is coming from CrunchifyHelloWorld.java **********</div><br><br>";
 				
-		return new ModelAndView("company/index", "message", message);
+		return new ModelAndView("email", "message", message);
 	}
 	
 	
