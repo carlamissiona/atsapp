@@ -10,7 +10,7 @@
 
       var authorizeButton = document.getElementById('authorize-button');
       var signoutButton = document.getElementById('signout-button');
-      var test =document.getElementById('header_inbox_bar');
+      var test = document.getElementById('header_inbox_bar');
       /**
        *  On load, called to load the auth2 library and API client library.
        */
@@ -18,7 +18,7 @@
       function handleClientLoad() {
     	  test.onclick = function(){
     		  console.log("click clock");
-    	  }
+    	  };
     		  
     		  
         gapi.load('client:auth2', initClient);
