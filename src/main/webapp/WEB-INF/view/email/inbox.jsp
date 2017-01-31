@@ -294,7 +294,7 @@
 							<div class="col-lg-12">
 								<div class="content-panel">
 									<h4>
-										<i class="fa fa-angle-right"></i> No More Table
+										<i class="fa fa-angle-right"></i>    <button id="authorize-button" style="display: none;">Authorize</button>
 									</h4>
 									<section id="no-more-tables">
 										<table
