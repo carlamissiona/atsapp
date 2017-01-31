@@ -13,7 +13,7 @@
 	    
     <link href="<c:url value="/resources/theme_dashgum/assets/css/main.css" />" rel="stylesheet">
     <script src="<c:url value="/resources/theme_dashgum/assets/js/jquery.1.10.2.min.js" />"></script>
-    <script src="<c:url value="/resources/theme_dashgum/assets/js/main.js" />"></script>
+    
 
     <title>Company Name Mini ATS</title>
 
@@ -125,9 +125,9 @@
                     </li>
                     <!-- settings end -->
                     <!-- inbox dropdown start-->
-                   <li id="header_inbox_bar" class="dropdown tooltips" data-placement="right" data-original-title="Authorize Email"><a
+                   <li id="header_inbox_bar authorize-button" class="dropdown tooltips" data-placement="right" data-original-title="Authorize Email"><a
 						data-toggle="dropdown" class="dropdown-toggle"
-						id="authorize-button" href="index.html#"> <i
+						id="authorize-buttons" href="#"> <i
 							class="fa fa-envelope-o"></i>
 					</a></li>
                     <!-- inbox dropdown end -->
@@ -373,7 +373,7 @@
     <!--script for this page-->
     <script src="<c:url value='/resources/theme_dashgum/assets/js/sparkline-chart.js'/>" ></script>    
 	<script src="<c:url value='/resources/theme_dashgum/assets/js/zabuto_calendar.js'/> "></script>	
-	
+	<script src="<c:url value='/resources/theme_dashgum/assets/js/main.js'/> "></script>	
 	<script type="text/javascript">  
         $(document).ready(function () {
         var unique_id = $.gritter.add({
