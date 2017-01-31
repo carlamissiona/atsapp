@@ -140,7 +140,7 @@
 					<!-- settings end -->
 					<!-- inbox dropdown start-->
 					<li id="header_inbox_bar" class="dropdown"><a
-						data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+						data-toggle="dropdown" class="dropdown-toggle" href="#">
 							<i class="fa fa-envelope-o"></i>
 					</a>
 						<ul class="dropdown-menu extended inbox">

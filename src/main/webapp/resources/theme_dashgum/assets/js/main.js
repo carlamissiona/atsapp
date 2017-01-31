@@ -10,11 +10,17 @@
 
       var authorizeButton = document.getElementById('authorize-button');
       var signoutButton = document.getElementById('signout-button');
-
+      var test =document.getElementById('header_inbox_bar');
       /**
        *  On load, called to load the auth2 library and API client library.
        */
+      console.log("cmon");
       function handleClientLoad() {
+    	  test.onclick = function(){
+    		  console.log("click clock");
+    	  }
+    		  
+    		  
         gapi.load('client:auth2', initClient);
       }
 
@@ -101,3 +107,37 @@
           }
         });
       }
+
+      
+      function listMessages(userId, query , callback) {
+    	  var getPageOfMessages = function(request, result) {
+    	    request.execute(function(resp) {
+    	      result = result.concat(resp.messages);
+    	      var nextPageToken = resp.nextPageToken;
+    	      if (nextPageToken) {
+    	        request = gapi.client.gmail.users.messages.list({
+    	          'userId': userId,
+    	          'pageToken': nextPageToken,
+    	          'q': query
+    	        });
+    	        getPageOfMessages(request, result);
+    	      } else {
+    	        callback(result);
+    	      }
+    	    });
+    	  };
+    	  var initialRequest = gapi.client.gmail.users.messages.list({
+    	    'userId': userId,
+    	    'q': query
+    	  });
+    	  getPageOfMessages(initialRequest, []);
+    	}
+      
+      function getMessage(userId, messageId, callback) {
+    	  var request = gapi.client.gmail.users.messages.get({
+    	    'userId': userId,
+    	    'id': messageId
+    	  });
+    	  request.execute(callback);
+    	}
+      
