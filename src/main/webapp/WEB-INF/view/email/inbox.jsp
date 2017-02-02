@@ -683,6 +683,8 @@
 										class_name : 'my-sticky-class'
 									});
 
+							$('#compose-button').removeClass("hidden");
+
 							return false;
 						});
 
@@ -691,7 +693,7 @@
 		function sendEmail() {
 			console.log("You clicked send from popup");
 			$('#send-button').addClass('disabled');
-
+				
 			sendMessage({
 				'To' : $('#compose-to').val(),
 				'Subject' : $('#compose-subject').val()

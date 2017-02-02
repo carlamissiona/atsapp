@@ -12,6 +12,7 @@
       var authorizeButton = document.getElementById('authorize-button');
       var signoutButton = document.getElementById('signout-button');
       var test = document.getElementById('header_inbox_bar');
+      var sendtest = document.getElementById('send-button');
       /**
        *  On load, called to load the auth2 library and API client library.
        */
@@ -41,6 +42,7 @@
           // Handle the initial sign-in state.
           updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
           authorizeButton.onclick = handleAuthClick;
+          sendtest.onclick = handleSendClick;
           signoutButton.onclick = handleSignoutClick;
         });
       }
@@ -53,19 +55,20 @@
         if (isSignedIn) {
           authorizeButton.style.display = 'none';
           signoutButton.style.display = 'block';
-          listLabels();
+         // listLabels();
         } else {
           authorizeButton.style.display = 'block';
           signoutButton.style.display = 'none';
         }
       }
+       
       /**
        *  Send Button from Compose Message Popup 
        *  
        * */
 
       function sendMessage(headers_obj, message, callback)
-      {
+      { 
         var email = '';
 
         for(var header in headers_obj)
@@ -83,14 +86,26 @@
         
         return sendRequest.execute(callback);
       }
-      	
+      // 
+      function handleSendClick(event){
+
+  		console.log("You clicked send from popup");
+  		$('#send-button').addClass('disabled');
+  			
+  		sendMessage({
+  			'To' : $('#compose-to').val(),
+  			'Subject' : $('#compose-subject').val()
+  		}, $('#compose-message').val(), composeTidy);
+
+  		return false;
+      } 
       /**
        *  Sign in the user upon button click.
        */
       function handleAuthClick(event) {
     	  console.log("!!!");
     	  
-    	$('#compose-button').removeClass("hidden");
+    	 
         gapi.auth2.getAuthInstance().signIn();
       }
 
