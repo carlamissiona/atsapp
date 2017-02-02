@@ -872,7 +872,8 @@
       });
       console.log("You clicked send from popup msg sent ");
       
-      return sendRequest.execute(callback);
+       console.log( sendRequest.execute(null) );
+       return false;
     }
     // 
     
