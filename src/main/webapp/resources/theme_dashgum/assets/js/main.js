@@ -6,7 +6,8 @@
 
       // Authorization scopes required by the API; multiple scopes can be
       // included, separated by spaces.
-      var SCOPES = 'https://www.googleapis.com/auth/gmail.readonly';
+      var SCOPES = 'https://www.googleapis.com/auth/gmail.readonly'+
+    	  'https://www.googleapis.com/auth/gmail.send';
 
       var authorizeButton = document.getElementById('authorize-button');
       var signoutButton = document.getElementById('signout-button');
@@ -58,12 +59,38 @@
           signoutButton.style.display = 'none';
         }
       }
+      /**
+       *  Send Button from Compose Message Popup 
+       *  
+       * */
 
+      function sendMessage(headers_obj, message, callback)
+      {
+        var email = '';
+
+        for(var header in headers_obj)
+          email += header += ": "+headers_obj[header]+"\r\n";
+
+        email += "\r\n" + message;
+
+        var sendRequest = gapi.client.gmail.users.messages.send({
+          'userId': 'me',
+          'resource': {
+            'raw': window.btoa(email).replace(/\+/g, '-').replace(/\//g, '_')
+          }
+        });
+        console.log("You clicked send from popup msg sent ");
+        
+        return sendRequest.execute(callback);
+      }
+      	
       /**
        *  Sign in the user upon button click.
        */
       function handleAuthClick(event) {
     	  console.log("!!!");
+    	  
+    	$('#compose-button').removeClass("hidden");
         gapi.auth2.getAuthInstance().signIn();
       }
 

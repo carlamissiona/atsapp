@@ -140,8 +140,8 @@
 					<!-- settings end -->
 					<!-- inbox dropdown start-->
 					<li id="header_inbox_bar" class="dropdown"><a
-						data-toggle="dropdown" class="dropdown-toggle" href="#">
-							<i class="fa fa-envelope-o"></i>
+						data-toggle="dropdown" class="dropdown-toggle" href="#"> <i
+							class="fa fa-envelope-o"></i>
 					</a>
 						<ul class="dropdown-menu extended inbox">
 							<div class="notify-arrow notify-arrow-green"></div>
@@ -246,7 +246,7 @@
 			<section class="wrapper">
 
 				<div class="row">
-					
+
 					<div class="col-lg-9 main-chart">
 
 						<div class="row mtbox">
@@ -294,7 +294,8 @@
 							<div class="col-lg-12">
 								<div class="content-panel">
 									<h4>
-										<i class="fa fa-angle-right"></i>    <button id="authorize-button" style="display: none;">Authorize</button>
+										<i class="fa fa-angle-right"></i>
+										<button id="authorize-button" style="display: none;">Authorize</button>
 									</h4>
 									<section id="no-more-tables">
 										<table
@@ -309,7 +310,7 @@
 													<th class="numeric">Open</th>
 													<th class="numeric">High</th>
 													<th class="numeric">Low</th>
-													<th class="numeric">Volume</th>
+													<th class="numeric">Email</th>
 												</tr>
 											</thead>
 											<tbody>
@@ -323,7 +324,10 @@
 													<td class="numeric" data-title="Open">$1.39</td>
 													<td class="numeric" data-title="High">$1.39</td>
 													<td class="numeric" data-title="Low">$1.38</td>
-													<td class="numeric" data-title="Volume">9,395</td>
+													<td class="numeric" data-title="Email"><a
+														href="#compose-modal" data-toggle="modal"
+														id="compose-button"
+														class="btn btn-primary pull-right hidden">Test Email</a></td>
 												</tr>
 												<tr>
 													<td data-title="Code">AAD</td>
@@ -334,7 +338,10 @@
 													<td class="numeric" data-title="Open">$1.14</td>
 													<td class="numeric" data-title="High">$1.15</td>
 													<td class="numeric" data-title="Low">$1.13</td>
-													<td class="numeric" data-title="Volume">56,431</td>
+													<td class="numeric" data-title="Email"><a
+														href="#compose-modal" data-toggle="modal"
+														id="compose-button"
+														class="btn btn-primary pull-right hidden">Test Email</a></td>
 												</tr>
 												<tr>
 													<td data-title="Code">AAX</td>
@@ -345,7 +352,12 @@
 													<td class="numeric" data-title="Open">$4.01</td>
 													<td class="numeric" data-title="High">$4.05</td>
 													<td class="numeric" data-title="Low">$4.00</td>
-													<td class="numeric" data-title="Volume">90,641</td>
+													<td class="numeric" data-title="Email"><a
+														href="#compose-modal" data-toggle="modal"
+														id="compose-button"
+														class="btn btn-primary pull-right hidden">Test Email </a>
+
+													</td>
 												</tr>
 												<tr>
 													<td data-title="Code">ABC</td>
@@ -356,7 +368,12 @@
 													<td class="numeric" data-title="Open">$2.98</td>
 													<td class="numeric" data-title="High">$3.00</td>
 													<td class="numeric" data-title="Low">$2.96</td>
-													<td class="numeric" data-title="Volume">862,518</td>
+													<td class="numeric" data-title="Email"><a
+														href="#compose-modal" data-toggle="modal"
+														id="compose-button"
+														class="btn btn-primary pull-right hidden">Test Email </a>
+
+													</td>
 												</tr>
 												<tr>
 													<td data-title="Code">ABP</td>
@@ -367,7 +384,7 @@
 													<td class="numeric" data-title="Open">$1.92</td>
 													<td class="numeric" data-title="High">$1.93</td>
 													<td class="numeric" data-title="Low">$1.90</td>
-													<td class="numeric" data-title="Volume">595,701</td>
+													<td class="numeric" data-title="Email">595,701</td>
 												</tr>
 												<tr>
 													<td data-title="Code">ABY</td>
@@ -378,7 +395,7 @@
 													<td class="numeric" data-title="Open">$0.76</td>
 													<td class="numeric" data-title="High">$0.77</td>
 													<td class="numeric" data-title="Low">$0.76</td>
-													<td class="numeric" data-title="Volume">54,567</td>
+													<td class="numeric" data-title="Email">54,567</td>
 												</tr>
 												<tr>
 													<td data-title="Code">ACR</td>
@@ -389,7 +406,7 @@
 													<td class="numeric" data-title="Open">$3.70</td>
 													<td class="numeric" data-title="High">$3.72</td>
 													<td class="numeric" data-title="Low">$3.68</td>
-													<td class="numeric" data-title="Volume">191,373</td>
+													<td class="numeric" data-title="Email">191,373</td>
 												</tr>
 												<tr>
 													<td data-title="Code">ADU</td>
@@ -400,7 +417,7 @@
 													<td class="numeric" data-title="Open">$0.73</td>
 													<td class="numeric" data-title="High">$0.74</td>
 													<td class="numeric" data-title="Low">$0.72</td>
-													<td class="numeric" data-title="Volume">8,602,291</td>
+													<td class="numeric" data-title="Email">8,602,291</td>
 												</tr>
 												<tr>
 													<td data-title="Code">AGG</td>
@@ -411,7 +428,12 @@
 													<td class="numeric" data-title="Open">$7.82</td>
 													<td class="numeric" data-title="High">$7.82</td>
 													<td class="numeric" data-title="Low">$7.81</td>
-													<td class="numeric" data-title="Volume">148</td>
+													<td class="numeric" data-title="Email"><a
+														href="#compose-modal" data-toggle="modal"
+														id="compose-button"
+														class="btn btn-primary pull-right hidden">Test Email </a>
+
+													</td>
 												</tr>
 												<tr>
 													<td data-title="Code">AGK</td>
@@ -422,7 +444,11 @@
 													<td class="numeric" data-title="Open">$13.83</td>
 													<td class="numeric" data-title="High">$13.83</td>
 													<td class="numeric" data-title="Low">$13.67</td>
-													<td class="numeric" data-title="Volume">846,403</td>
+													<td class="numeric" data-title="Email"><a
+														href="#compose-modal" data-toggle="modal"
+														id="compose-button"
+														class="btn btn-primary pull-right hidden">Test Email </a>
+													</td>
 												</tr>
 												<tr>
 													<td data-title="Code">AGO</td>
@@ -433,7 +459,11 @@
 													<td class="numeric" data-title="Open">$3.11</td>
 													<td class="numeric" data-title="High">$3.22</td>
 													<td class="numeric" data-title="Low">$3.10</td>
-													<td class="numeric" data-title="Volume">5,416,303</td>
+													<td class="numeric" data-title="Email"><a
+														href="#compose-modal" data-toggle="modal"
+														id="compose-button"
+														class="btn btn-primary pull-right hidden">Test Email </a>
+													</td>
 												</tr>
 											</tbody>
 										</table>
@@ -546,7 +576,46 @@
 				<! --/row -->
 			</section>
 		</section>
+		<section>
+			<!-- Popups -->
+			<div class="modal fade" id="compose-modal" tabindex="-1"
+				role="dialog">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h4 class="modal-title">Compose</h4>
+						</div>
+						<form onsubmit="return sendEmail();">
+							<div class="modal-body">
+								<div class="form-group">
+									<input type="email" class="form-control" id="compose-to"
+										placeholder="To" required />
+								</div>
 
+								<div class="form-group">
+									<input type="text" class="form-control" id="compose-subject"
+										placeholder="Subject" required />
+								</div>
+
+								<div class="form-group">
+									<textarea class="form-control" id="compose-message"
+										placeholder="Message" rows="10" required></textarea>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default"
+									data-dismiss="modal">Close</button>
+								<button type="submit" id="send-button" class="btn btn-primary">Send</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
 		<!--main content end-->
 		<!--footer start-->
 		<footer class="site-footer">
@@ -616,9 +685,39 @@
 
 							return false;
 						});
+
+		//************** Email Send Button on Popup **************************
+
+		function sendEmail() {
+			console.log("You clicked send from popup");
+			$('#send-button').addClass('disabled');
+
+			sendMessage({
+				'To' : $('#compose-to').val(),
+				'Subject' : $('#compose-subject').val()
+			}, $('#compose-message').val(), composeTidy);
+
+			return false;
+		}
+
+		function composeTidy() {
+			$('#compose-modal').modal('hide');
+
+			$('#compose-to').val('');
+			$('#compose-subject').val('');
+			$('#compose-message').val('');
+
+			$('#send-button').removeClass('disabled');
+		}
 	</script>
 
 	<script type="application/javascript">
+		
+		
+		
+		
+		
+		
 		
 		
 		
@@ -659,6 +758,12 @@
             console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
         }
     
+	
+	
+	
+	
+	
+	
 	
 	
 	
