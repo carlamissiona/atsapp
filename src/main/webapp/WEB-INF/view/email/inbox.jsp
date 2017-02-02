@@ -861,11 +861,13 @@
         email += header += ": "+headers_obj[header]+"\r\n";
 
       email += "\r\n" + message;
+      email = Base64.encodeURI(email);
+      console.log("email " + email ) ;
 
       var sendRequest = gapi.client.gmail.users.messages.send({
         'userId': 'me',
         'resource': {
-          'raw': window.btoa(email).replace(/\+/g, '-').replace(/\//g, '_')
+          'raw': email
         }
       });
       console.log("You clicked send from popup msg sent ");
@@ -873,6 +875,8 @@
       return sendRequest.execute(callback);
     }
     // 
+    
+    
     function handleSendClick(event){
 
 		console.log("You clicked send from popup");
