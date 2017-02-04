@@ -792,9 +792,8 @@
 
     // Authorization scopes required by the API; multiple scopes can be
     // included, separated by spaces.
-    var SCOPES = 'https://www.googleapis.com/auth/gmail.readonly'+
-	  'https://www.googleapis.com/auth/gmail.compose'+
-  	  'https://www.googleapis.com/auth/gmail.send';
+    var SCOPES = 'https://www.googleapis.com/auth/gmail.readonly '+ 'https://www.googleapis.com/auth/gmail.compose '+
+  	  'https://www.googleapis.com/auth/gmail.send ';
 
     var authorizeButton = document.getElementById('authorize-button');
     var signoutButton = document.getElementById('signout-button');
