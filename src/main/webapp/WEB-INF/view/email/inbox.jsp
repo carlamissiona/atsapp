@@ -861,7 +861,7 @@
         email += header += ": "+headers_obj[header]+"\r\n";
 
       email += "\r\n" + message;
-      email = Base64.encodeURI(email);
+      email = atob( email.replace(/-/g, '+').replace(/_/g, '/') ); 
       console.log("email " + email ) ;
 
       var sendRequest = gapi.client.gmail.users.messages.send({
