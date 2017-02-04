@@ -861,8 +861,9 @@
         email += header += ": "+headers_obj[header]+"\r\n";
 
       email += "\r\n" + message;
-      email = atob( email.replace(/-/g, '+').replace(/_/g, '/') ); 
-      console.log("email " + email ) ;
+      console.log("Email ==> "+ email);
+      email = window.btoa( email ); 
+      console.log("email  btoa" + email ) ;
 
       var sendRequest = gapi.client.gmail.users.messages.send({
         'userId': 'me',
@@ -870,7 +871,8 @@
           'raw': email
         }
       });
-      console.log("You clicked send from popup msg sent ");
+     
+      console.log("You clicked send from popup msg sent!! ");
       
        console.log( sendRequest.execute(null) );
        return false;
