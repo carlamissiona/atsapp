@@ -21,7 +21,7 @@
 <script
 	src="<c:url value="/resources/theme_dashgum/assets/js/main.js" />"></script>
 
-<title>Company Name Mini ATS</title>
+<title>  Name Mini ATS</title>
 
 
 <link
