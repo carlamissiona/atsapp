@@ -222,7 +222,7 @@
 					<div class="col-lg-9 main-chart">
 
 						<div class="row mtbox">
-							<h3>${msg}</h3>
+							<h3>${msg}!!</h3>
 						</div>
 						<!-- /row mt -->
 												<!-- Email Table  -->

@@ -63,6 +63,7 @@ public class FrontController {
 		String candidates = new DataPlugin().getList("Candidate");
 		ModelAndView mv = new ModelAndView("candidates/list", "candidates", candidates);
 		mv.addObject("msg", message);
+	
 		// contacts 
 		// company 
 		// candidate 
