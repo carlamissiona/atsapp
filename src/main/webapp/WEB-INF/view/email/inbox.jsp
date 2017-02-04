@@ -19,7 +19,7 @@
 	src="<c:url value="/resources/theme_dashgum/assets/js/jquery.1.10.2.min.js" />"></script>
 <script src="<c:url value="/resources/js/main.js" />"></script>
 
-<title>Company Name Mini ATS</title>
+<title> ATS</title>
 
 
 <link
