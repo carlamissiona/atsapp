@@ -59,13 +59,15 @@ public class FrontController {
 	@RequestMapping("/candidates")
 	public ModelAndView candidatelist() {	
 		
-		String message = "Candidates Lists";
+		String message = "Candidates Lists";		
+		String candidates = new DataPlugin().getList("Candidate");
+		ModelAndView mv = new ModelAndView("candidates/list", "candidates", candidates);
 		
 		// contacts 
 		// company 
 		// candidate 
 		
-		return new ModelAndView("candidates/list", "message", message);
+		return mv;
 	}
 	@RequestMapping("/contacts")
 	public ModelAndView contactslist() {	
