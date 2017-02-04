@@ -59,7 +59,7 @@ public class FrontController {
 	@RequestMapping("/candidates")
 	public ModelAndView candidatelist() {	
 		
-		String message = "Candidates Lists";		
+		String message = "Candidates Listsss";		
 		String candidates = new DataPlugin().getList("Candidate");
 		ModelAndView mv = new ModelAndView("candidates/list", "candidates", candidates);
 		mv.addObject("msg", message);

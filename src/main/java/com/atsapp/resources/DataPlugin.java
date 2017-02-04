@@ -91,7 +91,7 @@ public class DataPlugin {
 //		}
 		  
 		 // ***********************************************Candidates List
-		 if( classname.equalsIgnoreCase("candidates") ){
+		 if( classname.equalsIgnoreCase("candidate") ){
 			 List<Candidate> cnlist = new ArrayList<Candidate>();  
 		      
 			    try{  
