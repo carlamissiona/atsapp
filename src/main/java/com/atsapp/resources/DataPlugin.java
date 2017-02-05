@@ -96,7 +96,7 @@ public class DataPlugin {
 		      
 			    try{  
 			     
-			        PreparedStatement ps=con.prepareStatement("select * from register");  
+			        PreparedStatement ps=con.prepareStatement("select * from candidate");  
 			        ResultSet rs=ps.executeQuery();  
 			        while(rs.next()){  
 			            Candidate c=new Candidate();    
