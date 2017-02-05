@@ -74,24 +74,15 @@ public class DataPlugin {
 		
 	}
 	public static String getList(String classname){ 
-		// Object rt = objInstance(classname);
-		 Connection con = connect();
 		 
+		 Connection con = connect();	 
 	
 		 Gson gson = new Gson();
-		 // convert your list to json
+	 
 		 String rt = "";
-		 // print your generated json
-		 
-//		 try {
-//			PreparedStatement pst = con.prepareStatement("Select * from " + classname);
-//		} catch (SQLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-		  
+ 
 		 // ***********************************************Candidates List
-		 if( classname.equalsIgnoreCase("candidates") ){
+		 if( classname.equalsIgnoreCase("candidate") || classname.contains("Candidate") ){
 			 List<Candidate> cnlist = new ArrayList<Candidate>();  
 		      
 			    try{  
