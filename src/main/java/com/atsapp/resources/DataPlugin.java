@@ -113,7 +113,7 @@ public class DataPlugin {
 			    }catch(Exception e){System.out.println(e);}
 		 
 		 }
-		 if( objModel.equalsIgnoreCase("job") ||  objModel.contains("Job") || objModel.contentEquals("Jobs") ){
+		 if( objModel.equalsIgnoreCase("Jobs") ||  objModel.contains("Job") || objModel.contentEquals("Jobs") ){
 			 List<Job> jolist = new ArrayList<Job>();  
 		      
 			    try{  
@@ -210,7 +210,29 @@ public class DataPlugin {
 			   
 		 }
 		 // *********************************************** Job List   
+		 if(  classname.equalsIgnoreCase("Jobs") ||   classname.contains("Job") ||  classname.contentEquals("Jobs") ){
+			 List<Job> jolist = new ArrayList<Job>();  
+		      
+			    try{  
+			        // 
+			        PreparedStatement ps=con.prepareStatement("select j.*,  concat(c.co_firstname, ' ', c.co_lastname) as jo_contact_linked  from jobs j left join contacts c on j.jo_contact = c.co_id "); 
+			        ResultSet rs=ps.executeQuery(); 
+			        while(rs.next()){  
+			            Job j = new Job();    
+			            j.setJo_client(rs.getString("jo_client"));
+			            j.setJo_contact(rs.getString("jo_contact_linked"));
+			            j.setJo_desc(rs.getString("jo_desc"));
+			            j.setJo_id(rs.getInt("jo_id"));
+			            j.setJo_name(rs.getString("jo_name"));
+			            j.setJo_notes(rs.getString("jo_notes"));
+			            j.setJo_status(rs.getString("jo_status"));
+			            jolist.add(j);
+			        } 			         
+			   		rt = gson.toJson(jolist);
+			        
+			    }catch(Exception e){System.out.println(e);}
 		 
+		 }
 		 return rt ;
 	
 	}

@@ -105,8 +105,7 @@ public class FrontController {
 	@RequestMapping("/jobs")
 	public ModelAndView jobslist() {	
 	DataPlugin DataPlug = new DataPlugin(); 
-	    
-	 
+	    	 
 		 
 		String jobs = DataPlug.getList("Jobs","");
 		
