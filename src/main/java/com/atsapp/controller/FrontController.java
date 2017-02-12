@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.atsapp.resources.*; 
@@ -74,7 +75,7 @@ public class FrontController {
 		return mv;
 	}
 	@RequestMapping("/candidates/view/{cnd_id}")
-	public  ModelAndView view(@PathVariable(value="cnd_id") String cid) {	
+	public  @ResponseBody String  view(@PathVariable(value="cnd_id") String cid) {	
 		DataPlugin DataPlug = new DataPlugin(); 
 	    
 		String message = "Candidates Lists";		
@@ -87,7 +88,7 @@ public class FrontController {
 		mv.addObject("candidate",candidate);
 		mv.addObject("whose_online", signedin);
 	 
-		return mv;
+		return candidate;
 				
 			  
 	}
