@@ -74,7 +74,7 @@ public class FrontController {
 		return mv;
 	}
 	@RequestMapping("/candidates/view/{cnd_id}")
-	public String view(@PathVariable(value="cnd_id") String cid , HttpServletResponse res) {	
+	public  ModelAndView view(@PathVariable(value="cnd_id") String cid) {	
 		DataPlugin DataPlug = new DataPlugin(); 
 	    
 		String message = "Candidates Lists";		
@@ -86,16 +86,10 @@ public class FrontController {
 		mv.addObject("msg", message);
 		mv.addObject("candidate",candidate);
 		mv.addObject("whose_online", signedin);
-		try {       
-	        PrintWriter out = res.getWriter();
-	        out.println("=>"+candidate);
-	        out.close();
-	    } catch (IOException ex) { 
-	       
-	    }
-		return candidate;
+	 
+		return mv;
 				
-				//mv;
+			  
 	}
 	@RequestMapping("/contacts")
 	public ModelAndView contactslist() {	

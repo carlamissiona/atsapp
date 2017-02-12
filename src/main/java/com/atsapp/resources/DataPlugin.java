@@ -109,7 +109,7 @@ public class DataPlugin {
 			   			 
 			        }  
 			         
-			        rt = gson.toJson(cnlist); rt="sds";
+			        rt = gson.toJson(cnlist);  
 			    }catch(Exception e){System.out.println(e);}
 		 
 		 }
