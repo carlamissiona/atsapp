@@ -60,11 +60,14 @@ public class FrontController {
 	public ModelAndView candidatelist() {	
 		
 		String message = "Candidates Lists";		
-		String candidates = new DataPlugin().getList("Candidate");
+		String candidates = new DataPlugin().getList("Candidate","");
+		String signedin = new DataPlugin().getList("Accounts" , "ac_signed_in = 1" );
+		
 		ModelAndView mv = new ModelAndView("candidates/list", "candidates", candidates);
 		
 		mv.addObject("msg", message);
 		mv.addObject("candidates",candidates);
+		mv.addObject("whose_online", signedin);
 		return mv;
 	}
 	@RequestMapping("/contacts")

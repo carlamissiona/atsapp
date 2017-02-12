@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import com.atsapp.model.Account;
 import com.atsapp.model.Candidate;
 import com.google.gson.Gson;
 
@@ -73,7 +74,7 @@ public class DataPlugin {
 		return rt;
 		
 	}
-	public static String getList(String classname){ 
+	public static String getList(String classname , String filter){ 
 		 
 		 Connection con = connect();	 
 	
@@ -87,7 +88,7 @@ public class DataPlugin {
 		      
 			    try{  
 			     
-			        PreparedStatement ps=con.prepareStatement("select * from candidates");  
+			        PreparedStatement ps=con.prepareStatement("select * from candidates " + filter);  
 			        ResultSet rs=ps.executeQuery();  
 			        while(rs.next()){  
 			            Candidate c=new Candidate();    
@@ -112,8 +113,35 @@ public class DataPlugin {
 			    // convert your list to json
 			    rt = gson.toJson(cnlist);
 			   
-		 }
+		 }	
 		 // ***********************************************Candidates List   
+		 if( classname.equalsIgnoreCase("Accounts") || classname.contains("Accounts") ){
+			 List<Account> aclist = new ArrayList<Account>();  
+		      
+			    try{  
+			     
+			        PreparedStatement ps=con.prepareStatement("select * from accounts " + filter);  
+			        ResultSet rs=ps.executeQuery();  
+			        while(rs.next()){  
+			            Account a =new Account();    
+			             a.setAc_address(rs.getString("ac_address"));
+			             a.setAc_firstname(rs.getString("ac_firstname"));
+			             a.setAc_middlename(rs.getString("ac_middlename"));
+			             a.setAc_mobile(rs.getString("ac_mobile"));
+			             a.setAc_email(rs.getString("ac_email"));
+			             a.setAc_status(rs.getString("ac_status"));
+			             a.setAc_password(rs.getString("ac_password"));
+			             a.setAc_employment_date(rs.getDate("ac_employment_date").toString());
+			             aclist.add(a);  
+			        }  
+			    }catch(Exception e){System.out.println(e);}  
+			  
+			   
+			    // convert your list to json
+			    rt = gson.toJson(aclist);
+			   
+		 }
+		 // *********************************************** Job List   
 		 
 		 return rt ;
 	

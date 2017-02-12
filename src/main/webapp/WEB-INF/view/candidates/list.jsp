@@ -232,16 +232,16 @@
 									<h4>
 										<i class="fa fa-angle-right"></i> No More Table
 									</h4>
-									<section id="no-more-tables">
+									<section id="unseen">
 										<table
 											class="table-candidates table table-bordered table-striped table-condensed cf">
 											<thead class="cf">
 												<tr>
-													<th>Code</th>
-													<th>Company</th>
-													<th class="numeric"> </th>
-													<th class="numeric">Name</th>
+													<th> </th>
+													<th>Name</th>
 													<th class="numeric">Email</th>
+													<th class="numeric">Job Title</th>
+													<th class="numeric">Status</th>
 													<th class="numeric">Address</th>
 													<th class="numeric">Status</th>
 													<th class="numeric">Job Title</th>
@@ -334,8 +334,7 @@
 							</div>
 							<div class="details">
 								<p>
-									<a href="#">Zac Sniders</a><br />
-									<muted>Available</muted>
+									 ${whose_online}
 								</p>
 							</div>
 						</div>
@@ -473,9 +472,35 @@
             });
 
             //*********** candidates list table
-			console.log(${candidates});
-
-            
+			var candidatesStore  = ${candidates};
+			var whose_online = ${whose_online};
+			
+			for (i = 0; i < candidatesStore.length; i++) { 
+				$(".table-candidates tbody").append(
+				  "<tr> <td> <div class='checkbox'> <label> <input type='checkbox' value='"+  candidatesStore[i].ca_email  +"'> </label> </div> </td>" +
+				  " <td>" + candidatesStore[i].ca_firstname + " " + candidatesStore[i].ca_lastname + " </td>" +
+				  " <td>" + candidatesStore[i].ca_email +"</td> " +
+				  " <td>" + candidatesStore[i].ca_job_title + "</td>" +
+				  " <td>" + candidatesStore[i].ca_city + "</td>" +  
+				  " <td>" + candidatesStore[i].ca_status + "</td>" +
+				  " <td>" + candidatesStore[i].ca_mobile + "</td>" + 
+				  " <td>" + candidatesStore[i].ca_cv + "</td>" +
+				  " <td>  <div class='btn-group open action-drop'> " +
+				      "<button type='button' class='btn btn-theme03'>Action</button> " + 
+				       "<button type='button' class='btn btn-theme03 dropdown-toggle' data-toggle='dropdown'>"+				    <span class="caret"></span>
+				       "<span class='sr-only'>Toggle Dropdown</span>"+
+				       "</button>"+
+				       "<ul class='dropdown-menu' role='menu'>" +
+				         "<li><a href='#'>View</a></li>" +
+				         "<li><a href='#'>Edit</a></li>"+
+				         "<li><a href='#'>Email</a></li>"+
+				  	   "</ul> </div> </td> </tr>"+
+				 );
+				       
+				   
+			}
+			
+			  console.log(candidatesStore[i]);
         });
         
         
