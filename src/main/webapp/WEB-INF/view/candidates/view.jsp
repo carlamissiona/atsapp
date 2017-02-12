@@ -432,7 +432,7 @@
             });
 
             //*********** candidates list table
-			var candidateForm =${candidate}
+			var candidateForm =${candidate};
 			var whose_online = ${whose_online};
 
 			populateForm(candidateForm); 
@@ -440,19 +440,19 @@
 			  console.log(candidateForm);
         });
         
-        function populateForm(){
+        function populateForm(candidate){
             console.log("!!");
-			$("input.cn_firstname").attr("value" , ${candidate[0].ca_firstname});
-			$("input.cn_lastname").attr("value" , ${candidate[0].ca_lastname});
-			$("input.cn_middlename").attr("value" , ${candidate[0].ca_middlename});
-			$("input.cn_email").attr("value" , ${candidate[0].ca_email});
-			$("input.cn_mobile").attr("value" , ${candidate[0].ca_mobile});
-			$("input.cn_tel").attr("value" , ${candidate[0].ca_tel});
-			$("input.cn_recruiter").attr("value" , ${candidate[0].ca_recruiter_id});
-			$("textarea.cn_add").attr("value" , ${candidate[0].ca_add});
-			$("input.cn_city").attr("value" , ${candidate[0].ca_city});
-			$("input.cn_status").attr("value" , ${candidate[0].ca_status});
-			$("input.cn_job_title").attr("value" , ${candidate[0].ca_job_title});
+			$("input.cn_firstname").attr("value" , candidate[0].ca_firstname);
+			$("input.cn_lastname").attr("value" ,  candidate[0].ca_lastname);
+			$("input.cn_middlename").attr("value" ,  candidate[0].ca_middlename);
+			$("input.cn_email").attr("value" ,  candidate[0].ca_email);
+			$("input.cn_mobile").attr("value" ,  candidate[0].ca_mobile);
+			$("input.cn_tel").attr("value" , candidate[0].ca_tel);
+			$("input.cn_recruiter").attr("value" , candidate[0].ca_recruiter_id);
+			$("textarea.cn_add").attr("value" ,  candidate[0].ca_add);
+			$("input.cn_city").attr("value" ,  candidate[0].ca_city);
+			$("input.cn_status").attr("value" ,  candidate[0].ca_status);
+			$("input.cn_job_title").attr("value" ,  candidate[0].ca_job_title);
 			
         }
         function myNavFunction(id) {
