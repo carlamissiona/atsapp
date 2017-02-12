@@ -113,7 +113,7 @@ public class DataPlugin {
 			    }catch(Exception e){System.out.println(e);}
 		 
 		 }
-		 if( objModel.equalsIgnoreCase("job") ||  objModel.contains("job") ){
+		 if( objModel.equalsIgnoreCase("job") ||  objModel.contains("Job") || objModel.contentEquals("Jobs") ){
 			 List<Job> jolist = new ArrayList<Job>();  
 		      
 			    try{  

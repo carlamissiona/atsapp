@@ -213,7 +213,7 @@
 							<div class="col-lg-12">
 								<div class="content-panel">
 									<h4>
-										<i class="fa fa-angle-right"></i> Candidates  <span class="pull-right"><button type="button" class="btn btn-info">Mass Email</button></span>
+										<i class="fa fa-angle-right"></i> Jobs <span class="pull-right"><button type="button" class="btn btn-info">Mass Email</button></span>
 									</h4>
 									<section id="unseen">
 										<table
@@ -229,18 +229,7 @@
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
-													<td data-title="Code">AAC</td>
-													<td data-title="Company">AUSTRALIAN AGRICULTURAL
-														COMPANY LIMITED.</td>
-													<td class="numeric" data-title="Price">$1.38</td>
-													<td class="numeric" data-title="Change">-0.01</td>
-													<td class="numeric" data-title="Change %">-0.36%</td>
-													<td class="numeric" data-title="Open">$1.39</td>
-													<td class="numeric" data-title="High">$1.39</td>
-													<td class="numeric" data-title="Low">$1.38</td>
-													<td class="numeric" data-title="Volume">9,395</td>
-												</tr>
+											 
 												
 											</tbody>
 										</table>
