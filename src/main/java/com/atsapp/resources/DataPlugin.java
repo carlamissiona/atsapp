@@ -88,8 +88,8 @@ public class DataPlugin {
 			 List<Candidate> cnlist = new ArrayList<Candidate>();  
 		      
 			    try{  
-			     
-			        PreparedStatement ps=con.prepareStatement("select * from candidates where ca_id = "+ id ); 
+			    	String sql = "select * from candidates where ca_id = "+ id ;
+			        PreparedStatement ps=con.prepareStatement(sql); 
 			        ResultSet rs=ps.executeQuery(); 
 			        while(rs.next()){  
 			            Candidate c=new Candidate();    

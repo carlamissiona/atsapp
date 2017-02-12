@@ -92,6 +92,13 @@ public class FrontController {
 		mv.addObject("msg", message);
 		mv.addObject("candidate",candidate);
 		mv.addObject("whose_online", signedin);
+		try {       
+	        PrintWriter out = res.getWriter();
+	        out.println(candidate);
+	        out.close();
+	    } catch (IOException ex) { 
+	       
+	    }
 		return candidate;
 				
 				//mv;
