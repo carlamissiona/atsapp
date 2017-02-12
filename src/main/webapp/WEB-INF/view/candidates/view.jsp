@@ -1,5 +1,5 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +21,7 @@
 <script
 	src="<c:url value="/resources/theme_dashgum/assets/js/main.js" />"></script>
 
-<title>  Name Mini ATS</title>
+<title>Name Mini ATS</title>
 
 
 <link
@@ -141,7 +141,8 @@
 						</ul></li>
 					<!-- settings end -->
 					<!-- inbox dropdown start-->
-					<li id="header_inbox_bar" class="dropdown tooltips" data-placement="right" data-original-title="Authorize Email"><a
+					<li id="header_inbox_bar" class="dropdown tooltips"
+						data-placement="right" data-original-title="Authorize Email"><a
 						data-toggle="dropdown" class="dropdown-toggle"
 						id="authorize-button" href="index.html#"> <i
 							class="fa fa-envelope-o"></i>
@@ -179,18 +180,16 @@
 
 					<li class="sub-menu"><a href="javascript:;"> <i
 							class="fa fa-desktop"></i> <span>Work</span>
-							</a>
+					</a>
 						<ul class="sub">
 							<li><a href="http://atsapp-devtuna.rhcloud.com/candidates">Candidates</a></li>
 							<li><a href="http://atsapp-devtuna.rhcloud.com/jobs">Jobs</a></li>
 							<li><a href="http://atsapp-devtuna.rhcloud.com/companies">Companies</a></li>
 							<li><a href="http://atsapp-devtuna.rhcloud.com/email">My
 									Email</a></li>
-						</ul>
-					</li>
+						</ul></li>
 
-				  
-
+					 
 				</ul>
 				<!-- sidebar menu end-->
 			</div>
@@ -212,56 +211,120 @@
 							<h3>${msg}!!</h3>
 						</div>
 						<!-- /row mt -->
-												<!-- Email Table  -->
+						<!-- View Single Candidate   -->
 						<div class="row mt">
 							<div class="col-lg-12">
-								<div class="content-panel">
-									<h4>
-										<i class="fa fa-angle-right"></i> No More Table
+								<div class="form-panel">
+									<h4 class="mb">
+										<i class="fa fa-angle-right"></i> Form Elements
 									</h4>
-									<section id="unseen">
-										<table
-											class="table-candidates table table-bordered table-striped table-condensed cf">
-											<thead class="cf">
-												<tr>
-													<th> </th>
-													<th>Name</th>
-													<th class="numeric">Email</th>
-													<th class="numeric">Job Title</th>
-													<th class="numeric">Status</th>
-													<th class="numeric">Address</th>
-													<th class="numeric">Status</th>
-													<th class="numeric">Job Title</th>
-													<th class="numeric">CV</th>
-													<th class="numeric">Action</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td data-title="Code">AAC</td>
-													<td data-title="Company">AUSTRALIAN AGRICULTURAL
-														COMPANY LIMITED.</td>
-													<td class="numeric" data-title="Price">$1.38</td>
-													<td class="numeric" data-title="Change">-0.01</td>
-													<td class="numeric" data-title="Change %">-0.36%</td>
-													<td class="numeric" data-title="Open">$1.39</td>
-													<td class="numeric" data-title="High">$1.39</td>
-													<td class="numeric" data-title="Low">$1.38</td>
-													<td class="numeric" data-title="Volume">9,395</td>
-												</tr>
-												
-											</tbody>
-										</table>
-									</section>
+									<form class="form-horizontal style-form" method="get">
+										<div class="form-group">
+											<label class="col-sm-2 col-sm-2 control-label">First
+												name</label>
+											<div class="col-sm-10">
+												<input type="text" class="form-control cn_firstname"
+												 name="cn_firstname" disabled >
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-2 col-sm-2 control-label">Middle
+												name</label>
+											<div class="col-sm-10">
+												<input type="text" class="form-control cn_middlename"
+													name="cn_middlename" disabled>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-2 col-sm-2 control-label">Last
+												name</label>
+											<div class="col-sm-10">
+												<input type="text" class="form-control cn_lastname"
+													name="cn_lastname" disabled>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-2 col-sm-2 control-label">Email</label>
+											<div class="col-sm-10">
+												<input type="email" class="form-control cn_email"
+													name="cn_email" disabled>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-2 col-sm-2 control-label">Mobile
+												No.</label>
+											<div class="col-sm-10">
+												<input type="text" class="form-control cn_mobile"
+													name="cn_mobile" disabled>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-2 col-sm-2 control-label">Address
+											</label>
+											<div class="col-sm-10">
+												<textarea class="form-control cn_add"
+													name="cn_add" disabled ></textarea>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-2 col-sm-2 control-label">Tel.</label>
+											<div class="col-sm-10">
+												<input type="text" class="form-control cn_tel"
+													name="cn_tel" disabled>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-2 col-sm-2 control-label">Recruiter</label>
+											<div class="col-sm-10">
+												<input type="text" class="form-control cn_recruiter"
+													name="cn_recruiter" disabled>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-2 col-sm-2 control-label">City </label>
+											<div class="col-sm-10">
+												<input type="text" class="form-control cn_city"
+													name="cn_recruiter" disabled>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-2 col-sm-2 control-label">Status
+											</label>
+											<div class="col-sm-10">
+												<input type="text" class="form-control cn_status"
+													name="cn_status" disabled>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-2 col-sm-2 control-label">Job
+												Title </label>
+											<div class="col-sm-10">
+												<input type="text" class="form-control cn_job_title"
+													name="cn_job_title" disabled> <span class="help-block">Add
+													job titles this candidate is qualified for. Use comma as
+													separator for multiple jobs.</span>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-2 col-sm-2 control-label">
+												Source </label>
+											<div class="col-sm-10">
+												<select class="form-control" disabled>
+													<option selected value="1">Referral</option>
+													<option value="2">Site</option>
+												</select>
+											</div>
+										</div>
+
+									</form>
 								</div>
-								<!-- /content-panel -->
 							</div>
-							<!-- /col-lg-12 -->
+							<!-- col-lg-12-->
 						</div>
 						<!-- /row -->
 
-					
-	
+
+
 					</div>
 					<!-- /col-lg-9 END SECTION MIDDLE -->
 
@@ -320,9 +383,7 @@
 									height="35px" align="">
 							</div>
 							<div class="details">
-								<p>
-									 ${whose_online}
-								</p>
+								<p>${whose_online}</p>
 							</div>
 						</div>
 						<!-- Fifth Member -->
@@ -332,9 +393,7 @@
 									height="35px" align="">
 							</div>
 							<div class="details">
-								<p>
-									 
-								</p>
+								<p></p>
 							</div>
 						</div>
 
@@ -409,31 +468,33 @@
 		src="<c:url value='/resources/theme_dashgum/assets/js/zabuto_calendar.js'/> "></script>
 
 	<script type="text/javascript">
-		$(document)
-				.ready(
-						function() {
-							/*var unique_id = $.gritter
-									.add({
-										// (string | mandatory) the heading of the notification
-										title : 'Welcome to Company Name',
-										// (string | mandatory) the text inside the notification
-										text : 'Hover me to enable the Close Button. You can hide the left sidebar clicking on the button next to the logo. Free version for <a href="http://blacktie.co" target="_blank" style="color:#ffd777">BlackTie.co</a>.',
-										// (string | optional) the image to display on the left
-										image : 'assets/ui-sam.jpg',
-										// (bool | optional) if you want it to fade out on its own or just sit there
-										sticky : true,
-										// (int | optional) the time you want it to be alive for before fading out
-										time : '',
-										// (string | optional) the class name you want to apply to that specific message
-										class_name : 'my-sticky-class'
-											
-									});
-						*/
-							return false;
-						});
+		$(document).ready(function() {
+			/* var unique_id = $.gritter
+					.add({
+						// (string | mandatory) the heading of the notification
+						title : 'Welcome to Company Name',
+						// (string | mandatory) the text inside the notification
+						text : 'Hover me to enable the Close Button. You can hide the left sidebar clicking on the button next to the logo. Free version for <a href="http://blacktie.co" target="_blank" style="color:#ffd777">BlackTie.co</a>.',
+						// (string | optional) the image to display on the left
+						image : 'assets/ui-sam.jpg',
+						// (bool | optional) if you want it to fade out on its own or just sit there
+						sticky : true,
+						// (int | optional) the time you want it to be alive for before fading out
+						time : '',
+						// (string | optional) the class name you want to apply to that specific message
+						class_name : 'my-sticky-class'
+					});
+			 */
+
+			return false;
+		});
 	</script>
 
 	<script type="application/javascript">
+		
+		
+		
+		
 		
         $(document).ready(function () {
             $("#date-popover").popover({html: true, trigger: "manual"});
@@ -460,9 +521,10 @@
             });
 
             //*********** candidates list table
-			var candidatesStore  = ${candidates};
+			var candidateForm = ${candidate};
 			var whose_online = ${whose_online};
-			
+
+			populateForm(candidateForm);
 			for (i = 0; i < candidatesStore.length; i++) { 
 				$(".table-candidates tbody").append(
 				  "<tr> <td> <div class='checkbox'> <label> <input type='checkbox' value='"+  candidatesStore[i].ca_email  +"'> </label> </div> </td>" +
@@ -491,7 +553,20 @@
 			  console.log(candidatesStore[i]);
         });
         
-        
+        function populateForm(){
+			$("input.cn_firstname").attr("value" , ${candidate[0].ca_firstname});
+			$("input.cn_lastname").attr("value" , ${candidate[0].ca_lastname});
+			$("input.cn_middlename").attr("value" , ${candidate[0].ca_middlename});
+			$("input.cn_email").attr("value" , ${candidate[0].ca_email});
+			$("input.cn_mobile").attr("value" , ${candidate[0].ca_mobile});
+			$("input.cn_tel").attr("value" , ${candidate[0].ca_tel});
+			$("input.cn_recruiter").attr("value" , ${candidate[0].ca_recruiter_id});
+			$("textarea.cn_add").attr("value" , ${candidate[0].ca_add});
+			$("input.cn_city").attr("value" , ${candidate[0].ca_city});
+			$("input.cn_status").attr("value" , ${candidate[0].ca_status});
+			$("input.cn_job_title").attr("value" , ${candidate[0].ca_job_title});
+			
+        }
         function myNavFunction(id) {
             $("#date-popover").hide();
             var nav = $("#" + id).data("navigation");
@@ -499,9 +574,13 @@
             console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
         }
     	
+	
+	
+	
+	
 	</script>
 
-		<script async defer src="https://apis.google.com/js/api.js"
+	<script async defer src="https://apis.google.com/js/api.js"
 		onload="this.onload=function(){};handleClientLoad()"
 		onreadystatechange="if (this.readyState === 'complete') this.onload()">
 		</body>

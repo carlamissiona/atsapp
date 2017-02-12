@@ -13,6 +13,7 @@ import java.util.List;
 
 import com.atsapp.model.Account;
 import com.atsapp.model.Candidate;
+import com.atsapp.model.Job;
 import com.google.gson.Gson;
 
 public class DataPlugin {
@@ -72,6 +73,71 @@ public class DataPlugin {
 		}
 		
 		return rt;
+		
+	}
+	public static String getOne(String objModel, String id){ 
+		// get One by id
+		 Connection con = connect();	 
+			
+		 Gson gson = new Gson();
+	 
+		 String rt = "";
+		
+		// ***************************** Candidate 
+		 if( objModel.equalsIgnoreCase("candidate") ||  objModel.contains("Candidate") ){
+			 List<Candidate> cnlist = new ArrayList<Candidate>();  
+		      
+			    try{  
+			     
+			        PreparedStatement ps=con.prepareStatement("select * from candidates where ca_id = "+ id ); 
+			        ResultSet rs=ps.executeQuery(); 
+			        while(rs.next()){  
+			            Candidate c=new Candidate();    
+			            c.setCa_firstname(rs.getString("ca_firstname"));
+			            c.setCa_lastname(rs.getString("ca_lastname"));
+			            c.setCa_middlename(rs.getString("ca_middlename"));
+			            c.setCa_jobtitle(rs.getString("ca_job_title"));
+			            c.setCa_add(rs.getString("ca_add"));
+			            c.setCa_city(rs.getString("ca_city"));
+			            c.setCa_email(rs.getString("ca_email"));
+			            c.setCa_mobile(rs.getString("ca_mobile"));
+			            c.setCa_recruiter_id(rs.getString("ca_recruiter_id"));
+			            c.setCa_source(rs.getString("ca_source"));
+			            c.setCa_tel(rs.getString("ca_tel"));
+			            c.setCa_status(rs.getString("ca_status"));			            
+			            cnlist.add(c);  
+			   			 
+			        }  
+			        rt = gson.toJson(cnlist);
+			    }catch(Exception e){System.out.println(e);}
+		 
+		 }
+		 if( objModel.equalsIgnoreCase("job") ||  objModel.contains("job") ){
+			 List<Job> jolist = new ArrayList<Job>();  
+		      
+			    try{  
+			        // 
+			        PreparedStatement ps=con.prepareStatement("select j.*,  concat(c.co_firstname, ' ', c.co_lastname) as jo_contact_linked  from jobs j left join contacts c on j.jo_contact = c.co_id  where j.jo_id = "+ id ); 
+			        ResultSet rs=ps.executeQuery(); 
+			        while(rs.next()){  
+			            Job j = new Job();    
+			            j.setJo_client(rs.getString("jo_client"));
+			            j.setJo_contact(rs.getString("jo_contact_linked"));
+			            j.setJo_desc(rs.getString("jo_desc"));
+			            j.setJo_id(rs.getInt("jo_id"));
+			            j.setJo_name(rs.getString("jo_name"));
+			            j.setJo_notes(rs.getString("jo_notes"));
+			            j.setJo_status(rs.getString("jo_status"));
+			            jolist.add(j);
+			        } 			         
+			   		rt = gson.toJson(jolist);
+			        
+			    }catch(Exception e){System.out.println(e);}
+		 
+		 }
+		 
+ 		   
+		 return rt;
 		
 	}
 	public static String getList(String classname , String filter){ 

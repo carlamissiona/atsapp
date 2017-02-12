@@ -6,6 +6,7 @@ import javax.mail.MessagingException;
 import javax.mail.internet.AddressException;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -67,6 +68,20 @@ public class FrontController {
 		
 		mv.addObject("msg", message);
 		mv.addObject("candidates",candidates);
+		mv.addObject("whose_online", signedin);
+		return mv;
+	}
+	@RequestMapping("/candidates/view/{cnd_id}")
+	public ModelAndView view(@PathVariable(value="cnd_id") String cid) {	
+		
+		String message = "Candidates Lists";		
+		String candidate = new DataPlugin().getOne("Candidate", cid);
+		String signedin = new DataPlugin().getList("Accounts" , "ac_signed_in = 1" );
+		
+		ModelAndView mv = new ModelAndView("candidates/view", "candidates", candidate);
+		
+		mv.addObject("msg", message);
+		mv.addObject("candidate",candidate);
 		mv.addObject("whose_online", signedin);
 		return mv;
 	}
