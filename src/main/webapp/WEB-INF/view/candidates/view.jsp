@@ -432,7 +432,7 @@
             });
 
             //*********** candidates list table
-			var candidateForm = JSON.parse(${candidate});
+			var candidateForm = ${candidate};
 			var whose_online = ${whose_online};
 
 			populateForm(candidateForm); 
