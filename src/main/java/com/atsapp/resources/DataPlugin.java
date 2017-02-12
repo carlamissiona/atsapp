@@ -86,7 +86,7 @@ public class DataPlugin {
 		// ***************************** Candidate 
 		 if( objModel.equalsIgnoreCase("candidate") ||  objModel.contains("Candidate") ){
 			 List<Candidate> cnlist = new ArrayList<Candidate>();  
-		      
+		       
 			    try{  
 			    	String sql = "select * from candidates where ca_id = "+ id ;
 			        PreparedStatement ps=con.prepareStatement(sql); 
@@ -108,7 +108,8 @@ public class DataPlugin {
 			            cnlist.add(c);  
 			   			 
 			        }  
-			        rt = gson.toJson(cnlist);
+			         
+			        rt = gson.toJson(cnlist); rt="sds";
 			    }catch(Exception e){System.out.println(e);}
 		 
 		 }
