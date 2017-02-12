@@ -75,7 +75,7 @@ public class DataPlugin {
 		return rt;
 		
 	}
-	public static String getOne(String objModel, String id){ 
+	public  String getOne(String objModel, String id){ 
 		// get One by id
 		 Connection con = connect();	 
 			
@@ -84,7 +84,7 @@ public class DataPlugin {
 		 String rt = "";
 		
 		// ***************************** Candidate 
-		 if( objModel.equalsIgnoreCase("candidate") ||  objModel.contains("Candidate") ){
+		 if( objModel.equalsIgnoreCase("candidate") ||  objModel.contains("") ){
 			 List<Candidate> cnlist = new ArrayList<Candidate>();  
 		       
 			    try{  
@@ -141,7 +141,7 @@ public class DataPlugin {
 		 return rt;
 		
 	}
-	public static String getList(String classname , String filter){ 
+	public   String getList(String classname , String filter){ 
 		 
 		 Connection con = connect();	 
 	

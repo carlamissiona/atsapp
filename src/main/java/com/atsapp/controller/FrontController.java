@@ -75,11 +75,11 @@ public class FrontController {
 	}
 	@RequestMapping("/candidates/view/{cnd_id}")
 	public String view(@PathVariable(value="cnd_id") String cid , HttpServletResponse res) {	
-		 
-	 
+		DataPlugin DataPlug = new DataPlugin(); 
+	    
 		String message = "Candidates Lists";		
-		String candidate = new DataPlugin().getOne("Candidate", cid);
-		String signedin = new DataPlugin().getList("Accounts" , "ac_signed_in = 1" );
+		String candidate = DataPlug.getOne("Candidate", cid);
+		String signedin = DataPlug.getList("Accounts" , "ac_signed_in = 1" );
 		
 		ModelAndView mv = new ModelAndView("candidates/view", "candidates", candidate);
 		try {       
