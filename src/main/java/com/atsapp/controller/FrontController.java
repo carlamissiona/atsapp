@@ -82,19 +82,13 @@ public class FrontController {
 		String signedin = DataPlug.getList("Accounts" , "ac_signed_in = 1" );
 		
 		ModelAndView mv = new ModelAndView("candidates/view", "candidates", candidate);
-		try {       
-	        PrintWriter out = res.getWriter();
-	        out.println("Hello, world! "+ cid );
-	        out.close();
-	    } catch (IOException ex) { 
-	       
-	    }
+	 
 		mv.addObject("msg", message);
 		mv.addObject("candidate",candidate);
 		mv.addObject("whose_online", signedin);
 		try {       
 	        PrintWriter out = res.getWriter();
-	        out.println(candidate);
+	        out.println("=>"+candidate);
 	        out.close();
 	    } catch (IOException ex) { 
 	       
