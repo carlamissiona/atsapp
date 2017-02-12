@@ -14,7 +14,7 @@ public class Candidate {
 	private String ca_city;
 	private String ca_cv_url;
 	private String ca_status;
-	private String ca_jobtitle;
+	private String ca_job_title;
 	private String ca_source;
 	
 	public int getCa_id() {
@@ -90,10 +90,10 @@ public class Candidate {
 		this.ca_status = ca_status;
 	}
 	public String getCa_jobtitle() {
-		return ca_jobtitle;
+		return ca_job_title;
 	}
-	public void setCa_jobtitle(String ca_jobtitle) {
-		this.ca_jobtitle = ca_jobtitle;
+	public void setCa_job_title(String ca_jobtitle) {
+		this.ca_job_title = ca_jobtitle;
 	}
 	public String getCa_source() {
 		return ca_source;

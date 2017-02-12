@@ -471,7 +471,7 @@
 				  " <td>" + candidatesStore[i].ca_city + "</td>" +  
 				  " <td>" + candidatesStore[i].ca_status + "</td>" +
 				  " <td>" + candidatesStore[i].ca_mobile + "</td>" + 
-				  " <td>" + candidatesStore[i].ca_cv + "</td>" +
+				  " <td>" + candidatesStore[i].ca_cv_url + "</td>" +
 				  " <td>  <div class='btn-group open action-drop'> " +
 				      "<button type='button' class='btn btn-theme03'>Action</button> " + 
 				       "<button type='button' class='btn btn-theme03 dropdown-toggle' data-toggle='dropdown'>   <span class='caret'></span> "+

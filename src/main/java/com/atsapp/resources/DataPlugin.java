@@ -96,7 +96,7 @@ public class DataPlugin {
 			            c.setCa_firstname(rs.getString("ca_firstname"));
 			            c.setCa_lastname(rs.getString("ca_lastname"));
 			            c.setCa_middlename(rs.getString("ca_middlename"));
-			            c.setCa_jobtitle(rs.getString("ca_job_title"));
+			            c.setCa_job_title(rs.getString("ca_job_title"));
 			            c.setCa_add(rs.getString("ca_add"));
 			            c.setCa_city(rs.getString("ca_city"));
 			            c.setCa_email(rs.getString("ca_email"));
@@ -161,7 +161,7 @@ public class DataPlugin {
 			            c.setCa_firstname(rs.getString("ca_firstname"));
 			            c.setCa_lastname(rs.getString("ca_lastname"));
 			            c.setCa_middlename(rs.getString("ca_middlename"));
-			            c.setCa_jobtitle(rs.getString("ca_job_title"));
+			            c.setCa_job_title(rs.getString("ca_job_title"));
 			            c.setCa_add(rs.getString("ca_add"));
 			            c.setCa_city(rs.getString("ca_city"));
 			            c.setCa_email(rs.getString("ca_email"));
