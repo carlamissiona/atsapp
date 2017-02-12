@@ -84,7 +84,7 @@ public class DataPlugin {
 		 String rt = "";
 		
 		// ***************************** Candidate 
-		 if( objModel.equalsIgnoreCase("Candidate") ||  objModel.contains("Candidate") ){
+		 if( objModel.equalsIgnoreCase("Candidate") || objModel.contains("Candidate") || objModel.contentEquals("Candidate") ){
 			 List<Candidate> cnlist = new ArrayList<Candidate>();  
 		       
 			    try{  
