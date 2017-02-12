@@ -141,7 +141,7 @@ public class DataPlugin {
 		 return rt;
 		
 	}
-	public   String getList(String classname , String filter){ 
+	public String getList(String classname , String filter){ 
 		 
 		 Connection con = connect();	 
 	

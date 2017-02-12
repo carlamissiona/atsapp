@@ -75,20 +75,19 @@ public class FrontController {
 		return mv;
 	}
 	@RequestMapping("/candidates/view/{cnd_id}")
-	public  @ResponseBody String  view(@PathVariable(value="cnd_id") String cid) {	
+	public  ModelAndView  view(@PathVariable(value="cnd_id") String cid) {	
 		DataPlugin DataPlug = new DataPlugin(); 
 	    
 		String message = "Candidates Lists";		
 		String candidate = DataPlug.getOne("Candidate", cid);
 		String signedin = DataPlug.getList("Accounts" , "ac_signed_in = 1" );
 		
-		ModelAndView mv = new ModelAndView("candidates/view", "candidates", candidate);
+		ModelAndView mv = new ModelAndView("candidates/view", "candidate", candidate);
 	 
 		mv.addObject("msg", message);
-		mv.addObject("candidate",candidate);
 		mv.addObject("whose_online", signedin);
 	 
-		return candidate;
+		return mv;
 				
 			  
 	}
