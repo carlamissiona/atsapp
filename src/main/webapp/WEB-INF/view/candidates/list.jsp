@@ -1,5 +1,4 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -460,7 +459,7 @@
             });
 
             //*********** candidates list table
-			var candidatesStore  = ${candidates};
+			var candidatesStore  = JSON.parse(${candidates});
 			var whose_online = ${whose_online};
 			
 			for (i = 0; i < candidatesStore.length; i++) { 
@@ -479,8 +478,8 @@
 				       "<span class='sr-only'>Toggle Dropdown</span>"+
 				       "</button>"+
 				       "<ul class='dropdown-menu' role='menu'>" +
-				         "<li><a href=''>View</a></li>" +
-				         "<li><a href='"+${contextPath}+"/candidate/'>Edit</a></li>"+
+				         "<li><a href='/candidates/view'"+ candidatesStore[i].ca_id +">View</a></li>" +
+				         "<li><a href='/candidate/edit'>Edit</a></li>"+
 				         "<li><a href='#'>Email</a></li>"+
 				  	   "</ul> </div> </td> </tr>"
 				 );

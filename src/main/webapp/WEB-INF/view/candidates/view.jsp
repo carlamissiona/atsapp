@@ -207,9 +207,7 @@
 
 					<div class="col-lg-9 main-chart">
 
-						<div class="row mtbox">
-							<h3>${msg}!!</h3>
-						</div>
+					 
 						<!-- /row mt -->
 						<!-- View Single Candidate   -->
 						<div class="row mt">
@@ -521,7 +519,7 @@
             });
 
             //*********** candidates list table
-			var candidateForm = ${candidate};
+			var candidateForm = JSON.parse(${candidate});
 			var whose_online = ${whose_online};
 
 			populateForm(candidateForm);
