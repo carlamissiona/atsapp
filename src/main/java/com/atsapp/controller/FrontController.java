@@ -1,9 +1,11 @@
 package com.atsapp.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.AddressException;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -72,18 +74,27 @@ public class FrontController {
 		return mv;
 	}
 	@RequestMapping("/candidates/view/{cnd_id}")
-	public ModelAndView view(@PathVariable(value="cnd_id") String cid) {	
-		
+	public String view(@PathVariable(value="cnd_id") String cid , HttpServletResponse res) {	
+		 
+	 
 		String message = "Candidates Lists";		
 		String candidate = new DataPlugin().getOne("Candidate", cid);
 		String signedin = new DataPlugin().getList("Accounts" , "ac_signed_in = 1" );
 		
 		ModelAndView mv = new ModelAndView("candidates/view", "candidates", candidate);
-		
+		try {       
+	        PrintWriter out = res.getWriter();
+	        out.println("Hello, world! "+ cid );
+	        out.close();
+	    } catch (IOException ex) { 
+	       
+	    }
 		mv.addObject("msg", message);
 		mv.addObject("candidate",candidate);
 		mv.addObject("whose_online", signedin);
-		return mv;
+		return candidate;
+				
+				//mv;
 	}
 	@RequestMapping("/contacts")
 	public ModelAndView contactslist() {	
