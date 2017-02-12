@@ -110,7 +110,7 @@ public class FrontController {
 		 
 		String jobs = DataPlug.getList("Jobs","");
 		
-		ModelAndView mv = new ModelAndView("jobs/lists");
+		ModelAndView mv = new ModelAndView("jobs/list");
 		mv.addObject("jobs",jobs);
 	 
 		return mv;
