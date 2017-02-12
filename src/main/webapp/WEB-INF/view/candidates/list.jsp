@@ -213,7 +213,7 @@
 							<div class="col-lg-12">
 								<div class="content-panel">
 									<h4>
-										<i class="fa fa-angle-right"></i> Candidates  <span class="pull-right"><button type="button" class="btn btn-info btn-sm" style="margin-right:10px;">Mass Email</button></span>
+										<i class="fa fa-angle-right"></i> Candidates  <span class="pull-right"><button type="button" class="btn btn-info btn-sm" style="margin:10px;">Mass Email</button></span>
 									</h4>
 									<section id="unseen">
 										<table
@@ -224,12 +224,12 @@
 													<th>Name</th>
 													<th class="numeric">Email</th>
 													<th class="numeric">Job Title</th>
+													<th class="numeric">City</th>
 													<th class="numeric">Status</th>
-													<th class="numeric">Address</th>
-													<th class="numeric">Status</th>
-													<th class="numeric">Job Title</th>
-													<th class="numeric">CV</th>
-													<th class="numeric">Action</th>
+													<th class="numeric">Mobile</th>
+													<th class="numeric">Recruiter</th>
+													<th class="numeric">Date Added</th>
+													<th class="numeric"> </th>
 												</tr>
 											</thead>
 											<tbody>

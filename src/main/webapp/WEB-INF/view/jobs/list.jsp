@@ -205,7 +205,7 @@
 
 				<div class="row">
 
-					<div class="col-lg-9 main-chart">
+					<div class="col-lg-12 main-chart">
  
 						<!-- /row mt -->
 												<!-- Email Table  -->
@@ -213,7 +213,7 @@
 							<div class="col-lg-12">
 								<div class="content-panel">
 									<h4>
-										<i class="fa fa-angle-right"></i> Jobs <span class="pull-right"><button type="button" class="btn btn-info">Mass Email</button></span>
+										<i class="fa fa-angle-right"></i> Jobs <span class="pull-right"><button type="button" class="btn btn-info" style="margin:10px;" >Mass Email</button></span>
 									</h4>
 									<section id="unseen">
 										<table
