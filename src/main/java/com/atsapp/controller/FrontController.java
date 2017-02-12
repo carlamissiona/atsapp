@@ -104,14 +104,17 @@ public class FrontController {
 	}
 	@RequestMapping("/jobs")
 	public ModelAndView jobslist() {	
+	DataPlugin DataPlug = new DataPlugin(); 
+	    
+	 
+		 
+		String jobs = DataPlug.getList("Jobs","");
 		
-		String message = "Are we connected " + new DataPlugin().connect();
-		
-		// contacts 
-		// company 
-		// candidate 
-		
-		return new ModelAndView("jobs/list", "message", message);
+		ModelAndView mv = new ModelAndView("jobs/lists");
+		mv.addObject("jobs",jobs);
+	 
+		return mv;
+				
 	}
 	@RequestMapping("/email")
 	public ModelAndView emails() {

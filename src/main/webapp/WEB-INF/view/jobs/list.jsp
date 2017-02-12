@@ -220,15 +220,11 @@
 											class="table-candidates table table-bordered table-striped table-condensed cf">
 											<thead class="cf">
 												<tr>
-													<th> </th>
-													<th>Name</th>
-													<th class="numeric">Email</th>
-													<th class="numeric">Job Title</th>
+													<th class="numeric">Name</th>
+													<th class="numeric">Contact</th>
+													<th class="numeric">Description</th>
+													<th class="numeric">Notes</th>
 													<th class="numeric">Status</th>
-													<th class="numeric">Address</th>
-													<th class="numeric">Status</th>
-													<th class="numeric">Job Title</th>
-													<th class="numeric">CV</th>
 													<th class="numeric">Action</th>
 												</tr>
 											</thead>
@@ -366,36 +362,23 @@
             });
 
             //*********** candidates list table
-			var candidatesStore  =  ${candidates};
-			var whose_online = ${whose_online};
+			var jobsStore  =  ${jobs}; 
 			
-			for (i = 0; i < candidatesStore.length; i++) { 
+			for (i = 0; i < jobsStore.length; i++) { 
 				$(".table-candidates tbody").append(
-				  "<tr> <td> <div class='checkbox'> <label> <input type='checkbox' value='"+  candidatesStore[i].ca_email  +"'> </label> </div> </td>" +
-				  " <td>" + candidatesStore[i].ca_firstname + " " + candidatesStore[i].ca_lastname + " </td>" +
-				  " <td>" + candidatesStore[i].ca_email +"</td> " +
-				  " <td>" + candidatesStore[i].ca_job_title + "</td>" +
-				  " <td>" + candidatesStore[i].ca_city + "</td>" +  
-				  " <td>" + candidatesStore[i].ca_status + "</td>" +
-				  " <td>" + candidatesStore[i].ca_mobile + "</td>" + 
-				  " <td>" + candidatesStore[i].ca_cv_url + "</td>" +
-				  " <td>" + candidatesStore[i].ca_recruiter_id+ "</td>" +
-				  " <td>  <div class='btn-group open action-drop'> " +
-				      "<button type='button' class='btn btn-theme03'>Action</button> " + 
-				       "<button type='button' class='btn btn-theme03 dropdown-toggle' data-toggle='dropdown'>   <span class='caret'></span> "+
-				       "<span class='sr-only'>Toggle Dropdown</span>"+
-				       "</button>"+
-				       "<ul class='dropdown-menu' role='menu'>" +
-				         "<li><a href='/candidates/view/"+ candidatesStore[i].ca_id +"'>View</a></li>" +
-				         "<li><a href='/candidate/edit'>Edit</a></li>"+
-				         "<li><a href='#'>Email</a></li>"+
-				  	   "</ul> </div> </td> </tr>"
+				  "<tr> " +
+				  " <td>" + jobsStore[i].jo_name + " " + jobsStore[i].ca_lastname + " </td>" +
+				  " <td>" + jobsStore[i].jo_client +"</td> " +
+				  " <td>" + jobsStore[i].jo_contact_linked + "</td>" +
+				  " <td>" + jobsStore[i].jo_desc + "</td>" +  
+				  " <td>" + jobsStore[i].jo_notes + "</td>" +
+				  " <td>" + jobsStore[i].jo_status+ "</td> </tr>"
 				 );
 				       
 				   
 			}
 			
-			  console.log(candidatesStore[i]);
+			  console.log(jobsStore[i]);
         });
         
         
