@@ -75,7 +75,7 @@ public class DataPlugin {
 		return rt;
 		
 	}
-	public  String getOne(String objModel, String id){ 
+	public String getOne(String objModel, String id){ 
 		// get One by id
 		 Connection con = connect();	 
 			
@@ -84,7 +84,7 @@ public class DataPlugin {
 		 String rt = "";
 		
 		// ***************************** Candidate 
-		 if( objModel.equalsIgnoreCase("candidate") ||  objModel.contains("") ){
+		 if( objModel.equalsIgnoreCase("Candidate") ||  objModel.contains("Candidate") ){
 			 List<Candidate> cnlist = new ArrayList<Candidate>();  
 		       
 			    try{  
