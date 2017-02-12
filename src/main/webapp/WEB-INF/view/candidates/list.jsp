@@ -206,17 +206,14 @@
 				<div class="row">
 
 					<div class="col-lg-9 main-chart">
-
-						<div class="row mtbox">
-							<h3>${msg}!!</h3>
-						</div>
+ 
 						<!-- /row mt -->
 												<!-- Email Table  -->
 						<div class="row mt">
 							<div class="col-lg-12">
 								<div class="content-panel">
 									<h4>
-										<i class="fa fa-angle-right"></i> No More Table
+										<i class="fa fa-angle-right"></i> Candidates  <span class="pull-right"><button type="button" class="btn btn-info">Mass Email</button></span>
 									</h4>
 									<section id="unseen">
 										<table
@@ -472,13 +469,14 @@
 				  " <td>" + candidatesStore[i].ca_status + "</td>" +
 				  " <td>" + candidatesStore[i].ca_mobile + "</td>" + 
 				  " <td>" + candidatesStore[i].ca_cv_url + "</td>" +
+				  " <td>" + candidatesStore[i].ca_recruiter_id+ "</td>"
 				  " <td>  <div class='btn-group open action-drop'> " +
 				      "<button type='button' class='btn btn-theme03'>Action</button> " + 
 				       "<button type='button' class='btn btn-theme03 dropdown-toggle' data-toggle='dropdown'>   <span class='caret'></span> "+
 				       "<span class='sr-only'>Toggle Dropdown</span>"+
 				       "</button>"+
 				       "<ul class='dropdown-menu' role='menu'>" +
-				         "<li><a href='/candidates/view'"+ candidatesStore[i].ca_id +">View</a></li>" +
+				         "<li><a href='/candidates/view/"+ candidatesStore[i].ca_id +"'>View</a></li>" +
 				         "<li><a href='/candidate/edit'>Edit</a></li>"+
 				         "<li><a href='#'>Email</a></li>"+
 				  	   "</ul> </div> </td> </tr>"

@@ -157,7 +157,8 @@ public class DataPlugin {
 			        PreparedStatement ps=con.prepareStatement("select * from candidates " + filter);  
 			        ResultSet rs=ps.executeQuery();  
 			        while(rs.next()){  
-			            Candidate c=new Candidate();    
+			            Candidate c = new Candidate();    
+			            c.setCa_id(rs.getInt("ca_id"));
 			            c.setCa_firstname(rs.getString("ca_firstname"));
 			            c.setCa_lastname(rs.getString("ca_lastname"));
 			            c.setCa_middlename(rs.getString("ca_middlename"));

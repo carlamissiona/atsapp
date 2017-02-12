@@ -204,7 +204,7 @@
 
 				<div class="row">
 
-					<div class="col-lg-9 main-chart">
+					<div class="col-lg-12 ">
 
 					 
 						<!-- /row mt -->
@@ -325,93 +325,7 @@
 					</div>
 					<!-- /col-lg-9 END SECTION MIDDLE -->
 
-
-					<!-- **********************************************************************************************************************************************************
-      RIGHT SIDEBAR CONTENT
-      *********************************************************************************************************************************************************** -->
-
-					<div class="col-lg-3 ds">
-
-						<!-- USERS ONLINE SECTION -->
-						<h3>TEAM MEMBERS</h3>
-						<!-- First Member -->
-						<div class="desc">
-							<div class="thumb">
-								<img class="img-circle" src="assets/ui-divya.jpg" width="35px"
-									height="35px" align="">
-							</div>
-							<div class="details">
-								<p>
-									<a href="#">DIVYA MANIAN</a><br />
-									<muted>Available</muted>
-								</p>
-							</div>
-						</div>
-						<!-- Second Member -->
-						<div class="desc">
-							<div class="thumb">
-								<img class="img-circle" src="assets/ui-sherman.jpg" width="35px"
-									height="35px" align="">
-							</div>
-							<div class="details">
-								<p>
-									<a href="#">DJ SHERMAN</a><br />
-									<muted>I am Busy</muted>
-								</p>
-							</div>
-						</div>
-						<!-- Third Member -->
-						<div class="desc">
-							<div class="thumb">
-								<img class="img-circle" src="assets/ui-danro.jpg" width="35px"
-									height="35px" align="">
-							</div>
-							<div class="details">
-								<p>
-									<a href="#">DAN ROGERS</a><br />
-									<muted>Available</muted>
-								</p>
-							</div>
-						</div>
-						<!-- Fourth Member -->
-						<div class="desc">
-							<div class="thumb">
-								<img class="img-circle" src="assets/ui-zac.jpg" width="35px"
-									height="35px" align="">
-							</div>
-							<div class="details">
-								<p>${whose_online}</p>
-							</div>
-						</div>
-						<!-- Fifth Member -->
-						<div class="desc">
-							<div class="thumb">
-								<img class="img-circle" src="assets/ui-sam.jpg" width="35px"
-									height="35px" align="">
-							</div>
-							<div class="details">
-								<p></p>
-							</div>
-						</div>
-
-						<!-- CALENDAR-->
-						<div id="calendar" class="mb">
-							<div class="panel green-panel no-margin">
-								<div class="panel-body">
-									<div id="date-popover" class="popover top"
-										style="cursor: pointer; disadding: block; margin-left: 33%; margin-top: -50px; width: 175px;">
-										<div class="arrow"></div>
-										<h3 class="popover-title" style="disadding: none;"></h3>
-										<div id="date-popover-content" class="popover-content"></div>
-									</div>
-									<div id="my-calendar"></div>
-								</div>
-							</div>
-						</div>
-						<!-- / calendar -->
-
-					</div>
-					<!-- /col-lg-3 -->
+  
 				</div>
 				<! --/row -->
 			</section>
@@ -521,36 +435,13 @@
 			var candidateForm = JSON.parse(${candidate});
 			var whose_online = ${whose_online};
 
-			populateForm(candidateForm);
-			for (i = 0; i < candidatesStore.length; i++) { 
-				$(".table-candidates tbody").append(
-				  "<tr> <td> <div class='checkbox'> <label> <input type='checkbox' value='"+  candidatesStore[i].ca_email  +"'> </label> </div> </td>" +
-				  " <td>" + candidatesStore[i].ca_firstname + " " + candidatesStore[i].ca_lastname + " </td>" +
-				  " <td>" + candidatesStore[i].ca_email +"</td> " +
-				  " <td>" + candidatesStore[i].ca_job_title + "</td>" +
-				  " <td>" + candidatesStore[i].ca_city + "</td>" +  
-				  " <td>" + candidatesStore[i].ca_status + "</td>" +
-				  " <td>" + candidatesStore[i].ca_mobile + "</td>" + 
-				  " <td>" + candidatesStore[i].ca_cv + "</td>" +
-				  " <td>  <div class='btn-group open action-drop'> " +
-				      "<button type='button' class='btn btn-theme03'>Action</button> " + 
-				       "<button type='button' class='btn btn-theme03 dropdown-toggle' data-toggle='dropdown'>   <span class='caret'></span> "+
-				       "<span class='sr-only'>Toggle Dropdown</span>"+
-				       "</button>"+
-				       "<ul class='dropdown-menu' role='menu'>" +
-				         "<li><a href=''>View</a></li>" +
-				         "<li><a href='"+${contextPath}+"/candidate/'>Edit</a></li>"+
-				         "<li><a href='#'>Email</a></li>"+
-				  	   "</ul> </div> </td> </tr>"
-				 );
-				       
-				   
-			}
+			populateForm(candidateForm); 
 			
-			  console.log(candidatesStore[i]);
+			  console.log(candidateForm);
         });
         
         function populateForm(){
+            console.log("!!");
 			$("input.cn_firstname").attr("value" , ${candidate[0].ca_firstname});
 			$("input.cn_lastname").attr("value" , ${candidate[0].ca_lastname});
 			$("input.cn_middlename").attr("value" , ${candidate[0].ca_middlename});
