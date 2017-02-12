@@ -346,7 +346,7 @@
 							</div>
 							<div class="details">
 								<p>
-									${candidates}
+									 
 								</p>
 							</div>
 						</div>
@@ -487,7 +487,7 @@
 				  " <td>" + candidatesStore[i].ca_cv + "</td>" +
 				  " <td>  <div class='btn-group open action-drop'> " +
 				      "<button type='button' class='btn btn-theme03'>Action</button> " + 
-				       "<button type='button' class='btn btn-theme03 dropdown-toggle' data-toggle='dropdown'>"+				    <span class="caret"></span>
+				       "<button type='button' class='btn btn-theme03 dropdown-toggle' data-toggle='dropdown'>   <span class='caret'></span> "+
 				       "<span class='sr-only'>Toggle Dropdown</span>"+
 				       "</button>"+
 				       "<ul class='dropdown-menu' role='menu'>" +
