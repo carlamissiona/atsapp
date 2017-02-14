@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.atsapp.model.Account;
 import com.atsapp.model.Candidate;
@@ -141,16 +142,27 @@ public class DataPlugin {
 		 return rt;
 		
 	}
-	public String edit(String paramString){ 
+	public String edit(	Map param , String model){ 
+		 Connection con = connect();	 
+		 ResultSet rs = null;
+		 Gson gson = new Gson();
+		 String sql ="";
+		 String rt = "";
 		
-		if(paramString.startsWith("cn_") ){
+		if(model.contains("candidate") ){
 			
 			// edit Candidate
-			
-			
+		//	cn_firstname=Carla&cn_middlename=A&cn_lastname=Wi&cn_email=missiona.carla%40gmail.com&cn_mobile=09990991&cn_add=qc+qcs&cn_tel=12345&cn_recruiter=1&cn_recruiter=QC&cn_status=interviewed&cn_job_title=Software+Developer
+					
+			 sql =	"INSERT INTO Candidates (cn_firstname, cn_middlename,cn_lastname, cn_email, cn_mobile, cn_add, cn_tel , cn_recruiter ,cn_status ,cn_job_title)"
+			+ "VALUES ('"+ param.get("cn_firstname") +"', '"+ param.get("cn_middlename") +"'  , '"+ param.get("cn_lastname") +"'  , '"+ param.get(" cn_email") +"'  , '"+ param.get("cn_mobile") +"'  , '"+ param.get("cn_add") +"'  , '"+ param.get("cn_tel") +"'  , '"+ param.get("cn_recruiter") +"'  , '"+ param.get("cn_status") +"'  , '"+ param.get("cn_job_title") +"' )";
+		    try{  
+		    	PreparedStatement ps=con.prepareStatement(sql);  
+		    	rs=ps.executeQuery();  
+		    }catch(Exception e){System.out.println(e);}  
 			
 		}
-		return "Y";
+		return sql +"!! " ;
 	}
 	public String getList(String classname , String filter){ 
 		 

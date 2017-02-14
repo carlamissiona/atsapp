@@ -97,9 +97,9 @@ public class FrontController {
 	public @ResponseBody String formEdit(HttpServletRequest request) {	
 		Map<String, String[]> parameters = request.getParameterMap();
 		DataPlugin DataPlug = new DataPlugin(); 
-//		cn_firstname=Carla&cn_middlename=A&cn_lastname=Wi&cn_email=missiona.carla%40gmail.com&cn_mobile=09990991&cn_add=qc+qcs&cn_tel=12345&cn_recruiter=1&cn_recruiter=QC&cn_status=interviewed&cn_job_title=Software+Developer
-			//return DataPlug.edit(request.toString() );
-			return request.getParameter("cn_lastname") ;
+    return  DataPlug.edit(parameters , "candidate");
+	 
+	//		return request.getParameter("cn_lastname") ; 
 					
 				
 			  
