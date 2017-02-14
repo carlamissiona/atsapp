@@ -564,6 +564,7 @@
        *  Sign in the user upon button click.
        */
       function handleAuthClick(event) {
+          console.log("Hieee");
         gapi.auth2.getAuthInstance().signIn();
       }
 
