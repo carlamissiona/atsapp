@@ -468,19 +468,10 @@
 					console.log("I clicked edit submit");
 				 var form = $("form").serialize();
 				 console.log(form);
-				 $.ajax({
-				        url: window.location.origin + "/candidates/form/edit",
-				        data: form,
-				        cache: false,
-				        processData: false,
-				        contentType: false,
-				        type: 'POST',
-				        success: function (dataofconfirm) {
-				            // do something with the result
-				            console.log("this is result " );
-				            console.log(dataofconfirm);
-				        }
-				    });
+				 $.post( window.location.origin + "/candidates/form/edit", form , function( data ) {
+					  alert( "Data Loaded: " + data );
+					});
+		 
 			});
             //*********** Ccandidates list table
 			var candidateForm =${candidate};
