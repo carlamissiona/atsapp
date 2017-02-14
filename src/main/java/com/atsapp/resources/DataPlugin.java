@@ -141,6 +141,17 @@ public class DataPlugin {
 		 return rt;
 		
 	}
+	public String edit(String paramString){ 
+		
+		if(paramString.startsWith("cn_") ){
+			
+			// edit Candidate
+			
+			
+			
+		}
+		return "Y";
+	}
 	public String getList(String classname , String filter){ 
 		 
 		 Connection con = connect();	 
