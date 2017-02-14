@@ -450,7 +450,7 @@
                 $(".form-control").removeAttr("disabled");
 			
              });
-        
+            
 			//*********** If view cv is clicked
 			$( ".btn-view-cv" ).click(function() {
 				 
