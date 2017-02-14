@@ -2,9 +2,11 @@ package com.atsapp.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Map;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.AddressException;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
@@ -91,6 +93,15 @@ public class FrontController {
 				
 			  
 	}
+	@RequestMapping("/candidates/form/edit")
+	public  String formEdit(HttpServletRequest request) {	
+		Map<String, String[]> parameters = request.getParameterMap();
+	 
+		return  "Hie from controller " + parameters.toString();
+				
+			  
+	}
+	 
 	@RequestMapping("/contacts")
 	public ModelAndView contactslist() {	
 		

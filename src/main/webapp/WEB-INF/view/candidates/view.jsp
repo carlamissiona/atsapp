@@ -1,4 +1,4 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -142,9 +142,8 @@
 					<!-- inbox dropdown start-->
 					<li id="header_inbox_bar" class="dropdown tooltips"
 						data-placement="right" data-original-title="Authorize Email"><a
-						data-toggle="dropdown" class="dropdown-toggle"
-						id="authorize-button" href="index.html#"> <i
-							class="fa fa-envelope-o"></i>
+						data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+							<i class="fa fa-envelope-o"></i>
 					</a></li>
 					<!-- inbox dropdown end -->
 				</ul>
@@ -188,7 +187,7 @@
 									Email</a></li>
 						</ul></li>
 
-					 
+
 				</ul>
 				<!-- sidebar menu end-->
 			</div>
@@ -206,15 +205,16 @@
 
 					<div class="col-lg-12 view-single">
 
-					 
+
 						<!-- /row mt -->
 						<!-- View Single Candidate   -->
 						<div class="row mt">
 							<div class="col-lg-12">
 								<div class="form-panel">
 									<h4 class="mb">
-										<i class="fa fa-angle-right"></i> Form Elements
-										 <span class="pull-right"><button type="button" class="btn btn-info btn-sm" style="margin:10px;">Edit</button></span>
+										<i class="fa fa-angle-right"></i> Form Elements <span
+											class="pull-right"><button type="button"
+												class="btn btn-info btn-sm" style="margin: 10px;">Edit</button></span>
 									</h4>
 									<form class="form-horizontal style-form" method="get">
 										<div class="form-group">
@@ -222,7 +222,7 @@
 												name</label>
 											<div class="col-sm-10">
 												<input type="text" class="form-control cn_firstname"
-												 name="cn_firstname" disabled >
+													name="cn_firstname" disabled>
 											</div>
 										</div>
 										<div class="form-group">
@@ -260,15 +260,14 @@
 											<label class="col-sm-2 col-sm-2 control-label">Address
 											</label>
 											<div class="col-sm-10">
-												<textarea class="form-control cn_add"
-													name="cn_add" disabled ></textarea>
+												<textarea class="form-control cn_add" name="cn_add" disabled></textarea>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-sm-2 col-sm-2 control-label">Tel.</label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control cn_tel"
-													name="cn_tel" disabled>
+												<input type="text" class="form-control cn_tel" name="cn_tel"
+													disabled>
 											</div>
 										</div>
 										<div class="form-group">
@@ -298,9 +297,9 @@
 												Title </label>
 											<div class="col-sm-10">
 												<input type="text" class="form-control cn_job_title"
-													name="cn_job_title" disabled> <span class="help-block">Add
-													job titles this candidate is qualified for. Use comma as
-													separator for multiple jobs.</span>
+													name="cn_job_title" disabled> <span
+													class="help-block">Add job titles this candidate is
+													qualified for. Use comma as separator for multiple jobs.</span>
 											</div>
 										</div>
 										<div class="form-group">
@@ -313,14 +312,18 @@
 												</select>
 											</div>
 										</div>
+
 										<div class="form-group">
 											<label class="col-sm-2 col-sm-2 control-label">
-												Curriculum Vitae </label>
+												Update </label>
 											<div class="col-sm-10">
-												<button type="button" class="btn btn-info btn-sm btn-view-cv" style="margin:10px;">View</button> 
+												<button type="button"
+													class="btn btn-info btn-sm btn-edit-candidate pull-right"
+													style="margin: 10px;">Submit</button>
 											</div>
 										</div>
-										
+										<div class="form-group">   </div>
+
 									</form>
 								</div>
 							</div>
@@ -333,7 +336,7 @@
 					</div>
 					<!-- /col-lg-9 END SECTION MIDDLE -->
 
-  
+
 				</div>
 				<! --/row -->
 			</section>
@@ -347,8 +350,8 @@
 					class="fa fa-angle-up"></i>
 				</a>
 			</div>
-			    <button id="authorize-button" style="display: none;">Authorize</button>
-    			<button id="signout-button" style="display: none;">Sign Out</button>	
+			<button id="authorize-button" style="display: none;">Authorize</button>
+			<button id="signout-button" style="display: none;">Sign Out</button>
 		</footer>
 		<!--footer end-->
 	</section>
@@ -417,6 +420,8 @@
 		
 		
 		
+		
+		
         $(document).ready(function () {
             $("#date-popover").popover({html: true, trigger: "manual"});
             $("#date-popover").hide();
@@ -440,7 +445,12 @@
                     {type: "block", label: "Regular event", }
                 ]
             });
-            
+            //*********** If Edit button was clicked 
+            $( ".btn-view-cv" ).click(function() {
+                $(".form-control").removeAttr("disabled");
+			
+             }
+        
 			//*********** If view cv is clicked
 			$( ".btn-view-cv" ).click(function() {
 				 
@@ -449,10 +459,28 @@
 					// disabled since viewing function so you can  open cv
 				}else{
 					
-
+					
 				}
 			});
+			//*********** Submit update form 
 			
+			$(".btn-edit-candidate").click(function(){
+					console.log("I clicked edit submit");
+				 var form = $("form").serialize();
+				 $.ajax({
+				        url: window.location.origin + "/candidates/form/edit",
+				        data: form,
+				        cache: false,
+				        processData: false,
+				        contentType: false,
+				        type: 'POST',
+				        success: function (dataofconfirm) {
+				            // do something with the result
+				            console.log("this is result " );
+				            console.log(dataofconfirm);
+				        }
+				    });
+			});
             //*********** Ccandidates list table
 			var candidateForm =${candidate};
 			var whose_online = ${whose_online};
@@ -481,7 +509,7 @@
 			
         	$(".sidebar-toggle-box .tooltips").click();
         	$(".view-single .form-panel").addClass("col-lg-4");
-        	
+        	   console.log("Hieee");
 		 	// check if edit button is on 
 		  
     		
@@ -501,116 +529,123 @@
 	
 	
 	
+	
+	
 	</script>
 
 	<!-- --  --------- Google Drive Google Drive --------- --- -->
 	<script type="text/javascript">
-      // Client ID and API key from the Developer Console
-      var CLIENT_ID = '44908189323-581ggnn44jq7rqaj7aa5gf36jik855b3.apps.googleusercontent.com';
+		// Client ID and API key from the Developer Console
+		var CLIENT_ID = '44908189323-0aghvejrg0t2oc5gm863blb6b2m9bj73.apps.googleusercontent.com';
 
-      // Array of API discovery doc URLs for APIs used by the quickstart
-      var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"];
+		// Array of API discovery doc URLs for APIs used by the quickstart
+		var DISCOVERY_DOCS = [ "https://www.googleapis.com/discovery/v1/apis/drive/v3/rest" ];
 
-      // Authorization scopes required by the API; multiple scopes can be
-      // included, separated by spaces.
-      var SCOPES = 'https://www.googleapis.com/auth/drive.metadata.readonly';
+		// Authorization scopes required by the API; multiple scopes can be
+		// included, separated by spaces.
+		var SCOPES = 'https://www.googleapis.com/auth/drive.metadata.readonly';
 
-      var authorizeButton = document.getElementById('authorize-button');
-      var signoutButton = document.getElementById('signout-button');
+		var authorizeButton = document.getElementById('authorize-button');
+		var signoutButton = document.getElementById('signout-button');
 
-      /**
-       *  On load, called to load the auth2 library and API client library.
-       */
-      function handleClientLoad() {
-        gapi.load('client:auth2', initClient);
-      }
+		/**
+		 *  On load, called to load the auth2 library and API client library.
+		 */
+		function handleClientLoad() {
+			gapi.load('client:auth2', initClient);
+		}
 
-      /**
-       *  Initializes the API client library and sets up sign-in state
-       *  listeners.
-       */
-      function initClient() {
-        gapi.client.init({
-          discoveryDocs: DISCOVERY_DOCS,
-          clientId: CLIENT_ID,
-          scope: SCOPES
-        }).then(function () {
-          // Listen for sign-in state changes.
-          gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+		/**
+		 *  Initializes the API client library and sets up sign-in state
+		 *  listeners.
+		 */
+		function initClient() {
+			gapi.client
+					.init({
+						discoveryDocs : DISCOVERY_DOCS,
+						clientId : CLIENT_ID,
+						scope : SCOPES
+					})
+					.then(
+							function() {
+								// Listen for sign-in state changes.
+								gapi.auth2.getAuthInstance().isSignedIn
+										.listen(updateSigninStatus);
 
-          // Handle the initial sign-in state.
-          updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-          authorizeButton.onclick = handleAuthClick;
-          signoutButton.onclick = handleSignoutClick;
-        });
-      }
+								// Handle the initial sign-in state.
+								updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn
+										.get());
+								authorizeButton.onclick = handleAuthClick;
+								signoutButton.onclick = handleSignoutClick;
+							});
+		}
 
-      /**
-       *  Called when the signed in status changes, to update the UI
-       *  appropriately. After a sign-in, the API is called.
-       */
-      function updateSigninStatus(isSignedIn) {
-        if (isSignedIn) {
-          authorizeButton.style.display = 'none';
-          signoutButton.style.display = 'block';
-          listFiles();
-        } else {
-          authorizeButton.style.display = 'block';
-          signoutButton.style.display = 'none';
-        }
-      }
+		/**
+		 *  Called when the signed in status changes, to update the UI
+		 *  appropriately. After a sign-in, the API is called.
+		 */
+		function updateSigninStatus(isSignedIn) {
+			if (isSignedIn) {
+				authorizeButton.style.display = 'none';
+				signoutButton.style.display = 'block';
+				listFiles();
+			} else {
+				authorizeButton.style.display = 'block';
+				signoutButton.style.display = 'none';
+			}
+		}
 
-      /**
-       *  Sign in the user upon button click.
-       */
-      function handleAuthClick(event) {
-          console.log("Hieee");
-        gapi.auth2.getAuthInstance().signIn();
-      }
+		/**
+		 *  Sign in the user upon button click.
+		 */
+		function handleAuthClick(event) {
+			console.log("Hieee");
+			gapi.auth2.getAuthInstance().signIn();
 
-      /**
-       *  Sign out the user upon button click.
-       */
-      function handleSignoutClick(event) {
-        gapi.auth2.getAuthInstance().signOut();
-      }
+		}
 
-      /**
-       * Append a pre element to the body containing the given message
-       * as its text node. Used to display the results of the API call.
-       *
-       * @param {string} message Text to be placed in pre element.
-       */
-      function appendPre(message) {
-        var pre = document.getElementById('content');
-        var textContent = document.createTextNode(message + '\n');
-        pre.appendChild(textContent);
-      }
+		/**
+		 *  Sign out the user upon button click.
+		 */
+		function handleSignoutClick(event) {
+			gapi.auth2.getAuthInstance().signOut();
+		}
 
-      /**
-       * Print files.
-       */
-      function listFiles() {
-        gapi.client.drive.files.list({
-          'pageSize': 10,
-          'fields': "nextPageToken, files(id, name)"
-        }).then(function(response) {
-          appendPre('Files:');
-          var files = response.result.files;
-          if (files && files.length > 0) {
-            for (var i = 0; i < files.length; i++) {
-              var file = files[i];
-              appendPre(file.name + ' (' + file.id + ')');
-            }
-          } else {
-            appendPre('No files found.');
-          }
-        });
-      }
+		/**
+		 * Append a pre element to the body containing the given message
+		 * as its text node. Used to display the results of the API call.
+		 *
+		 * @param {string} message Text to be placed in pre element.
+		 */
+		function appendPre(message) {
+			var pre = document.getElementById('content');
+			var textContent = document.createTextNode(message + '\n');
+			pre.appendChild(textContent);
+		}
 
-    </script>
+		/**
+		 * Print files.
+		 */
+		function listFiles() {
+			gapi.client.drive.files.list({
+				'pageSize' : 10,
+				'fields' : "nextPageToken, files(id, name)"
+			}).then(function(response) {
+				appendPre('Files:');
+				var files = response.result.files;
+				if (files && files.length > 0) {
+					for (var i = 0; i < files.length; i++) {
+						var file = files[i];
+						appendPre(file.name + ' (' + file.id + ')');
+					}
+				} else {
+					appendPre('No files found.');
+				}
+			});
+		}
+	</script>
 
- 
+
 	<script async defer src="https://apis.google.com/js/api.js"
 		onload="this.onload=function(){};handleClientLoad()"
 		onreadystatechange="if (this.readyState === 'complete') this.onload()">
