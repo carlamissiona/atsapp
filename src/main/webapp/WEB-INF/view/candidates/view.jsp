@@ -214,7 +214,7 @@
 									<h4 class="mb">
 										<i class="fa fa-angle-right"></i> Form Elements <span
 											class="pull-right"><button type="button"
-												class="btn btn-info btn-sm" style="margin: 10px;">Edit</button></span>
+												class="btn btn-info btn-sm btn-edit-cnd" style="margin: 10px;">Edit</button></span>
 									</h4>
 									<form class="form-horizontal style-form" method="post">
 										<div class="form-group">
@@ -446,7 +446,7 @@
                 ]
             });
             //*********** If Edit button was clicked 
-            $( ".btn-view-cv" ).click(function() {
+            $( ".btn-edit-cnd" ).click(function() {
                 $(".form-control").removeAttr("disabled");
 			
              });
@@ -467,6 +467,7 @@
 			$(".btn-edit-candidate").click(function(){
 					console.log("I clicked edit submit");
 				 var form = $("form").serialize();
+				 console.log(form);
 				 $.ajax({
 				        url: window.location.origin + "/candidates/form/edit",
 				        data: form,

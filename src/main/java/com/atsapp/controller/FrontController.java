@@ -97,7 +97,7 @@ public class FrontController {
 	public @ResponseBody String formEdit(HttpServletRequest request) {	
 		Map<String, String[]> parameters = request.getParameterMap();
 	 
-		return  "Hie from controller " + parameters.toString();
+		return  "Hie from controller " + parameters.size() ;
 				
 			  
 	}
