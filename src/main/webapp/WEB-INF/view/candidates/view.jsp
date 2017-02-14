@@ -435,7 +435,7 @@
                 },
                 action_nav: function () {
                     return myNavFunction(this.id);
-                },
+                },   
                 ajax: {
                     url: "show_data.php?action=1",
                     modal: true
