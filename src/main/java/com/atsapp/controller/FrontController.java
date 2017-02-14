@@ -94,7 +94,7 @@ public class FrontController {
 			  
 	}
 	@RequestMapping("/candidates/form/edit")
-	public  String formEdit(HttpServletRequest request) {	
+	public @ResponseBody String formEdit(HttpServletRequest request) {	
 		Map<String, String[]> parameters = request.getParameterMap();
 	 
 		return  "Hie from controller " + parameters.toString();

@@ -216,7 +216,7 @@
 											class="pull-right"><button type="button"
 												class="btn btn-info btn-sm" style="margin: 10px;">Edit</button></span>
 									</h4>
-									<form class="form-horizontal style-form" method="get">
+									<form class="form-horizontal style-form" method="post">
 										<div class="form-group">
 											<label class="col-sm-2 col-sm-2 control-label">First
 												name</label>
@@ -319,10 +319,10 @@
 											<div class="col-sm-10">
 												<button type="button"
 													class="btn btn-info btn-sm btn-edit-candidate pull-right"
-													style="margin: 10px;">Submit</button>
+													style="margin: 10px;">Submit</button> <br>
 											</div>
 										</div>
-										<div class="form-group">   </div>
+									 
 
 									</form>
 								</div>
@@ -449,7 +449,7 @@
             $( ".btn-view-cv" ).click(function() {
                 $(".form-control").removeAttr("disabled");
 			
-             }
+             });
         
 			//*********** If view cv is clicked
 			$( ".btn-view-cv" ).click(function() {
