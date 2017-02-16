@@ -108,13 +108,15 @@ public class FrontController {
 	@RequestMapping("/contacts")
 	public ModelAndView contactslist() {	
 		
-		String message = "Are we connected " + new DataPlugin().connect();
+		String message = "Contacts Lists";		
+		String contacts = new DataPlugin().getList("Contacts","");
+		String signedin = new DataPlugin().getList("Accounts" , "ac_signed_in = 1" );
 		
-		// contacts 
-		// company 
-		// candidate 
+		ModelAndView mv = new ModelAndView("contacts/list", "contacts", contacts);
 		
-		return new ModelAndView("contacts/list", "message", message);
+		mv.addObject("msg", message);		
+		mv.addObject("whose_online", signedin);
+		return mv;
 	}
 	@RequestMapping("/jobs")
 	public ModelAndView jobslist() {	

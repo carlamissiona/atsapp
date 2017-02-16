@@ -154,8 +154,8 @@ public class DataPlugin {
 			// edit Candidate
 		//	cn_firstname=Carla&cn_middlename=A&cn_lastname=Wi&cn_email=missiona.carla%40gmail.com&cn_mobile=09990991&cn_add=qc+qcs&cn_tel=12345&cn_recruiter=1&cn_recruiter=QC&cn_status=interviewed&cn_job_title=Software+Developer
 					
-			 sql =	"INSERT INTO Candidates (cn_firstname, cn_middlename,cn_lastname, cn_email, cn_mobile, cn_add, cn_tel , cn_recruiter ,cn_status ,cn_job_title)"
-			+ "VALUES ('"+ param.get("cn_firstname").toString() +"', '"+ param.get("cn_middlename").toString() +"'  , '"+ param.get("cn_lastname").toString() +"'  , '"+ param.get(" cn_email")+"'  , '"+ param.get("cn_mobile").toString() +"'  , '"+ param.get("cn_add").toString() +"'  , '"+ param.get("cn_tel").toString() +"'  , '"+ param.get("cn_recruiter").toString() +"'  , '"+ param.get("cn_status").toString() +"'  , '"+ param.get("cn_job_title").toString() +"' )";
+			 sql =	Arrays.toString(param.keySet().toArray())+    "INSERT INTO Candidates (cn_firstname, cn_middlename,cn_lastname, cn_email, cn_mobile, cn_add, cn_tel , cn_recruiter ,cn_status ,cn_job_title)"
+			+ "VALUES ('"+ param.get("cn_middlename").toString()+"', '"+ param.get("cn_middlename").toString() +"'  , '"+ param.get("cn_lastname").toString() +"'  , '"+ param.get(" cn_email")+"'  , '"+ param.get("cn_mobile").toString() +"'  , '"+ param.get("cn_add").toString() +"'  , '"+ param.get("cn_tel").toString() +"'  , '"+ param.get("cn_recruiter").toString() +"'  , '"+ param.get("cn_status").toString() +"'  , '"+ param.get("cn_job_title").toString() +"' )";
 		    try{  
 		    	PreparedStatement ps=con.prepareStatement(sql);  
 		    	rs=ps.executeQuery();  
