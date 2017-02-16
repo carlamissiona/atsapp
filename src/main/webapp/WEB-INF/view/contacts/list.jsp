@@ -223,12 +223,9 @@
 													<th> </th>
 													<th>Name</th>
 													<th class="numeric">Email</th>
-													<th class="numeric">Job Title</th>
-													<th class="numeric">City</th>
-													<th class="numeric">Status</th>
+													<th class="numeric">Address</th>
+													<th class="numeric">Tel</th>
 													<th class="numeric">Mobile</th>
-													<th class="numeric">Recruiter</th>
-													<th class="numeric">Date Added</th>
 													<th class="numeric"> </th>
 												</tr>
 											</thead>

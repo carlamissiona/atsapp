@@ -102,7 +102,7 @@ public class FrontController {
 	//		return request.getParameter("cn_lastname") ; 
 					
 				
-			  
+			    
 	}
 	@RequestMapping("/companies")
 	public ModelAndView companyList() {	
