@@ -14,6 +14,8 @@ import java.util.Map;
 
 import com.atsapp.model.Account;
 import com.atsapp.model.Candidate;
+import com.atsapp.model.Company;
+import com.atsapp.model.Contact;
 import com.atsapp.model.Job;
 import com.google.gson.Gson;
 
@@ -256,6 +258,58 @@ public class DataPlugin {
 			        
 			    }catch(Exception e){System.out.println(e);}
 		 
+		 }
+		 //*********************************************Contacts List
+		 
+		 if( classname.equalsIgnoreCase("contacts") || classname.contains("Contacts") ){
+			 List<Contact> cnlist = new ArrayList<Contact>();  
+		      
+			    try{  
+			     
+			        PreparedStatement ps=con.prepareStatement("select * from contacts " + filter);  
+			        ResultSet rs=ps.executeQuery();  
+			        while(rs.next()){  
+			            Contact c = new Contact();    
+			            c.setCo_id(rs.getInt("co_id"));
+			            c.setCo_firstname(rs.getString("co_firstname"));
+			            c.setCo_lastname(rs.getString("co_lastname"));
+			            c.setCo_middlename(rs.getString("co_middlename"));
+			            c.setCo_add(rs.getString("co_add"));
+			            c.setCo_email(rs.getString("co_email"));
+			            c.setCo_mobile(rs.getString("co_mobile"));
+			            c.setCo_tel(rs.getString("co_tel"));
+			            
+			            cnlist.add(c);  
+			        }  
+			    }catch(Exception e){System.out.println(e);}  
+			  
+			   
+			    // convert your list to json
+			    rt = gson.toJson(cnlist);
+			   
+		 }
+		 if( classname.equalsIgnoreCase("company") || classname.contains("Company") ){
+			 List<Company> cnlist = new ArrayList<Company>();  
+		      
+			    try{  
+			     
+			        PreparedStatement ps=con.prepareStatement("select cm.* , cn.contact_firstname+' '+cn.contact_lastname as cm_contact from companies cm  left join contacts on cm_contact = cn.cn_id  "  );  
+			        ResultSet rs=ps.executeQuery();  
+			        while(rs.next()){  
+			            Company c = new Company();    
+			            c.setCm_id(rs.getInt("co_id"));
+			            c.setCm_name(rs.getString("co_firstname"));
+			            c.setCm_desc(rs.getString("co_lastname"));
+			            c.setCm_contact(rs.getString("co_middlename"));
+			            
+			            cnlist.add(c);  
+			        }  
+			    }catch(Exception e){System.out.println(e);}  
+			  
+			   
+			    // convert your list to json
+			    rt = gson.toJson(cnlist);
+			   
 		 }
 		 return rt ;
 	

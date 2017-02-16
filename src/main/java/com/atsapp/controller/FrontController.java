@@ -104,7 +104,19 @@ public class FrontController {
 				
 			  
 	}
-	 
+	@RequestMapping("/companies")
+	public ModelAndView companyList() {	
+		
+		String message = "Company Lists";		
+		String companies = new DataPlugin().getList("Company","");
+		String signedin = new DataPlugin().getList("Accounts" , "ac_signed_in = 1" );
+		
+		ModelAndView mv = new ModelAndView("companies/list", "companies", companies);
+		
+		mv.addObject("msg", message);		
+		mv.addObject("whose_online", signedin);
+		return mv;
+	}
 	@RequestMapping("/contacts")
 	public ModelAndView contactslist() {	
 		
