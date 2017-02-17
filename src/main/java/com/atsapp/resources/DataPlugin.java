@@ -290,10 +290,11 @@ public class DataPlugin {
 		 }
 		 if( classname.equalsIgnoreCase("company") || classname.contains("Company") ){
 			 List<Company> cnlist = new ArrayList<Company>();  
-		      
+			   String sql  ="";
 			    try{  
 			     
-			        PreparedStatement ps=con.prepareStatement("select cm.* , cn.contact_firstname+' '+cn.contact_lastname as cm_contact from companies cm  left join contacts on cm_contact = cn.cn_id  "  );  
+			       sql = "select cm.* , concat( cn.contact_firstname,' ',cn.contact_lastname ) as cm_contact from companies cm  left join contacts cn on cm_contact = cn.cn_id  "  ;  
+			        PreparedStatement ps=con.prepareStatement(sql);
 			        ResultSet rs=ps.executeQuery();  
 			        while(rs.next()){  
 			            Company c = new Company();    
@@ -302,13 +303,14 @@ public class DataPlugin {
 			            c.setCm_desc(rs.getString("co_lastname"));
 			            c.setCm_contact(rs.getString("co_middlename"));
 			            
-			            cnlist.add(c);  
+			            //cnlist.add();  
 			        }  
 			    }catch(Exception e){System.out.println(e);}  
 			  
 			   
 			    // convert your list to json
 			    rt = gson.toJson(cnlist);
+			    rt=sql;
 			   
 		 }
 		 return rt ;
