@@ -356,7 +356,7 @@
 
             //*********** candidates list table
 			var candidatesStore  =  ${candidates};
-			//var whose_online = ${whose_online};
+			 var whose_online = ${whose_online};
 			
 			for (i = 0; i < candidatesStore.length; i++) { 
 				$(".table-candidates tbody").append(
