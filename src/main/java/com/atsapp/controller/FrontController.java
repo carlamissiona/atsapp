@@ -136,8 +136,8 @@ public class FrontController {
 		String message = "Account Lists";		
 		 
 		String signedin = new DataPlugin().getList("Accounts" , "ac_signed_in = 1" );
-		String accounts = new DataPlugin().getList("User" , "" );
-		ModelAndView mv = new ModelAndView("users/list", "users", accounts);
+		String accounts = new DataPlugin().getList("Accounts" , "" );
+		ModelAndView mv = new ModelAndView("users/list", "user", accounts);
 		
 		mv.addObject("msg", message);		
 		mv.addObject("whose_online", signedin);

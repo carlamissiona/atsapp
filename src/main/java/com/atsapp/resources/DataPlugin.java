@@ -310,7 +310,7 @@ public class DataPlugin {
 			   
 			    // convert your list to json
 			    rt = gson.toJson(cnlist);
-			    rt=sql;
+		 
 			   
 		 }
 		 if( classname.equalsIgnoreCase("User") || classname.contains("User") ){
@@ -342,7 +342,7 @@ public class DataPlugin {
 			   
 			    // convert your list to json
 			    rt = gson.toJson(cnlist);
-			    rt=sql;
+			   
 			   
 		 }
 		 return rt ;
