@@ -303,7 +303,7 @@ public class DataPlugin {
 			            c.setCm_desc(rs.getString("co_desc"));
 			            c.setCm_contact(rs.getString("cm_contact"));
 			            
-			            //cnlist.add();  
+			            cnlist.add(c);  
 			        }  
 			    }catch(Exception e){System.out.println(e);}  
 			  
