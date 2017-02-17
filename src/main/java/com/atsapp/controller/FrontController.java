@@ -116,8 +116,17 @@ public class FrontController {
 		return mv;
 
 	}
-
 	@RequestMapping("/candidates/form/edit")
+	public @ResponseBody
+	String formCandidateUpdate(HttpServletRequest request) {
+
+		DataPlugin DataPlug = new DataPlugin();
+		return DataPlug.edit(request, "candidate");
+
+		// return request.getParameter("cn_lastname") ;
+
+	}
+	@RequestMapping("/candidates/form/add")
 	public @ResponseBody
 	String formEdit(HttpServletRequest request) {
 
@@ -131,13 +140,12 @@ public class FrontController {
 	@RequestMapping("/companies")
 	public ModelAndView companyList() {
 		DataPlugin DataPlug = new DataPlugin();
-		String message = "Company Lists";
 		String signedin = DataPlug.getList("Users", "ac_signed_in = 1");
 		String companies = DataPlug.getList("Company", "");
 
 		ModelAndView mv = new ModelAndView("companies/list");
 		mv.addObject("companies", companies);
-		mv.addObject("msg", message);
+	 
 		mv.addObject("whose_online", signedin);
 		return mv;
 	}

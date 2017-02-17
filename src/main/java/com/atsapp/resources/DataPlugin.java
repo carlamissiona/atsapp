@@ -181,9 +181,24 @@ public class DataPlugin {
 			// edit Candidate
 	    	//	cn_firstname=Carla&cn_middlename=A&cn_lastname=Wi&cn_email=missiona.carla%40gmail.com&cn_mobile=09990991&cn_add=qc+qcs&cn_tel=12345&cn_recruiter=1&cn_recruiter=QC&cn_status=interviewed&cn_job_title=Software+Developer
 					
-		 	sql ="INSERT INTO Candidates (cn_firstname, cn_middlename,cn_lastname, cn_email, cn_mobile, cn_add, cn_tel , cn_recruiter ,cn_status ,cn_job_title)"
-			+ "VALUES ('"+ req.getParameter("cn_firstname").toString()+"', '"+ req.getParameter("cn_middlename").toString() +"'  , '"+ req.getParameter("cn_lastname").toString() +"'  , '"+ req.getParameter("cn_email").toString() +"'  , '"+ req.getParameter("cn_mobile").toString() +"'  , '"+ req.getParameter("cn_add").toString() +"'  , '"+ req.getParameter("cn_tel").toString() +"'  , '"+ req.getParameter("cn_recruiter").toString() +"'  , '"+req.getParameter("cn_status").toString() +"'  , '"+ req.getParameter("cn_job_title").toString() +"' )";
-		    try{  
+		 	//sql ="INSERT INTO Candidates (cn_firstname, cn_middlename,cn_lastname, cn_email, cn_mobile, cn_add, cn_tel , cn_recruiter ,cn_status ,cn_job_title)"
+			//+ "VALUES ('"+ req.getParameter("cn_firstname").toString()+"', '"+ req.getParameter("cn_middlename").toString() +"'  , '"+ req.getParameter("cn_lastname").toString() +"'  , '"+ req.getParameter("cn_email").toString() +"'  , '"+ req.getParameter("cn_mobile").toString() +"'  , '"+ req.getParameter("cn_add").toString() +"'  , '"+ req.getParameter("cn_tel").toString() +"'  , '"+ req.getParameter("cn_recruiter").toString() +"'  , '"+req.getParameter("cn_status").toString() +"'  , '"+ req.getParameter("cn_job_title").toString() +"' )";
+		    sql = "UPDATE candidates SET  cn_firstname='"+ req.getParameter("cn_firstname").toString() +"', "+
+		    		"cn_middlename='"+  req.getParameter("cn_middlename").toString()  +"' , "+
+		    		"cn_lastname='"+  req.getParameter("cn_lastname").toString()  +"' , "+
+		    		"cn_mobile='"+  req.getParameter("cn_mobile").toString()  +"' , "+
+		    		"cn_add='"+  req.getParameter("cn_add").toString()  +"' , "+
+		    		"cn_recruiter_id'"+  req.getParameter("cn_recruiter_id").toString()  +"' , "+
+		    		"cn_status='"+  req.getParameter("cn_status").toString()  +"' , "+
+		    		"cn_tel='"+  req.getParameter("cn_tel").toString()  +"' , "+
+		    		"cn_job_title='"+  req.getParameter("cn_job_title").toString()  +"'  "+
+		    		"where cn_id ="+ req.getParameter("cn_id").toString();
+		    		
+		    		
+		    		
+		    	 
+			
+			try{  
 		    	PreparedStatement ps=con.prepareStatement(sql);  
 		    	rs=ps.executeQuery();  
 		    }catch(Exception e){System.out.println(e);}  
@@ -287,7 +302,7 @@ public class DataPlugin {
 		 }
 		 //*********************************************Contacts List
 		 
-		 if( classname.equalsIgnoreCase("contacts") || classname.contains("Contacts") ){
+		 if( classname.equalsIgnoreCase("contacts") || classname.contains("Contacts")  ){
 			 List<Contact> cnlist = new ArrayList<Contact>();  
 		      
 			    try{  
@@ -314,12 +329,12 @@ public class DataPlugin {
 			    rt = gson.toJson(cnlist);
 			   
 		 }
-		 if( classname.equalsIgnoreCase("Company") || classname.contains("Company") ){
+		 if( classname.equalsIgnoreCase("Company") || classname.contains("Company") || classname.contentEquals("Company") ){
 			 List<Company> cnlist = new ArrayList<Company>();  
 			   String sql  ="";
 			    try{  
 			     
-			       sql = "SELECT cm.cm_name AS cm_name, cm.cm_desc AS cm_desc, cm.cm_id AS cm_id, CONCAT( cn.co_firstname,  ' ', cn.co_lastname ) AS cm_contact_linked FROM companies cm LEFT JOIN contacts cn ON cm_contact = cn.co_id";  
+			       sql = "SELECT cm.cm_name AS cm_name, cm.cm_desc AS cm_desc, cm.cm_id AS cm_id, CONCAT( cn.co_firstname,  ' ', cn.co_lastname ) AS cm_contact  FROM companies cm LEFT JOIN contacts cn ON cm_contact = cn.co_id";  
 			        PreparedStatement ps=con.prepareStatement(sql);
 			        ResultSet rs=ps.executeQuery();  
 			        while(rs.next() ){  

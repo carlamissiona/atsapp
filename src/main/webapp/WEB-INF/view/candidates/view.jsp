@@ -323,7 +323,8 @@
 											</div>
 										</div>
 									 
-
+									<input type="hidden" class="form-control ca_id"
+													name="ca_id" disabled>
 									</form>
 								</div>
 							</div>
@@ -496,7 +497,7 @@
 			$("input.ca_city").attr("value" ,  candidate[0].ca_city);
 			$("input.ca_status").attr("value" ,  candidate[0].ca_status);
 			$("input.ca_job_title").attr("value" ,  candidate[0].ca_job_title);
-			
+			$("input.ca_id").attr("value" ,  candidate[0].ca_id);
         }
         function viewCvlink(){
 			
