@@ -470,6 +470,7 @@
 				 console.log(form);
 				 $.post( window.location.origin + "/candidates/form/edit", form , function( data ) {
 					  alert( "Data Loaded: " + data );
+					  console.log(data);
 					});
 		 
 			});

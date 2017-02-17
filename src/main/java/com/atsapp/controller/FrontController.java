@@ -87,7 +87,8 @@ public class FrontController {
 
 		String message = "Candidates Lists";
 		String candidate = DataPlug.getOne("Candidate", cid);
-		String signedin = new DataPlugin().getList("Users", " ac_signed_in = 1");
+		String signedin = new DataPlugin()
+				.getList("Users", " ac_signed_in = 1");
 
 		ModelAndView mv = new ModelAndView("candidates/view");
 		mv.addObject("candidate", candidate);
@@ -97,13 +98,15 @@ public class FrontController {
 		return mv;
 
 	}
+
 	@RequestMapping("/company/view/{cm_id}")
 	public ModelAndView viewCompany(@PathVariable(value = "cm_id") String id) {
 		DataPlugin DataPlug = new DataPlugin();
 
 		String message = "Company Lists";
 		String company = DataPlug.getOne("Company", id);
-		String signedin = new DataPlugin().getList("Users", " ac_signed_in = 1");
+		String signedin = new DataPlugin()
+				.getList("Users", " ac_signed_in = 1");
 
 		ModelAndView mv = new ModelAndView("companies/view");
 		mv.addObject("company", company);
@@ -117,7 +120,7 @@ public class FrontController {
 	@RequestMapping("/candidates/form/edit")
 	public @ResponseBody
 	String formEdit(HttpServletRequest request) {
-	 
+
 		DataPlugin DataPlug = new DataPlugin();
 		return DataPlug.edit(request, "candidate");
 
@@ -129,14 +132,14 @@ public class FrontController {
 	public ModelAndView companyList() {
 		DataPlugin DataPlug = new DataPlugin();
 		String message = "Company Lists";
-		//String signedin = DataPlug.getList("Accounts", "ac_signed_in = 1");
+		String signedin = DataPlug.getList("Users", "ac_signed_in = 1");
 		String companies = DataPlug.getList("Company", "");
 
 		ModelAndView mv = new ModelAndView("companies/list", "companies",
 				companies);
 
 		mv.addObject("msg", message);
-		//mv.addObject("whose_online", signedin);
+		mv.addObject("whose_online", signedin);
 		return mv;
 	}
 
@@ -145,12 +148,11 @@ public class FrontController {
 
 		String message = "Contacts Lists";
 		String contacts = new DataPlugin().getList("Contacts", "");
-		String signedin = new DataPlugin().getList("Users",
-				"ac_signed_in = 1");
- 		ModelAndView mv = new ModelAndView("contacts/list", "contacts",
+		String signedin = new DataPlugin().getList("Users", "ac_signed_in = 1");
+		ModelAndView mv = new ModelAndView("contacts/list", "contacts",
 				contacts);
 
-		mv.addObject("msg", message);
+		mv.addObject("whose_online", signedin);
 		return mv;
 	}
 
