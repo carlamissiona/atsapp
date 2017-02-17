@@ -106,11 +106,11 @@ public class FrontController {
 	}
 	@RequestMapping("/companies")
 	public ModelAndView companyList() {	
-		
+		DataPlugin DataPlug = new DataPlugin(); 
 		String message = "Company Lists";		
-		String companies = new DataPlugin().getList("Company","");
-		String signedin = new DataPlugin().getList("Accounts" , "ac_signed_in = 1" );
-		
+		String signedin =  DataPlug.getList("Accounts", "ac_signed_in = 1");  
+		String companies =  DataPlug.getList("Company", "");  
+	 		
 		ModelAndView mv = new ModelAndView("companies/list", "companies", companies);
 		
 		mv.addObject("msg", message);		
@@ -132,11 +132,12 @@ public class FrontController {
 	}
 	@RequestMapping("/users")
 	public ModelAndView accountlist() {	
-		
+		DataPlugin DataPlug = new DataPlugin(); 
 		String message = "Account Lists";		
-		 
-		String signedin = new DataPlugin().getList("Accounts" , "ac_signed_in = 1" );
-		String accounts = new DataPlugin().getList("Accounts" , "" );
+	 
+		String signedin =  DataPlug.getList("Accounts", "ac_signed_in = 1");  
+		String accounts =  DataPlug.getList("Accounts","");  
+		
 		ModelAndView mv = new ModelAndView("users/list", "users", accounts);
 		
 		mv.addObject("msg", message);		
