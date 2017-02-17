@@ -113,14 +113,14 @@ public class FrontController {
 	public ModelAndView companyList() {
 		DataPlugin DataPlug = new DataPlugin();
 		String message = "Company Lists";
-		String signedin = DataPlug.getList("Accounts", "ac_signed_in = 1");
+		//String signedin = DataPlug.getList("Accounts", "ac_signed_in = 1");
 		String companies = DataPlug.getList("Company", "");
 
 		ModelAndView mv = new ModelAndView("companies/list", "companies",
 				companies);
 
 		mv.addObject("msg", message);
-		mv.addObject("whose_online", signedin);
+		//mv.addObject("whose_online", signedin);
 		return mv;
 	}
 
@@ -129,14 +129,14 @@ public class FrontController {
 
 		String message = "Contacts Lists";
 		String contacts = new DataPlugin().getList("Contacts", "");
-		String signedin = new DataPlugin().getList("Accounts",
-				"ac_signed_in = 1");
+	//	String signedin = new DataPlugin().getList("Accounts",
+			//	"ac_signed_in = 1");
 
 		ModelAndView mv = new ModelAndView("contacts/list", "contacts",
 				contacts);
 
 		mv.addObject("msg", message);
-		mv.addObject("whose_online", signedin);
+	//	mv.addObject("whose_online", signedin);
 		return mv;
 	}
 
@@ -145,7 +145,7 @@ public class FrontController {
 		DataPlugin DataPlug = new DataPlugin();
 		String message = "Account Lists";
 
-		String accounts = DataPlug.getList("Accounts", "");
+		String accounts = DataPlug.getList("Users", "");
 
 		ModelAndView mv = new ModelAndView("users/list");
 

@@ -332,7 +332,7 @@ public class DataPlugin {
 			            a.setAc_mobile(rs.getString("ac_mobile") );
 			            a.setAc_status(rs.getString("ac_status") );
 			            a.setAc_password(rs.getString("ac_password") );
-			            a.setAc_employment_date(rs.getString("ac_employment_date") );
+			            a.setAc_employment_date(rs.getString("ac_employement_date") );
 			            a.setAc_id(rs.getInt("ac_signed_in"));		            
 			        
 			            cnlist.add(a);  
