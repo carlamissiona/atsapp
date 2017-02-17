@@ -297,16 +297,15 @@ public class DataPlugin {
 			       sql = "SELECT cm . * , CONCAT( cn.co_firstname,  ' ', cn.co_lastname ) AS cm_contact FROM companies cm LEFT JOIN contacts cn ON cm_contact = cn.co_id ";  
 			        PreparedStatement ps=con.prepareStatement(sql);
 			        ResultSet rs=ps.executeQuery();  
-			        while(rs.next()){  
+			        while(rs.next() ){  
 			            Company c = new Company();    
 			            c.setCm_id(rs.getInt("co_id"));
 			            c.setCm_name(rs.getString("co_name") );
 			            c.setCm_desc(rs.getString("co_desc"));
-			            c.setCm_contact(rs.getString("cm_contact"));
-			            
-			            cnlist.add(c);  
+			            c.setCm_contact(rs.getString("cm_contact"));			                
+			            cnlist.add(c);    
 			        }  
-			    }catch(Exception e){System.out.println(e);}  
+			    }catch(Exception e){System.out.println(e);}    
 			  
 			   
 			    // convert your list to json
