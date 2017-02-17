@@ -209,13 +209,13 @@ public class DataPlugin {
 			   
 		 }	
 		 // ***********************************************Candidates List   
-		 if( classname.equalsIgnoreCase("Accounts") || classname.contains("Accounts") ){
+		 if( classname.equalsIgnoreCase("Accounts") || classname.contains("Accounts") ||  classname.contentEquals(" Accounts")){
 			 List<Account> aclist = new ArrayList<Account>();  
-		      
+			  ResultSet rs=  null; String sql ="";
 			    try{  
-			     
-			        PreparedStatement ps=con.prepareStatement("select * from accounts " + filter);  
-			        ResultSet rs=ps.executeQuery();  
+			    	sql ="select * from accounts ";
+			        PreparedStatement ps=con.prepareStatement(sql+ filter);  
+			        rs=ps.executeQuery();  
 			        while(rs.next()){  
 			            Account a =new Account();    
 			             a.setAc_address(rs.getString("ac_address"));
@@ -232,8 +232,9 @@ public class DataPlugin {
 			  
 			   
 			    // convert your list to json
+			    
 			    rt = gson.toJson(aclist);
-			   
+			    rt = sql ;
 		 }
 		 // *********************************************** Job List   
 		 if(  classname.equalsIgnoreCase("Jobs") ||   classname.contains("Job") ||  classname.contentEquals("Jobs") ){

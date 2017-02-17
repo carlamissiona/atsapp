@@ -133,15 +133,15 @@ public class FrontController {
 	@RequestMapping("/users")
 	public ModelAndView accountlist() {	
 		DataPlugin DataPlug = new DataPlugin(); 
-		String message = "Account Lists";		
+		String message = "Account Lists";	 	
 	 
-		String signedin =  DataPlug.getList("Accounts", "ac_signed_in = 1");  
+		  
 		String accounts =  DataPlug.getList("Accounts","");  
 		
-		ModelAndView mv = new ModelAndView("users/list", "users", accounts);
+		ModelAndView mv = new ModelAndView("users/list");
 		
-		mv.addObject("msg", message);		
-		mv.addObject("whose_online", signedin);
+		mv.addObject("users",accounts);		
+		
 		return mv;
 	}
 	@RequestMapping("/jobs")
