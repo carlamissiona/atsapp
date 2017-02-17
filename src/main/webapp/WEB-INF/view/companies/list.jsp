@@ -351,7 +351,7 @@
             });
 
             //*********** candidates list table
-			var companiesStore  =  ${companies}; 
+			var companiesStore  = ${companies}; 
 			
 			for (i = 0; i < companiesStore.length; i++) { 
 				$(".table-candidates tbody").append(

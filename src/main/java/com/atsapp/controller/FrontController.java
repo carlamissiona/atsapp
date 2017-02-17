@@ -135,9 +135,8 @@ public class FrontController {
 		String signedin = DataPlug.getList("Users", "ac_signed_in = 1");
 		String companies = DataPlug.getList("Company", "");
 
-		ModelAndView mv = new ModelAndView("companies/list", "companies",
-				companies);
-
+		ModelAndView mv = new ModelAndView("companies/list");
+		mv.addObject("companies", companies);
 		mv.addObject("msg", message);
 		mv.addObject("whose_online", signedin);
 		return mv;

@@ -221,83 +221,83 @@
 											<label class="col-sm-2 col-sm-2 control-label">First
 												name</label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control cn_firstname"
-													name="cn_firstname" disabled>
+												<input type="text" class="form-control ca_firstname"
+													name="ca_firstname" disabled>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-sm-2 col-sm-2 control-label">Middle
 												name</label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control cn_middlename"
-													name="cn_middlename" disabled>
+												<input type="text" class="form-control ca_middlename"
+													name="ca_middlename" disabled>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-sm-2 col-sm-2 control-label">Last
 												name</label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control cn_lastname"
-													name="cn_lastname" disabled>
+												<input type="text" class="form-control ca_lastname"
+													name="ca_lastname" disabled>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-sm-2 col-sm-2 control-label">Email</label>
 											<div class="col-sm-10">
-												<input type="email" class="form-control cn_email"
-													name="cn_email" disabled>
+												<input type="email" class="form-control ca_email"
+													name="ca_email" disabled>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-sm-2 col-sm-2 control-label">Mobile
 												No.</label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control cn_mobile"
-													name="cn_mobile" disabled>
+												<input type="text" class="form-control ca_mobile"
+													name="ca_mobile" disabled>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-sm-2 col-sm-2 control-label">Address
 											</label>
 											<div class="col-sm-10">
-												<textarea class="form-control cn_add" name="cn_add" disabled></textarea>
+												<textarea class="form-control ca_add" name="ca_add" disabled></textarea>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-sm-2 col-sm-2 control-label">Tel.</label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control cn_tel" name="cn_tel"
+												<input type="text" class="form-control ca_tel" name="ca_tel"
 													disabled>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-sm-2 col-sm-2 control-label">Recruiter</label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control cn_recruiter"
-													name="cn_recruiter" disabled>
+												<input type="text" class="form-control ca_recruiter"
+													name="ca_recruiter_id" disabled>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-sm-2 col-sm-2 control-label">City </label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control cn_city"
-													name="cn_recruiter" disabled>
+												<input type="text" class="form-control ca_city"
+													name="ca_city" disabled>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-sm-2 col-sm-2 control-label">Status
 											</label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control cn_status"
-													name="cn_status" disabled>
+												<input type="text" class="form-control ca_status"
+													name="ca_status" disabled>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-sm-2 col-sm-2 control-label">Job
 												Title </label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control cn_job_title"
-													name="cn_job_title" disabled> <span
+												<input type="text" class="form-control ca_job_title"
+													name="ca_job_title" disabled> <span
 													class="help-block">Add job titles this candidate is
 													qualified for. Use comma as separator for multiple jobs.</span>
 											</div>
@@ -485,17 +485,17 @@
         
         function populateForm(candidate){
             console.log("!!");
-			$("input.cn_firstname").attr("value" , candidate[0].ca_firstname);
-			$("input.cn_lastname").attr("value" ,  candidate[0].ca_lastname);
-			$("input.cn_middlename").attr("value" ,  candidate[0].ca_middlename);
-			$("input.cn_email").attr("value" ,  candidate[0].ca_email);
-			$("input.cn_mobile").attr("value" ,  candidate[0].ca_mobile);
-			$("input.cn_tel").attr("value" , candidate[0].ca_tel);
-			$("input.cn_recruiter").attr("value" , candidate[0].ca_recruiter_id);
-			$("textarea.cn_add").attr("value" ,  candidate[0].ca_add);
-			$("input.cn_city").attr("value" ,  candidate[0].ca_city);
-			$("input.cn_status").attr("value" ,  candidate[0].ca_status);
-			$("input.cn_job_title").attr("value" ,  candidate[0].ca_job_title);
+			$("input.ca_firstname").attr("value" , candidate[0].ca_firstname);
+			$("input.ca_lastname").attr("value" ,  candidate[0].ca_lastname);
+			$("input.ca_middlename").attr("value" ,  candidate[0].ca_middlename);
+			$("input.ca_email").attr("value" ,  candidate[0].ca_email);
+			$("input.ca_mobile").attr("value" ,  candidate[0].ca_mobile);
+			$("input.ca_tel").attr("value" , candidate[0].ca_tel);
+			$("input.ca_recruiter_id").attr("value" , candidate[0].ca_recruiter_id);
+			$("textarea.ca_add").attr("value" ,  candidate[0].ca_add);
+			$("input.ca_city").attr("value" ,  candidate[0].ca_city);
+			$("input.ca_status").attr("value" ,  candidate[0].ca_status);
+			$("input.ca_job_title").attr("value" ,  candidate[0].ca_job_title);
 			
         }
         function viewCvlink(){

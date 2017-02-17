@@ -314,7 +314,7 @@ public class DataPlugin {
 			    rt = gson.toJson(cnlist);
 			   
 		 }
-		 if( classname.equalsIgnoreCase("company") || classname.contains("Company") ){
+		 if( classname.equalsIgnoreCase("Company") || classname.contains("Company") ){
 			 List<Company> cnlist = new ArrayList<Company>();  
 			   String sql  ="";
 			    try{  
@@ -332,8 +332,6 @@ public class DataPlugin {
 			        }  
 			    }catch(Exception e){System.out.println(e);}    
 			  
-			   
-			 
 			    rt = gson.toJson(cnlist);
 		 
 			   
