@@ -293,17 +293,49 @@ public class DataPlugin {
 			   String sql  ="";
 			    try{  
 			     
-			       sql = "select cm.* , concat( cn.contact_firstname,' ',cn.contact_lastname ) as cm_contact from companies cm  left join contacts cn on cm_contact = cn.cn_id  "  ;  
+			       sql = "SELECT cm . * , CONCAT( cn.co_firstname,  ' ', cn.co_lastname ) AS cm_contact FROM companies cm LEFT JOIN contacts cn ON cm_contact = cn.co_id ";  
 			        PreparedStatement ps=con.prepareStatement(sql);
 			        ResultSet rs=ps.executeQuery();  
 			        while(rs.next()){  
 			            Company c = new Company();    
 			            c.setCm_id(rs.getInt("co_id"));
-			            c.setCm_name(rs.getString("co_firstname"));
-			            c.setCm_desc(rs.getString("co_lastname"));
-			            c.setCm_contact(rs.getString("co_middlename"));
+			            c.setCm_name(rs.getString("co_name") );
+			            c.setCm_desc(rs.getString("co_desc"));
+			            c.setCm_contact(rs.getString("cm_contact"));
 			            
 			            //cnlist.add();  
+			        }  
+			    }catch(Exception e){System.out.println(e);}  
+			  
+			   
+			    // convert your list to json
+			    rt = gson.toJson(cnlist);
+			    rt=sql;
+			   
+		 }
+		 if( classname.equalsIgnoreCase("User") || classname.contains("User") ){
+			 List<Account> cnlist = new ArrayList<Account>();  
+			   String sql  ="";
+			    try{  
+	 
+			        sql = "SELECT * FROM accounts";  
+			        PreparedStatement ps=con.prepareStatement(sql);
+			        ResultSet rs=ps.executeQuery();  
+			        while(rs.next()){  
+			            Account a= new Account();    
+			            a.setAc_address( rs.getString("ac_address") );
+			            a.setAc_email( rs.getString("ac_email") );
+			            a.setAc_firstname( rs.getString("ac_firstname") );
+			            a.setAc_lastname(rs.getString("ac_lastname"));
+			            a.setAc_middlename(rs.getString("ac_middlename") );
+			            a.setAc_id(rs.getInt("ac_id"));
+			            a.setAc_mobile(rs.getString("ac_mobile") );
+			            a.setAc_status(rs.getString("ac_status") );
+			            a.setAc_password(rs.getString("ac_password") );
+			            a.setAc_employment_date(rs.getString("ac_employment_date") );
+			            a.setAc_id(rs.getInt("ac_signed_in"));		            
+			        
+			            cnlist.add(a);  
 			        }  
 			    }catch(Exception e){System.out.println(e);}  
 			  
