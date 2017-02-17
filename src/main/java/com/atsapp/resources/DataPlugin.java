@@ -140,7 +140,30 @@ public class DataPlugin {
 		 
 		 }
 		 
- 		   
+		 if( objModel.equalsIgnoreCase("Company") ||  objModel.contains("Company") || objModel.contentEquals("Company") ){
+			 	String sql ="";
+			 	List<Company> colist = new ArrayList<Company>();  
+			 	sql = "SELECT cm.co_name as co_name, cm.co_desc , cm.co_id as co_id  CONCAT( cn.co_firstname,  ' ', cn.co_lastname ) AS co_contact_linked FROM companies cm LEFT JOIN contacts cn ON cm_contact = cn.co_id ";
+			    try{  
+			    	
+			        // 
+			        PreparedStatement ps=con.prepareStatement(sql);
+			        ResultSet rs=ps.executeQuery(); 
+			        while(rs.next()){  
+			            Company cm = new Company();  
+			            
+			            cm.setCm_contact(rs.getString("co_contact_linked"));
+			            cm.setCm_name(rs.getString("co_name"));
+			            cm.setCm_desc(rs.getString("co_desc"));
+			            cm.setCm_id(rs.getInt("co_id"));
+			            			       
+			            colist.add(cm);
+			        } 			         
+			   		rt = gson.toJson(colist);
+			        
+			    }catch(Exception e){System.out.println(e);}
+		 
+		 }
 		 return rt;
 		
 	}
@@ -294,7 +317,7 @@ public class DataPlugin {
 			   String sql  ="";
 			    try{  
 			     
-			       sql = "SELECT cm . * , CONCAT( cn.co_firstname,  ' ', cn.co_lastname ) AS cm_contact FROM companies cm LEFT JOIN contacts cn ON cm_contact = cn.co_id ";  
+			       sql = "SELECT cm.* , CONCAT( cn.co_firstname,  ' ', cn.co_lastname ) AS cm_contact FROM companies cm LEFT JOIN contacts cn ON cm_contact = cn.co_id ";  
 			        PreparedStatement ps=con.prepareStatement(sql);
 			        ResultSet rs=ps.executeQuery();  
 			        while(rs.next() ){  

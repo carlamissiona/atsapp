@@ -82,7 +82,7 @@ public class FrontController {
 	}
 
 	@RequestMapping("/candidates/view/{cnd_id}")
-	public ModelAndView view(@PathVariable(value = "cnd_id") String cid) {
+	public ModelAndView viewCandidate(@PathVariable(value = "cnd_id") String cid) {
 		DataPlugin DataPlug = new DataPlugin();
 
 		String message = "Candidates Lists";
@@ -91,6 +91,22 @@ public class FrontController {
 
 		ModelAndView mv = new ModelAndView("candidates/view");
 		mv.addObject("candidate", candidate);
+		mv.addObject("msg", message);
+		mv.addObject("whose_online", signedin);
+
+		return mv;
+
+	}
+	@RequestMapping("/company/view/{cm_id}")
+	public ModelAndView viewCompany(@PathVariable(value = "cm_id") String id) {
+		DataPlugin DataPlug = new DataPlugin();
+
+		String message = "Company Lists";
+		String company = DataPlug.getOne("Company", id);
+		String signedin = new DataPlugin().getList("Users", " ac_signed_in = 1");
+
+		ModelAndView mv = new ModelAndView("candidates/view");
+		mv.addObject("company", company);
 		mv.addObject("msg", message);
 		mv.addObject("whose_online", signedin);
 
@@ -129,14 +145,12 @@ public class FrontController {
 
 		String message = "Contacts Lists";
 		String contacts = new DataPlugin().getList("Contacts", "");
-	//	String signedin = new DataPlugin().getList("Accounts",
-			//	"ac_signed_in = 1");
-
-		ModelAndView mv = new ModelAndView("contacts/list", "contacts",
+		String signedin = new DataPlugin().getList("Users",
+				"ac_signed_in = 1");
+ 		ModelAndView mv = new ModelAndView("contacts/list", "contacts",
 				contacts);
 
 		mv.addObject("msg", message);
-	//	mv.addObject("whose_online", signedin);
 		return mv;
 	}
 
