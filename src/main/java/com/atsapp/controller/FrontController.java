@@ -87,7 +87,7 @@ public class FrontController {
 
 		String message = "Candidates Lists";
 		String candidate = DataPlug.getOne("Candidate", cid);
-		String signedin = DataPlug.getList("Accounts", "ac_signed_in = 1");
+		String signedin = new DataPlugin().getList("Users", " ac_signed_in = 1");
 
 		ModelAndView mv = new ModelAndView("candidates/view");
 		mv.addObject("candidate", candidate);
