@@ -67,13 +67,13 @@ public class FrontController {
 		
 		String message = "Candidates Lists";		
 		String candidates = new DataPlugin().getList("Candidate","");
-		String signedin = new DataPlugin().getList("Accounts" , "ac_signed_in = 1" );
+		//String signedin = new DataPlugin().getList("Users" , " ac_signed_in = 1" );
 		
 		ModelAndView mv = new ModelAndView("candidates/list", "candidates", candidates);
 		
 		mv.addObject("msg", message);
 		mv.addObject("candidates",candidates);
-		mv.addObject("whose_online", signedin);
+		//mv.addObject("whose_online", signedin);
 		return mv;
 	}
 	@RequestMapping("/candidates/view/{cnd_id}")

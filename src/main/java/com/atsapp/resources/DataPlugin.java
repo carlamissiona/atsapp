@@ -209,12 +209,12 @@ public class DataPlugin {
 			   
 		 }	
 		 // ***********************************************Candidates List   
-		 if( classname.equalsIgnoreCase("Accounts") || classname.contains("Accounts") ||  classname.contentEquals(" Accounts")){
+		 if( classname.equalsIgnoreCase("Accounts") || classname.contains("Accounts") ||  classname.contentEquals(" Accounts") ){
 			 List<Account> aclist = new ArrayList<Account>();  
-			  ResultSet rs=  null; String sql ="";
+			  ResultSet rs = null; String sql = "";
 			    try{  
 			    	sql ="select * from accounts ";
-			        PreparedStatement ps=con.prepareStatement(sql+ filter);  
+			        PreparedStatement ps=con.prepareStatement(sql+" "+filter);  
 			        rs=ps.executeQuery();  
 			        while(rs.next()){  
 			            Account a =new Account();    
