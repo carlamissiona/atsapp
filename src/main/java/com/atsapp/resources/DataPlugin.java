@@ -192,12 +192,9 @@ public class DataPlugin {
 		    		"cn_status='"+  req.getParameter("cn_status").toString()  +"' , "+
 		    		"cn_tel='"+  req.getParameter("cn_tel").toString()  +"' , "+
 		    		"cn_job_title='"+  req.getParameter("cn_job_title").toString()  +"'  "+
-		    		"where cn_id ="+ req.getParameter("cn_id").toString();
+		    		"where cn_id ="+ req.getParameter("cn_id").toString() + " "; 
 		    		
-		    		
-		    		
-		    	 
-			
+		    		 
 			try{  
 		    	PreparedStatement ps=con.prepareStatement(sql);  
 		    	rs=ps.executeQuery();  
