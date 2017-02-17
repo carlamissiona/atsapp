@@ -308,7 +308,7 @@ public class DataPlugin {
 			    }catch(Exception e){System.out.println(e);}    
 			  
 			   
-			    // convert your list to json
+			 
 			    rt = gson.toJson(cnlist);
 		 
 			   
