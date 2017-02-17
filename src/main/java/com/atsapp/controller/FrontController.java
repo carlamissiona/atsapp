@@ -105,7 +105,7 @@ public class FrontController {
 		String company = DataPlug.getOne("Company", id);
 		String signedin = new DataPlugin().getList("Users", " ac_signed_in = 1");
 
-		ModelAndView mv = new ModelAndView("candidates/view");
+		ModelAndView mv = new ModelAndView("companies/view");
 		mv.addObject("company", company);
 		mv.addObject("msg", message);
 		mv.addObject("whose_online", signedin);
@@ -117,9 +117,9 @@ public class FrontController {
 	@RequestMapping("/candidates/form/edit")
 	public @ResponseBody
 	String formEdit(HttpServletRequest request) {
-		Map<String, String[]> parameters = request.getParameterMap();
+	 
 		DataPlugin DataPlug = new DataPlugin();
-		return DataPlug.edit(parameters, "candidate");
+		return DataPlug.edit(request, "candidate");
 
 		// return request.getParameter("cn_lastname") ;
 

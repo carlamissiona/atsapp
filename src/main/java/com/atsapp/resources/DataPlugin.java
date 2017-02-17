@@ -12,6 +12,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
 import com.atsapp.model.Account;
 import com.atsapp.model.Candidate;
 import com.atsapp.model.Company;
@@ -143,8 +145,8 @@ public class DataPlugin {
 		 if( objModel.equalsIgnoreCase("Company") ||  objModel.contains("Company") || objModel.contentEquals("Company") ){
 			 	String sql ="";
 			 	List<Company> colist = new ArrayList<Company>();  
-			 	sql = "SELECT cm.co_name as co_name, cm.co_desc , cm.co_id as co_id  CONCAT( cn.co_firstname,  ' ', cn.co_lastname ) AS co_contact_linked FROM companies cm LEFT JOIN contacts cn ON cm_contact = cn.co_id ";
-			    try{  
+			 	sql = "SELECT cm.cm_name AS cm_name, cm.cm_desc AS cm_desc, cm.cm_id AS cm_id, CONCAT( cn.co_firstname,  ' ', cn.co_lastname ) AS cm_contact_linked FROM companies cm LEFT JOIN contacts cn ON cm_contact = cn.co_id";
+			 	try{  
 			    	
 			        // 
 			        PreparedStatement ps=con.prepareStatement(sql);
@@ -152,10 +154,10 @@ public class DataPlugin {
 			        while(rs.next()){  
 			            Company cm = new Company();  
 			            
-			            cm.setCm_contact(rs.getString("co_contact_linked"));
-			            cm.setCm_name(rs.getString("co_name"));
-			            cm.setCm_desc(rs.getString("co_desc"));
-			            cm.setCm_id(rs.getInt("co_id"));
+			            cm.setCm_contact(rs.getString("cm_contact_linked"));
+			            cm.setCm_name(rs.getString("cm_name"));
+			            cm.setCm_desc(rs.getString("cm_desc"));
+			            cm.setCm_id(rs.getInt("cm_id"));
 			            			       
 			            colist.add(cm);
 			        } 			         
@@ -167,7 +169,7 @@ public class DataPlugin {
 		 return rt;
 		
 	}
-	public String edit(	Map param , String model){ 
+	public String edit(HttpServletRequest req , String model){ 
 		 Connection con = connect();	 
 		 ResultSet rs = null;
 		 Gson gson = new Gson();
@@ -177,10 +179,10 @@ public class DataPlugin {
 		if(model.contains("candidate") ){
 			
 			// edit Candidate
-		//	cn_firstname=Carla&cn_middlename=A&cn_lastname=Wi&cn_email=missiona.carla%40gmail.com&cn_mobile=09990991&cn_add=qc+qcs&cn_tel=12345&cn_recruiter=1&cn_recruiter=QC&cn_status=interviewed&cn_job_title=Software+Developer
+	    	//	cn_firstname=Carla&cn_middlename=A&cn_lastname=Wi&cn_email=missiona.carla%40gmail.com&cn_mobile=09990991&cn_add=qc+qcs&cn_tel=12345&cn_recruiter=1&cn_recruiter=QC&cn_status=interviewed&cn_job_title=Software+Developer
 					
-			 sql =	Arrays.toString(param.keySet().toArray())+    "INSERT INTO Candidates (cn_firstname, cn_middlename,cn_lastname, cn_email, cn_mobile, cn_add, cn_tel , cn_recruiter ,cn_status ,cn_job_title)"
-			+ "VALUES ('"+ param.get("cn_middlename").toString()+"', '"+ param.get("cn_middlename").toString() +"'  , '"+ param.get("cn_lastname").toString() +"'  , '"+ param.get(" cn_email")+"'  , '"+ param.get("cn_mobile").toString() +"'  , '"+ param.get("cn_add").toString() +"'  , '"+ param.get("cn_tel").toString() +"'  , '"+ param.get("cn_recruiter").toString() +"'  , '"+ param.get("cn_status").toString() +"'  , '"+ param.get("cn_job_title").toString() +"' )";
+			sql ="INSERT INTO Candidates (cn_firstname, cn_middlename,cn_lastname, cn_email, cn_mobile, cn_add, cn_tel , cn_recruiter ,cn_status ,cn_job_title)"
+			+ "VALUES ('"+ req.getParameter("cn_firstname").toString()+"', '"+ req.getParameter("cn_middlename").toString() +"'  , '"+ req.getParameter("cn_lastname").toString() +"'  , '"+ req.getParameter("cn_email").toString() +"'  , '"+ req.getParameter("cn_mobile").toString() +"'  , '"+ req.getParameter("cn_add").toString() +"'  , '"+ req.getParameter("cn_tel").toString() +"'  , '"+ req.getParameter("cn_recruiter").toString() +"'  , '"+req.getParameter("cn_status").toString() +"'  , '"+ req.getParameter("cn_job_title").toString() +"' )";
 		    try{  
 		    	PreparedStatement ps=con.prepareStatement(sql);  
 		    	rs=ps.executeQuery();  
@@ -317,14 +319,14 @@ public class DataPlugin {
 			   String sql  ="";
 			    try{  
 			     
-			       sql = "SELECT cm.* , CONCAT( cn.co_firstname,  ' ', cn.co_lastname ) AS cm_contact FROM companies cm LEFT JOIN contacts cn ON cm_contact = cn.co_id ";  
+			       sql = "SELECT cm.cm_name AS cm_name, cm.cm_desc AS cm_desc, cm.cm_id AS cm_id, CONCAT( cn.co_firstname,  ' ', cn.co_lastname ) AS cm_contact_linked FROM companies cm LEFT JOIN contacts cn ON cm_contact = cn.co_id";  
 			        PreparedStatement ps=con.prepareStatement(sql);
 			        ResultSet rs=ps.executeQuery();  
 			        while(rs.next() ){  
 			            Company c = new Company();    
-			            c.setCm_id(rs.getInt("co_id"));
-			            c.setCm_name(rs.getString("co_name") );
-			            c.setCm_desc(rs.getString("co_desc"));
+			            c.setCm_id(rs.getInt("cm_id"));
+			            c.setCm_name(rs.getString("cm_name") );
+			            c.setCm_desc(rs.getString("cm_desc"));
 			            c.setCm_contact(rs.getString("cm_contact"));			                
 			            cnlist.add(c);    
 			        }  
