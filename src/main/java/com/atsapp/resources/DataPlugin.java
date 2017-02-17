@@ -188,7 +188,7 @@ public class DataPlugin {
 		    		"cn_lastname='"+  req.getParameter("cn_lastname").toString()  +"' , "+
 		    		"cn_mobile='"+  req.getParameter("cn_mobile").toString()  +"' , "+
 		    		"cn_add='"+  req.getParameter("cn_add").toString()  +"' , "+
-		    		"cn_recruiter_id'"+  req.getParameter("cn_recruiter_id").toString()  +"' , "+
+		    		"cn_recruiter_id ='"+  req.getParameter("cn_recruiter_id").toString()  +"' , "+
 		    		"cn_status='"+  req.getParameter("cn_status").toString()  +"' , "+
 		    		"cn_tel='"+  req.getParameter("cn_tel").toString()  +"' , "+
 		    		"cn_job_title='"+  req.getParameter("cn_job_title").toString()  +"'  "+
