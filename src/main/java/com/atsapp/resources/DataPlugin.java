@@ -195,13 +195,13 @@ public class DataPlugin {
 		 return rt;
 		
 	}
-	public String edit(HttpServletRequest req , String model){ 
+	public int edit(HttpServletRequest req , String model){ 
 		 Connection con = connect();	 
 		 ResultSet rs = null;
 		 Gson gson = new Gson();
 		 String sql ="";
 		 String rt = "";
-		
+		 int res = -1 ;
 		 if(model.contains("user") || model.equalsIgnoreCase("user") || model.contentEquals("user") ){
 			    sql = "UPDATE accounts SET  ac_firstname='"+ req.getParameter("ac_firstname").toString() +"', "+
 			    		"ac_middlename='"+  req.getParameter("ac_middlename").toString()  +"' , "+
@@ -226,7 +226,7 @@ public class DataPlugin {
 					
 		 	//sql ="INSERT INTO Candidates (cn_firstname, cn_middlename,cn_lastname, cn_email, cn_mobile, cn_add, cn_tel , cn_recruiter ,cn_status ,cn_job_title)"
 			//+ "VALUES ('"+ req.getParameter("cn_firstname").toString()+"', '"+ req.getParameter("cn_middlename").toString() +"'  , '"+ req.getParameter("cn_lastname").toString() +"'  , '"+ req.getParameter("cn_email").toString() +"'  , '"+ req.getParameter("cn_mobile").toString() +"'  , '"+ req.getParameter("cn_add").toString() +"'  , '"+ req.getParameter("cn_tel").toString() +"'  , '"+ req.getParameter("cn_recruiter").toString() +"'  , '"+req.getParameter("cn_status").toString() +"'  , '"+ req.getParameter("cn_job_title").toString() +"' )";
-		   
+			 
 			sql = "UPDATE candidates SET ca_firstname='"+ req.getParameter("ca_firstname").toString() +"', "+
 			        "ca_middlename='"+  req.getParameter("ca_middlename").toString()  +"' , "+
 		    		"ca_lastname='"+  req.getParameter("ca_lastname").toString()  +"' , "+
@@ -241,11 +241,11 @@ public class DataPlugin {
 		    		 
 			try{  
 				PreparedStatement ps=con.prepareStatement(sql);  
- 		    	rs=ps.executeQuery();  
+ 		        res = ps.executeUpdate() ;  
  		    }catch(Exception e){System.out.println(e);}  
 			
 		}
-		return sql +"!! " ;
+		return res;
 	}
 	public String getList(String classname , String filter){ 
 		 

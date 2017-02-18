@@ -123,7 +123,7 @@ public class FrontController {
 	public @ResponseBody
 	String formEditCandidate(HttpServletRequest req) {
 		DataPlugin DataPlug = new DataPlugin();
-		return DataPlug.edit(req, "candidate");
+		return "Result "+ DataPlug.edit(req, "candidate");
 	    
 	}
 	@RequestMapping("/candidates/form/add")
@@ -131,7 +131,7 @@ public class FrontController {
 	String candidateAdd(HttpServletRequest request) {
     
 		DataPlugin DataPlug = new DataPlugin();
-		return DataPlug.edit(request, "candidate");
+		return "Result "+DataPlug.edit(request, "candidate");
 
 		// return request.getParameter("cn_lastname") ;
 
@@ -174,7 +174,7 @@ public class FrontController {
 	String formUsersUpdate(HttpServletRequest request) {
 
 		DataPlugin DataPlug = new DataPlugin();
-		return DataPlug.edit(request, "Users");
+		return "Result "+ DataPlug.edit(request, "Users");
 
 		// return request.getParameter("cn_lastname") ;
 
