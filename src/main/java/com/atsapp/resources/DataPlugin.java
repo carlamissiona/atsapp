@@ -141,7 +141,31 @@ public class DataPlugin {
 			    }catch(Exception e){System.out.println(e);}
 		 
 		 }
+		 if( objModel.equalsIgnoreCase("Users") ||  objModel.contains("Users") || objModel.contentEquals("Users") ){
+			 List<Account> aclist = new ArrayList<Account>();  
+		      
+			    try{  
+			        // 
+			        PreparedStatement ps=con.prepareStatement("Select * from accounts where ac_id = "+ id ); 
+			        ResultSet rs=ps.executeQuery(); 
+			        while(rs.next()){  
+			            Account a = new Account();    
+			            a.setAc_address(rs.getString("ac_address"));
+			            a.setAc_email(rs.getString("ac_email")); 
+			            a.setAc_employment_date(rs.getString("ac_employement_date"));
+			            a.setAc_id(rs.getInt("ac_is"));
+			            a.setAc_firstname(rs.getString("ac_firstname"));
+			            a.setAc_lastname(rs.getString("ac_lastname"));
+			            a.setAc_middlename(rs.getString("ac_middlename"));
+			            a.setAc_mobile(rs.getString("ac_mobile"));
+			            a.setAc_status(rs.getString("ac_status"));
+			            aclist.add(a);
+			        } 			         
+			   		rt = gson.toJson(aclist);
+			        
+			    }catch(Exception e){System.out.println(e);}
 		 
+		 }
 		 if( objModel.equalsIgnoreCase("Company") ||  objModel.contains("Company") || objModel.contentEquals("Company") ){
 			 	String sql ="";
 			 	List<Company> colist = new ArrayList<Company>();  
@@ -176,7 +200,24 @@ public class DataPlugin {
 		 String sql ="";
 		 String rt = "";
 		
-		if(model.contains("candidate") ){
+		 if(model.contains("user") || model.equalsIgnoreCase("user") || model.contentEquals("user") ){
+			    sql = "UPDATE accounts SET  ac_firstname='"+ req.getParameter("ac_firstname").toString() +"', "+
+			    		"ac_middlename='"+  req.getParameter("ac_middlename").toString()  +"' , "+
+			    		"ac_lastname='"+  req.getParameter("ac_lastname").toString()  +"' , "+
+			    		"ac_mobile='"+  req.getParameter("ac_mobile").toString()  +"' , "+
+			    		"ac_address='"+  req.getParameter("ac_address").toString()  +"' , "+
+			    		"ac_employement_date ='"+  req.getParameter("ac_employement_date").toString()  +"' , "+
+			    		"ac_status='"+  req.getParameter("ac_status").toString()  +"' , "+
+			    		"where ac_id ="+ req.getParameter("ac_id").toString() + " "; 
+			    		
+			    		 
+				try{  
+			    	PreparedStatement ps=con.prepareStatement(sql);  
+			    	rs=ps.executeQuery();  
+			    }catch(Exception e){System.out.println(e);}  
+			 
+		 }
+		if(model.contains("candidate") || model.equalsIgnoreCase("candidate") || model.contentEquals("candidate") ){
 			
 			// edit Candidate
 	    	//	cn_firstname=Carla&cn_middlename=A&cn_lastname=Wi&cn_email=missiona.carla%40gmail.com&cn_mobile=09990991&cn_add=qc+qcs&cn_tel=12345&cn_recruiter=1&cn_recruiter=QC&cn_status=interviewed&cn_job_title=Software+Developer

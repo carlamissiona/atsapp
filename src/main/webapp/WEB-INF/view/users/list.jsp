@@ -357,7 +357,7 @@
 		 
 			for (i = 0; i < userStore.length; i++) { 
 				$(".table-candidates tbody").append(
-				  "<tr> <td> <div class='checkbox'> <label> <input type='checkbox' value='"+  userStore[i].ac_id  +"'> </label> </div> </td>" +
+				  "<tr> <td> <div class='checkbox'> <label> <input type='checkbox' value='"+  userStore[i].ac_email+"'> </label> </div> </td>" +
 				  " <td>" + userStore[i].ac_firstname + " " + userStore[i].ac_lastname + " </td>" +
 				  " <td>" + userStore[i].ac_email +"</td> " +
 				  " <td>" + userStore[i].ac_address+ "</td>" +
@@ -369,8 +369,8 @@
 				       "<span class='sr-only'>Toggle Dropdown</span>"+
 				       "</button>"+
 				       "<ul class='dropdown-menu' role='menu'>" +
-				         "<li><a href='/candidates/view/"+ userStore[i].cm_id +"'>View</a></li>" +
-				         "<li><a href='/candidate/edit'>Edit</a></li>"+
+				         "<li><a href='/users/view/"+ userStore[i].ac_id +"'>View</a></li>" +
+				         "<li><a href='/users/edit'>Edit</a></li>"+
 				         "<li><a href='#'>Email</a></li>"+
 				  	   "</ul> </div> </td> </tr>"
 				 );

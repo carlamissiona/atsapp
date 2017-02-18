@@ -64,6 +64,27 @@ public class FrontController {
 		return new ModelAndView("other/calendar", "message", message);
 	}
 
+ 
+
+ 
+	@RequestMapping("/company/view/{cm_id}")
+	public ModelAndView viewCompany(@PathVariable(value = "cm_id") String id) {
+		DataPlugin DataPlug = new DataPlugin();
+
+		String message = "Company Lists";
+		String company = DataPlug.getOne("Company", id);
+		String signedin = new DataPlugin()
+				.getList("Users", " ac_signed_in = 1");
+
+		ModelAndView mv = new ModelAndView("companies/view");
+		mv.addObject("company", company);
+		mv.addObject("msg", message);
+		mv.addObject("whose_online", signedin);
+
+		return mv;
+
+	}
+	//********************Candidates
 	@RequestMapping("/candidates")
 	public ModelAndView candidatelist() {
 
@@ -80,7 +101,6 @@ public class FrontController {
 		mv.addObject("whose_online", signedin);
 		return mv;
 	}
-
 	@RequestMapping("/candidates/view/{cnd_id}")
 	public ModelAndView viewCandidate(@PathVariable(value = "cnd_id") String cid) {
 		DataPlugin DataPlug = new DataPlugin();
@@ -99,23 +119,6 @@ public class FrontController {
 
 	}
 
-	@RequestMapping("/company/view/{cm_id}")
-	public ModelAndView viewCompany(@PathVariable(value = "cm_id") String id) {
-		DataPlugin DataPlug = new DataPlugin();
-
-		String message = "Company Lists";
-		String company = DataPlug.getOne("Company", id);
-		String signedin = new DataPlugin()
-				.getList("Users", " ac_signed_in = 1");
-
-		ModelAndView mv = new ModelAndView("companies/view");
-		mv.addObject("company", company);
-		mv.addObject("msg", message);
-		mv.addObject("whose_online", signedin);
-
-		return mv;
-
-	}
 	@RequestMapping("/candidates/form/edit")
 	public @ResponseBody
 	String formCandidateUpdate(HttpServletRequest request) {
@@ -129,13 +132,58 @@ public class FrontController {
 	@RequestMapping("/candidates/form/add")
 	public @ResponseBody
 	String formEdit(HttpServletRequest request) {
-
+    
 		DataPlugin DataPlug = new DataPlugin();
 		return DataPlug.edit(request, "candidate");
 
 		// return request.getParameter("cn_lastname") ;
 
 	}
+	//********************Candidates
+	
+	
+	//********************USERS
+	@RequestMapping("/users/view/{cm_id}")
+	public ModelAndView viewUser(@PathVariable(value = "ac_id") String id) {
+		DataPlugin DataPlug = new DataPlugin();
+
+		String message = "Company Lists";
+		String users = DataPlug.getOne("Users", id);
+		String signedin = new DataPlugin()
+				.getList("Users", " ac_signed_in = 1");
+
+		ModelAndView mv = new ModelAndView("users/view");
+		mv.addObject("users", users); 
+		mv.addObject("whose_online", signedin);
+
+		return mv;
+
+	}
+	@RequestMapping("/users")
+	public ModelAndView accountlist() {
+		DataPlugin DataPlug = new DataPlugin();
+		String message = "Account Lists";
+
+		String accounts = DataPlug.getList("Users", "");
+
+		ModelAndView mv = new ModelAndView("users/list");
+
+		mv.addObject("users", accounts);
+
+		return mv;
+	}
+	@RequestMapping("/users/form/edit")
+	public @ResponseBody
+	String formUsersUpdate(HttpServletRequest request) {
+
+		DataPlugin DataPlug = new DataPlugin();
+		return DataPlug.edit(request, "Users");
+
+		// return request.getParameter("cn_lastname") ;
+
+	}
+	//********************USERS
+ 
 
 	@RequestMapping("/companies")
 	public ModelAndView companyList() {
@@ -163,19 +211,7 @@ public class FrontController {
 		return mv;
 	}
 
-	@RequestMapping("/users")
-	public ModelAndView accountlist() {
-		DataPlugin DataPlug = new DataPlugin();
-		String message = "Account Lists";
-
-		String accounts = DataPlug.getList("Users", "");
-
-		ModelAndView mv = new ModelAndView("users/list");
-
-		mv.addObject("users", accounts);
-
-		return mv;
-	}
+ 
 
 	@RequestMapping("/jobs")
 	public ModelAndView jobslist() {

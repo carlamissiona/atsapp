@@ -221,97 +221,63 @@
 											<label class="col-sm-2 col-sm-2 control-label">First
 												name</label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control ca_firstname"
-													name="ca_firstname" disabled>
+												<input type="text" class="form-control ac_firstname"
+													name="ac_firstname" disabled>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-sm-2 col-sm-2 control-label">Middle
 												name</label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control ca_middlename"
-													name="ca_middlename" disabled>
+												<input type="text" class="form-control ac_middlename"
+													name="ac_middlename" disabled>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-sm-2 col-sm-2 control-label">Last
 												name</label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control ca_lastname"
-													name="ca_lastname" disabled>
+												<input type="text" class="form-control ac_lastname"
+													name="ac_lastname" disabled>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-sm-2 col-sm-2 control-label">Email</label>
 											<div class="col-sm-10">
-												<input type="email" class="form-control ca_email"
-													name="ca_email" disabled>
+												<input type="email" class="form-control ac_email"
+													name="ac_email" disabled>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-sm-2 col-sm-2 control-label">Mobile
 												No.</label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control ca_mobile"
-													name="ca_mobile" disabled>
+												<input type="text" class="form-control ac_mobile"
+													name="ac_mobile" disabled>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-sm-2 col-sm-2 control-label">Address
 											</label>
 											<div class="col-sm-10">
-												<textarea class="form-control ca_add" name="ca_add" disabled></textarea>
+												<textarea class="form-control ac_address" name="ac_address" disabled></textarea>
 											</div>
 										</div>
 										<div class="form-group">
-											<label class="col-sm-2 col-sm-2 control-label">Tel.</label>
+											<label class="col-sm-2 col-sm-2 control-label">Employment Date</label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control ca_tel" name="ca_tel"
+												<input type="text" class="form-control ac_employement_date" name="ac_employement_date"
 													disabled>
 											</div>
 										</div>
-										<div class="form-group">
-											<label class="col-sm-2 col-sm-2 control-label">Recruiter</label>
+									  		<div class="form-group">
+											<label class="col-sm-2 col-sm-2 control-label">Employment Status</label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control ca_recruiter"
-													name="ca_recruiter_id" disabled>
+												<input type="text" class="form-control ac_status" name="ac_status2"
+													disabled>
 											</div>
 										</div>
-										<div class="form-group">
-											<label class="col-sm-2 col-sm-2 control-label">City </label>
-											<div class="col-sm-10">
-												<input type="text" class="form-control ca_city"
-													name="ca_city" disabled>
-											</div>
-										</div>
-										<div class="form-group">
-											<label class="col-sm-2 col-sm-2 control-label">Status
-											</label>
-											<div class="col-sm-10">
-												<input type="text" class="form-control ca_status"
-													name="ca_status" disabled>
-											</div>
-										</div>
-										<div class="form-group">
-											<label class="col-sm-2 col-sm-2 control-label">Job
-												Title </label>
-											<div class="col-sm-10">
-												<input type="text" class="form-control ca_job_title"
-													name="ca_job_title" disabled> <span
-													class="help-block">Add job titles this candidate is
-													qualified for. Use comma as separator for multiple jobs.</span>
-											</div>
-										</div>
-										<div class="form-group">
-											<label class="col-sm-2 col-sm-2 control-label">
-												Source </label>
-											<div class="col-sm-10">
-												<select class="form-control" disabled>
-													<option selected value="1">Referral</option>
-													<option value="2">Site</option>
-												</select>
-											</div>
-										</div>
+								  	
 
 										<div class="form-group">
 											<label class="col-sm-2 col-sm-2 control-label">
@@ -323,8 +289,8 @@
 											</div>
 										</div>
 									 
-									<input type="hidden" class="form-control ca_id"
-													name="ca_id" disabled >
+									<input type="hidden" class="form-control ac_id"
+													name="ac_id" disabled >
 									</form>
 								</div>
 							</div>
@@ -469,35 +435,32 @@
 					console.log("I clicked edit submit");
 				 var form = $("form").serialize();
 				 console.log(form);
-				 $.post( window.location.origin + "/candidates/form/edit", form , function( data ) {
+				 $.post( window.location.origin + "/users/form/edit", form , function( data ) {
 					  alert( "Data Loaded: " + data );
 					  console.log(data);
 					});
 		 
 			});
             //*********** Ccandidates list table
-			var candidateForm =${candidate};
+			var userForm =$users};
 			var whose_online = ${whose_online};
 
-			populateForm(candidateForm); 
+			populateForm(userForm); 
 			
 			 
         });
         
         function populateForm(candidate){
             console.log("!!");
-			$("input.ca_firstname").attr("value" , candidate[0].ca_firstname);
-			$("input.ca_lastname").attr("value" ,  candidate[0].ca_lastname);
-			$("input.ca_middlename").attr("value" ,  candidate[0].ca_middlename);
-			$("input.ca_email").attr("value" ,  candidate[0].ca_email);
-			$("input.ca_mobile").attr("value" ,  candidate[0].ca_mobile);
-			$("input.ca_tel").attr("value" , candidate[0].ca_tel);
-			$("input.ca_recruiter_id").attr("value" , candidate[0].ca_recruiter_id);
-			$("textarea.ca_add").attr("value" ,  candidate[0].ca_add);
-			$("input.ca_city").attr("value" ,  candidate[0].ca_city);
-			$("input.ca_status").attr("value" ,  candidate[0].ca_status);
-			$("input.ca_job_title").attr("value" ,  candidate[0].ca_job_title);
-			$("input.ca_id").attr("value" ,  candidate[0].ca_id);
+			$("input.ac_firstname").attr("value" , user[0].ac_firstname);
+			$("input.ac_lastname").attr("value" ,  user[0].ac_lastname);
+			$("input.ac_middlename").attr("value" ,  user[0].ac_middlename);
+			$("input.ac_email").attr("value" ,  user[0].ac_email);
+			$("input.ac_mobile").attr("value" ,  user[0].ac_mobile);			
+			$("textarea.ac_addresss").attr("value" ,  user[0].ac_address);
+			$("input.ac_employement_date").attr("value" ,  user[0].ac_employement_date);
+			$("input.ac_status").attr("value" ,  user[0].ac_status);						
+			$("input.ac_id").attr("value" ,  user[0].ac_id);
         }
         function viewCvlink(){
 			
@@ -646,4 +609,4 @@
 		</body>
 
 		</html>
-	
+	 
