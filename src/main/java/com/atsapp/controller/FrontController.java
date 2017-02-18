@@ -209,7 +209,7 @@ public class FrontController {
 	}
 
  
-
+	//***************************************** JOBS
 	@RequestMapping("/jobs")
 	public ModelAndView jobslist() {
 		DataPlugin DataPlug = new DataPlugin();
@@ -222,6 +222,22 @@ public class FrontController {
 		return mv;
 
 	}
+	@RequestMapping("/jobs/view/{job_id}")
+	public ModelAndView viewJobs(@PathVariable(value = "job_id") String id) {
+		DataPlugin DataPlug = new DataPlugin();
+ 
+		String job = DataPlug.getOne("Jobs", id);
+		String signedin = new DataPlugin()
+				.getList("Users", " ac_signed_in = 1");
+
+		ModelAndView mv = new ModelAndView("candidates/view");
+		mv.addObject("job", job);
+		mv.addObject("whose_online", signedin);
+
+		return mv;
+
+	}
+	//***************************************** JOBS
 
 	@RequestMapping("/email")
 	public ModelAndView emails() {

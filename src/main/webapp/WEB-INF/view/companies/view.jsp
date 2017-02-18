@@ -405,7 +405,6 @@
             //*********** Ccandidates list table
 			var companyForm =${company};
 			var whose_online = ${whose_online};
-
 			populateForm(companyForm); 
 			
 			 
@@ -413,10 +412,11 @@
         
         function populateForm(company){
             console.log("!!");
+            console.log(company);
 			$("input.cm_name").attr("value" , company[0].cm_name);
 			$("input.cm_desc").attr("value" ,  company[0].cm_desc);
-			$("input.cm_contact_linked").attr("value" ,  company[0].cm_contact_linked);
-		 
+			$("input.cm_contact_linked").attr("value" ,  company[0].cm_contact);
+		    
 			
         }
         function viewCvlink(){

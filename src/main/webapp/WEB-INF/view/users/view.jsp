@@ -442,7 +442,7 @@
 		 
 			});
             //*********** Ccandidates list table
-			var userForm =$users};
+			var userForm =${users};
 			var whose_online = ${whose_online};
 
 			populateForm(userForm); 
@@ -450,8 +450,9 @@
 			 
         });
         
-        function populateForm(candidate){
+        function populateForm(user){
             console.log("!!");
+            console.log(user);
 			$("input.ac_firstname").attr("value" , user[0].ac_firstname);
 			$("input.ac_lastname").attr("value" ,  user[0].ac_lastname);
 			$("input.ac_middlename").attr("value" ,  user[0].ac_middlename);
