@@ -213,7 +213,7 @@
 							<div class="col-lg-12">
 								<div class="content-panel">
 									<h4>
-										<i class="fa fa-angle-right"></i> Jobs <span class="pull-right"><button type="button" class="btn btn-info" style="margin:10px;" >Mass Email</button></span>
+										<i class="fa fa-angle-right"></i> Job Order <span class="pull-right"><button type="button" class="btn btn-info" style="margin:10px;" >Mass Email</button></span>
 									</h4>
 									<section id="unseen">
 										<table
@@ -221,6 +221,7 @@
 											<thead class="cf">
 												<tr>
 													<th class="numeric">Name</th>
+													<th class="numeric">Job For</th>
 													<th class="numeric">Contact</th>
 													<th class="numeric">Description</th>
 													<th class="numeric">Notes</th>

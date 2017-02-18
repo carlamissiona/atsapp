@@ -88,7 +88,7 @@ public class DataPlugin {
 	 
 		 String rt = "";
 		
-		// ***************************** Candidate 
+		// ***************************** CANDIDATE 
 		 if( objModel.equalsIgnoreCase("Candidate") || objModel.contains("Candidate") || objModel.contentEquals("Candidate") ){
 			 List<Candidate> cnlist = new ArrayList<Candidate>();  
 		       
@@ -125,11 +125,11 @@ public class DataPlugin {
 		      
 			    try{  
 			        // 
-			        PreparedStatement ps=con.prepareStatement("select j.*,  concat(c.co_firstname, ' ', c.co_lastname) as jo_contact_linked  from jobs j left join contacts c on j.jo_contact = c.co_id  where j.jo_id = "+ id ); 
+			        PreparedStatement ps=con.prepareStatement("select j.*,  cm_name as jo_client_name,  concat(c.co_firstname, ' ', c.co_lastname) as jo_contact_linked  from jobs j left join contacts c on j.jo_contact = c.co_id where jo_id left join companies cm on cm.cm_id = j.jo_client where j.jo_id ="+ id ); 
 			        ResultSet rs=ps.executeQuery(); 
 			        while(rs.next()){  
 			            Job j = new Job();    
-			            j.setJo_client(rs.getString("jo_client"));
+			            j.setJo_client(rs.getString("jo_client_name"));
 			            j.setJo_contact(rs.getString("jo_contact_linked"));
 			            j.setJo_desc(rs.getString("jo_desc"));
 			            j.setJo_id(rs.getInt("jo_id"));
@@ -155,7 +155,7 @@ public class DataPlugin {
 			            a.setAc_address(rs.getString("ac_address"));
 			            a.setAc_email(rs.getString("ac_email")); 
 			            a.setAc_employment_date(rs.getString("ac_employement_date"));
-			            a.setAc_id(rs.getInt("ac_is"));
+			            a.setAc_id(rs.getInt("ac_id"));
 			            a.setAc_firstname(rs.getString("ac_firstname"));
 			            a.setAc_lastname(rs.getString("ac_lastname"));
 			            a.setAc_middlename(rs.getString("ac_middlename"));

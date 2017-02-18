@@ -144,15 +144,16 @@ public class FrontController {
 	public ModelAndView viewUser(@PathVariable(value = "ac_id") String id) {
 		DataPlugin DataPlug = new DataPlugin();
 
-		String message = "Company Lists";
+		 
 		String users = DataPlug.getOne("Users", id);
 		String signedin = new DataPlugin()
 				.getList("Users", " ac_signed_in = 1");
 
 		ModelAndView mv = new ModelAndView("users/view");
 		mv.addObject("users", users); 
+		String message = "Debug "+ id + "  = "+ users;
 		mv.addObject("whose_online", signedin);
-
+		mv.addObject("msg", message);
 		return mv;
 
 	}
@@ -230,7 +231,7 @@ public class FrontController {
 		String signedin = new DataPlugin()
 				.getList("Users", " ac_signed_in = 1");
 
-		ModelAndView mv = new ModelAndView("candidates/view");
+		ModelAndView mv = new ModelAndView("jobs/view");
 		mv.addObject("job", job);
 		mv.addObject("whose_online", signedin);
 

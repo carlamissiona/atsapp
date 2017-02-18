@@ -218,79 +218,41 @@
 									</h4>
 									<form class="form-horizontal style-form" method="post">
 										<div class="form-group">
-											<label class="col-sm-2 col-sm-2 control-label">First
-												name</label>
+											<label class="col-sm-2 col-sm-2 control-label">
+												Job </label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control ac_firstname"
-													name="ac_firstname" disabled>
+												<input type="text" class="form-control cm_name"
+													name="cm_name" disabled>
+											</div>
+										</div>
+										
+										<div class="form-group">
+											<label class="col-sm-2 col-sm-2 control-label">Description</label>
+											<div class="col-sm-10">
+												<input type="text" class="form-control cm_desc"
+													name="cm_desc" disabled>
 											</div>
 										</div>
 										<div class="form-group">
-											<label class="col-sm-2 col-sm-2 control-label">Middle
-												name</label>
+											<label class="col-sm-2 col-sm-2 control-label">Contact Person</label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control ac_middlename"
-													name="ac_middlename" disabled>
+												<input type="text" class="form-control cm_contact_linked"
+													name="cm_contact_linked" disabled>
 											</div>
 										</div>
-										<div class="form-group">
-											<label class="col-sm-2 col-sm-2 control-label">Last
-												name</label>
-											<div class="col-sm-10">
-												<input type="text" class="form-control ac_lastname"
-													name="ac_lastname" disabled>
-											</div>
-										</div>
-										<div class="form-group">
-											<label class="col-sm-2 col-sm-2 control-label">Email</label>
-											<div class="col-sm-10">
-												<input type="email" class="form-control ac_email"
-													name="ac_email" disabled>
-											</div>
-										</div>
-										<div class="form-group">
-											<label class="col-sm-2 col-sm-2 control-label">Mobile
-												No.</label>
-											<div class="col-sm-10">
-												<input type="text" class="form-control ac_mobile"
-													name="ac_mobile" disabled>
-											</div>
-										</div>
-										<div class="form-group">
-											<label class="col-sm-2 col-sm-2 control-label">Address
-											</label>
-											<div class="col-sm-10">
-												<textarea class="form-control ac_address" name="ac_address" disabled></textarea>
-											</div>
-										</div>
-										<div class="form-group">
-											<label class="col-sm-2 col-sm-2 control-label">Employment Date</label>
-											<div class="col-sm-10">
-												<input type="text" class="form-control ac_employement_date" name="ac_employement_date"
-													disabled>
-											</div>
-										</div>
-									  		<div class="form-group">
-											<label class="col-sm-2 col-sm-2 control-label">Employment Status</label>
-											<div class="col-sm-10">
-												<input type="text" class="form-control ac_status" name="ac_status2"
-													disabled>
-											</div>
-										</div>
-								  	
-
+										
+										
 										<div class="form-group">
 											<label class="col-sm-2 col-sm-2 control-label">
 												Update </label>
 											<div class="col-sm-10">
 												<button type="button"
-													class="btn btn-info btn-sm btn-edit-candidate pull-right"
+													class="btn btn-info btn-sm btn-edit-company pull-right"
 													style="margin: 10px;">Submit</button> <br>
 											</div>
 										</div>
 									 
-									<input type="hidden" class="form-control ac_id"
-													name="ac_id" disabled >
+
 									</form>
 								</div>
 							</div>
@@ -435,33 +397,27 @@
 					console.log("I clicked edit submit");
 				 var form = $("form").serialize();
 				 console.log(form);
-				 $.post( window.location.origin + "/users/form/edit", form , function( data ) {
+				 $.post( window.location.origin + "/jobs/form/edit", form , function( data ) {
 					  alert( "Data Loaded: " + data );
-					  console.log(data);
 					});
 		 
 			});
             //*********** Ccandidates list table
-			var userForm =${users};
+			var jobForm =${jobs};
 			var whose_online = ${whose_online};
-
-			populateForm(userForm); 
-			console.log(${msg});
+			populateForm(jobForm); 
+			
 			 
         });
         
-        function populateForm(user){
+        function populateForm(jobs){
             console.log("!!");
-            console.log(user);
-			$("input.ac_firstname").attr("value" , user[0].ac_firstname);
-			$("input.ac_lastname").attr("value" ,  user[0].ac_lastname);
-			$("input.ac_middlename").attr("value" ,  user[0].ac_middlename);
-			$("input.ac_email").attr("value" ,  user[0].ac_email);
-			$("input.ac_mobile").attr("value" ,  user[0].ac_mobile);			
-			$("textarea.ac_addresss").attr("value" ,  user[0].ac_address);
-			$("input.ac_employement_date").attr("value" ,  user[0].ac_employement_date);
-			$("input.ac_status").attr("value" ,  user[0].ac_status);						
-			$("input.ac_id").attr("value" ,  user[0].ac_id);
+            console.log(jobs);
+			$("input.cm_name").attr("value" , jobs[0].cm_name);
+			$("input.cm_desc").attr("value" ,  jobs[0].cm_desc);
+			$("input.cm_contact_linked").attr("value" ,  jobs[0].cm_contact);
+		    
+			
         }
         function viewCvlink(){
 			
@@ -610,4 +566,4 @@
 		</body>
 
 		</html>
-	 
+	
