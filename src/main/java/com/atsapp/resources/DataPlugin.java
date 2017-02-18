@@ -108,6 +108,7 @@ public class DataPlugin {
 			            c.setCa_mobile(rs.getString("ca_mobile"));
 			            c.setCa_recruiter_id(rs.getString("ca_recruiter_id"));
 			            c.setCa_source(rs.getString("ca_source"));
+			            c.setCa_recruiter(rs.getString("ca_recruiter"));
 			            c.setCa_tel(rs.getString("ca_tel"));
 			            c.setCa_id(rs.getInt("ca_id"));
 			            c.setCa_status(rs.getString("ca_status"));			            

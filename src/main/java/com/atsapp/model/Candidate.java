@@ -11,7 +11,8 @@ public class Candidate {
 	private String ca_mobile;
 	private String ca_tel;
 	private String ca_recruiter_id;
-	private String ca_city;
+	private String ca_recruiter;
+ 	private String ca_city;
 	private String ca_cv_url;
 	private String ca_status;
 	private String ca_job_title;
@@ -22,6 +23,12 @@ public class Candidate {
 	}
 	public void setCa_id(int ca_id) {
 		this.ca_id = ca_id;
+	}
+	public String getCa_recruiter() {
+		return ca_recruiter;
+	}
+	public void setCa_recruiter(String ca_recruiter) {
+		this.ca_recruiter = ca_recruiter;
 	}
 	public String getCa_firstname() {
 		return ca_firstname;

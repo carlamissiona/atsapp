@@ -214,7 +214,8 @@
 									<h4 class="mb">
 										<i class="fa fa-angle-right"></i> Form Elements <span
 											class="pull-right"><button type="button"
-												class="btn btn-info btn-sm btn-edit-cnd" style="margin: 10px;">Edit</button></span>
+												class="btn btn-info btn-sm btn-edit-cnd"
+												style="margin: 10px;">Edit</button></span>
 									</h4>
 									<form class="form-horizontal style-form" method="post">
 										<div class="form-group">
@@ -274,7 +275,10 @@
 											<label class="col-sm-2 col-sm-2 control-label">Recruiter</label>
 											<div class="col-sm-10">
 												<input type="text" class="form-control ca_recruiter"
-													name="ca_recruiter_id" disabled>
+													name="ca_recruiter" disabled> 
+												<input type="hidden"
+													class="form-control ca_recruiter_id" name="ca_recruiter_id"
+													disabled>
 											</div>
 										</div>
 										<div class="form-group">
@@ -319,12 +323,13 @@
 											<div class="col-sm-10">
 												<button type="button"
 													class="btn btn-info btn-sm btn-edit-candidate pull-right"
-													style="margin: 10px;">Submit</button> <br>
+													style="margin: 10px;">Submit</button>
+												<br>
 											</div>
 										</div>
-									 
-									<input type="hidden" class="form-control ca_id"
-													name="ca_id" disabled >
+
+										<input type="hidden" class="form-control ca_id" name="ca_id"
+											disabled>
 									</form>
 								</div>
 							</div>
@@ -423,6 +428,7 @@
 		
 		
 		
+		
         $(document).ready(function () {
             $("#date-popover").popover({html: true, trigger: "manual"});
             $("#date-popover").hide();
@@ -449,7 +455,7 @@
             //*********** If Edit button was clicked 
             $( ".btn-edit-cnd" ).click(function() {
                 $(".form-control").removeAttr("disabled");
-			
+                $(".form-control.ca_recruiter").attr("disabled","");
              });
             
 			//*********** If view cv is clicked
@@ -494,6 +500,7 @@
 			$("input.ca_mobile").attr("value" ,  candidate[0].ca_mobile);
 			$("input.ca_tel").attr("value" , candidate[0].ca_tel);
 			$("input.ca_recruiter_id").attr("value" , candidate[0].ca_recruiter_id);
+			$("input.ca_recruiter").attr("value" , candidate[0].ca_recruiter);
 			$("textarea.ca_add").attr("value" ,  candidate[0].ca_add);
 			$("input.ca_city").attr("value" ,  candidate[0].ca_city);
 			$("input.ca_status").attr("value" ,  candidate[0].ca_status);
@@ -521,6 +528,7 @@
         }
     	
 		
+	
 	
 	
 	
