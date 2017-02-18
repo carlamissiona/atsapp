@@ -124,6 +124,7 @@ public class FrontController {
 	String formCandidateUpdate(HttpServletRequest request) {
 
 		DataPlugin DataPlug = new DataPlugin();
+		
 		return DataPlug.edit(request, "candidate");
 
 		// return request.getParameter("cn_lastname") ;
@@ -143,7 +144,7 @@ public class FrontController {
 	
 	
 	//********************USERS
-	@RequestMapping("/users/view/{cm_id}")
+	@RequestMapping("/users/view/{ac_id}")
 	public ModelAndView viewUser(@PathVariable(value = "ac_id") String id) {
 		DataPlugin DataPlug = new DataPlugin();
 
