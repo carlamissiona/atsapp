@@ -486,6 +486,7 @@
         
         function populateForm(candidate){
             console.log("!!");
+            console.log(candidate[0]);
 			$("input.ca_firstname").attr("value" , candidate[0].ca_firstname);
 			$("input.ca_lastname").attr("value" ,  candidate[0].ca_lastname);
 			$("input.ca_middlename").attr("value" ,  candidate[0].ca_middlename);
