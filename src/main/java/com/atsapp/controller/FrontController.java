@@ -118,23 +118,23 @@ public class FrontController {
 		return mv;
 
 	}
-
+ 
 	@RequestMapping("/candidates/form/edit")
 	public @ResponseBody
 	String formCandidateUpdate(HttpServletRequest req) {
 
-		DataPlugin DataPlug = new DataPlugin();
-		
-		String sql = "UPDATE candidates SET  cn_firstname='"+ req.getParameter("cn_firstname").toString() +"', "+
-	    		"cn_middlename='"+  req.getParameter("cn_middlename").toString()  +"' , "+
-	    		"cn_lastname='"+  req.getParameter("cn_lastname").toString()  +"' , "+
-	    		"cn_mobile='"+  req.getParameter("cn_mobile").toString()  +"' , "+
-	    		"cn_add='"+  req.getParameter("cn_add").toString()  +"' , "+
-	    		"cn_recruiter_id ="+  req.getParameter("cn_recruiter_id").toString()  +" , "+
-	    		"cn_status='"+  req.getParameter("cn_status").toString()  +"' , "+
-	    		"cn_tel='"+  req.getParameter("cn_tel").toString()  +"' , "+
-	    		"cn_job_title='"+  req.getParameter("cn_job_title").toString()  +"'  "+
-	    		"where cn_id ="+ req.getParameter("cn_id").toString() + " "; 
+ 
+		String sql ="sdsd";
+//		String sql = "UPDATE candidates SET  cn_firstname='"+ req.getParameter("cn_firstname").toString() +"', "+
+//	    		"cn_middlename='"+  req.getParameter("cn_middlename").toString()  +"' , "+
+//	    		"cn_lastname='"+  req.getParameter("cn_lastname").toString()  +"' , "+
+//	    		"cn_mobile='"+  req.getParameter("cn_mobile").toString()  +"' , "+
+//	    		"cn_add='"+  req.getParameter("cn_add").toString()  +"' , "+
+//	    		"cn_recruiter_id ="+  req.getParameter("cn_recruiter_id").toString()  +" , "+
+//	    		"cn_status='"+  req.getParameter("cn_status").toString()  +"' , "+
+//	    		"cn_tel='"+  req.getParameter("cn_tel").toString()  +"' , "+
+//	    		"cn_job_title='"+  req.getParameter("cn_job_title").toString()  +"'  "+
+//	    		"where cn_id ="+ req.getParameter("cn_id").toString() + " "; 
 		return sql;
 		//return DataPlug.edit(request, "candidate");
 
