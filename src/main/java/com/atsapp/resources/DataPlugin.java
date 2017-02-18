@@ -226,22 +226,22 @@ public class DataPlugin {
 		 	//sql ="INSERT INTO Candidates (cn_firstname, cn_middlename,cn_lastname, cn_email, cn_mobile, cn_add, cn_tel , cn_recruiter ,cn_status ,cn_job_title)"
 			//+ "VALUES ('"+ req.getParameter("cn_firstname").toString()+"', '"+ req.getParameter("cn_middlename").toString() +"'  , '"+ req.getParameter("cn_lastname").toString() +"'  , '"+ req.getParameter("cn_email").toString() +"'  , '"+ req.getParameter("cn_mobile").toString() +"'  , '"+ req.getParameter("cn_add").toString() +"'  , '"+ req.getParameter("cn_tel").toString() +"'  , '"+ req.getParameter("cn_recruiter").toString() +"'  , '"+req.getParameter("cn_status").toString() +"'  , '"+ req.getParameter("cn_job_title").toString() +"' )";
 		   
-			sql = "UPDATE candidates SET  cn_firstname='"+ req.getParameter("cn_firstname").toString() +"', "+
-		    		"cn_middlename='"+  req.getParameter("cn_middlename").toString()  +"' , "+
-		    		"cn_lastname='"+  req.getParameter("cn_lastname").toString()  +"' , "+
-		    		"cn_mobile='"+  req.getParameter("cn_mobile").toString()  +"' , "+
-		    		"cn_add='"+  req.getParameter("cn_add").toString()  +"' , "+
-		    		"cn_recruiter_id ="+  req.getParameter("cn_recruiter_id").toString()  +" , "+
-		    		"cn_status='"+  req.getParameter("cn_status").toString()  +"' , "+
-		    		"cn_tel='"+  req.getParameter("cn_tel").toString()  +"' , "+
-		    		"cn_job_title='"+  req.getParameter("cn_job_title").toString()  +"'  "+
-		    		"where cn_id ="+ req.getParameter("cn_id").toString() + " "; 
+			sql = "UPDATE candidates SET ca_firstname='"+ req.getParameter("ca_firstname").toString() +"', "+
+			        "ca_middlename='"+  req.getParameter("ca_middlename").toString()  +"' , "+
+		    		"ca_lastname='"+  req.getParameter("ca_lastname").toString()  +"' , "+
+		    		"ca_mobile='"+  req.getParameter("ca_mobile").toString()  +"' , "+
+		    		"ca_add='"+  req.getParameter("ca_add").toString()  +"' , "+
+		    		"ca_recruiter_id ="+  req.getParameter("ca_recruiter_id").toString()  +" , "+
+		    		"ca_status='"+  req.getParameter("ca_status").toString()  +"' , "+
+		    		"ca_tel='"+  req.getParameter("ca_tel").toString()  +"' , "+
+		    		"ca_job_title='"+  req.getParameter("ca_job_title").toString()  +"'  "+
+		    		"where ca_id ="+ req.getParameter("ca_id").toString() ;
 		    		
 		    		 
 			try{  
-//		    	PreparedStatement ps=con.prepareStatement(sql);  
-//		    	rs=ps.executeQuery();  
-		    }catch(Exception e){System.out.println(e);}  
+				PreparedStatement ps=con.prepareStatement(sql);  
+ 		    	rs=ps.executeQuery();  
+ 		    }catch(Exception e){System.out.println(e);}  
 			
 		}
 		return sql +"!! " ;

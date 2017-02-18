@@ -121,18 +121,14 @@ public class FrontController {
  
 	@RequestMapping("/candidates/form/edit")
 	public @ResponseBody
-	String formCandidateUpdate(HttpServletRequest req) {
- 
-		//String sql = "UPDATE candidates SET cn_firstname='"+ req.getParameter("cn_firstname").toString() +"', cn_middlename='"+  req.getParameter("cn_middlename").toString()  +"' , cn_lastname='"+  req.getParameter("cn_lastname").toString()  +"' , cn_mobile='"+  req.getParameter("cn_mobile").toString()  +"' , cn_add='"+  req.getParameter("cn_add").toString()  +"' , cn_recruiter_id ="+  req.getParameter("cn_recruiter_id").toString()  +" , cn_status='"+  req.getParameter("cn_status").toString()  +"' , cn_tel='"+  req.getParameter("cn_tel").toString()  +"' , cn_job_title='"+  req.getParameter("cn_job_title").toString()  +"'  where cn_id ="+ req.getParameter("cn_id").toString() ;
-		return req.getParameter("cn_firstname").toString();
-		//return DataPlug.edit(request, "candidate");  
-
-		// return request.getParameter("cn_lastname") ;
-
+	String formEditCandidate(HttpServletRequest req) {
+		DataPlugin DataPlug = new DataPlugin();
+		return DataPlug.edit(req, "candidate");
+	    
 	}
 	@RequestMapping("/candidates/form/add")
 	public @ResponseBody
-	String candidateEdit(HttpServletRequest request) {
+	String candidateAdd(HttpServletRequest request) {
     
 		DataPlugin DataPlug = new DataPlugin();
 		return DataPlug.edit(request, "candidate");
