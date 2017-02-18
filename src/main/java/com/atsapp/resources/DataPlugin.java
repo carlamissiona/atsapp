@@ -120,12 +120,12 @@ public class DataPlugin {
 			    }catch(Exception e){System.out.println(e);}
 		 
 		 }
-		 if( objModel.equalsIgnoreCase("Jobs") ||  objModel.contains("Job") || objModel.contentEquals("Jobs") ){
+		 if( objModel.equalsIgnoreCase("Jobs") ||  objModel.contains("Jobs") || objModel.contentEquals("Jobs") ){
 			 List<Job> jolist = new ArrayList<Job>();  
 		      
 			    try{  
 			        // 
-			        PreparedStatement ps=con.prepareStatement("select j.*,  cm_name as jo_client_name,  concat(c.co_firstname, ' ', c.co_lastname) as jo_contact_linked  from jobs j left join contacts c on j.jo_contact = c.co_id where jo_id left join companies cm on cm.cm_id = j.jo_client where j.jo_id ="+ id ); 
+			        PreparedStatement ps=con.prepareStatement("select j.*,  cm_name as jo_client_name,  concat(c.co_firstname, ' ', c.co_lastname) as jo_contact_linked  from jobs j left join contacts c on j.jo_contact = c.co_id  left join companies cm on cm.cm_id = j.jo_client where j.jo_id ="+ id ); 
 			        ResultSet rs=ps.executeQuery(); 
 			        while(rs.next()){  
 			            Job j = new Job();    

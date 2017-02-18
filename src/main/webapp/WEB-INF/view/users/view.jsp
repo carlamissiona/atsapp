@@ -446,7 +446,7 @@
 			var whose_online = ${whose_online};
 
 			populateForm(userForm); 
-			console.log(${msg});
+//			console.log(${msg});
 			 
         });
         
