@@ -93,7 +93,7 @@ public class DataPlugin {
 			 List<Candidate> cnlist = new ArrayList<Candidate>();  
 		       
 			    try{  
-			    	String sql = "select * from candidates where ca_id = "+ id ;
+			    	String sql = "select * , concat(accounts.ac_firstname,' ' , accounts.ac_lastname ) as  ca_recruiter from candidates , accounts   where candidates.ca_id = "+ id + " and  ac_id = ca_recruiter_id" ;
 			        PreparedStatement ps=con.prepareStatement(sql); 
 			        ResultSet rs=ps.executeQuery(); 
 			        while(rs.next()){  
