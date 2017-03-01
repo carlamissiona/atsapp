@@ -329,7 +329,7 @@
 						
 
 						$( ".cb_email" ).click(function() {
-							  if( $(".cb_email").length > 0){
+							  if( $(".cb_email:checked").length > 0){
 								 console.log("----- disabled ------");
 	                             $(".btn-email").removeAttr("disabled");
 							  }else{

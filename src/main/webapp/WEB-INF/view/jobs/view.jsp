@@ -253,7 +253,7 @@
 												Update </label>
 											<div class="col-sm-10">
 												<button type="button"
-													class="btn btn-info btn-sm btn-edit-company pull-right"
+													class="btn btn-info btn-sm btn-edit-job pull-right"
 													style="margin: 10px;">Submit</button> <br>
 											</div>
 										</div>
@@ -396,7 +396,7 @@
 			});
 			//*********** Submit update form 
 			
-			$(".btn-edit-candidate").click(function(){
+			$(".btn-edit-job").click(function(){
 					console.log("I clicked edit submit");
 				 var form = $("form").serialize();
 				 console.log(form);

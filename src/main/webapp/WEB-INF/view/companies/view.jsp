@@ -394,7 +394,7 @@
 			});
 			//*********** Submit update form 
 			
-			$(".btn-edit-candidate").click(function(){
+			$(".btn-edit-company).click(function(){
 					console.log("I clicked edit submit");
 				 var form = $("form").serialize();
 				 console.log(form);
