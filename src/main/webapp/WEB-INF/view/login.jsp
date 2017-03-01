@@ -101,7 +101,7 @@
 								<div class="modal-footer">
 									<button data-dismiss="modal" class="btn btn-default"
 										type="button">Cancel</button>
-									<button class="btn btn-theme" type="button">Submit</button>
+									<button class="btn btn-theme btn-submit" type="button">Submit</button>
 								</div>
 							</div>
 						</div>
@@ -116,7 +116,7 @@
 	<!-- js placed at the end of the document so the pages load faster -->
 	<script src="/resources/theme_dashgum/assets/js/jquery.js"></script>
 	<script src="/resources/theme_dashgum/assets/js/bootstrap.min.js"></script>
-  
+    
 	<!--BACKSTRETCH-->
 	<!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
 	<script type="text/javascript"
@@ -125,6 +125,27 @@
 		$.backstretch("/resources/theme_dashgum/assets/img/assets/login-bg.jpg", {
 			speed : 500
 		});
+	</script>
+	<script type="text/javascript">
+
+	 $(document).ready(function () {
+  	 
+
+
+  			$(".btn-submit").click(function(){
+				console.log("I clicked edit submit");
+				 var form = $("form").serialize();
+				 console.log(form);
+				 $.post( window.location.origin + "/login/submit", form , function( data ) {
+					  alert( "Data Loaded: " + data );
+					  console.log(data);
+				 });
+		 
+			});
+
+	});
+
+
 	</script>
 
 

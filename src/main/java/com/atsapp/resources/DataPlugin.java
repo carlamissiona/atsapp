@@ -284,7 +284,6 @@ public class DataPlugin {
 			        }  
 			    }catch(Exception e){System.out.println(e);}  
 			  
-			   
 			    // convert your list to json
 			    rt = gson.toJson(cnlist);
 			   
@@ -294,7 +293,7 @@ public class DataPlugin {
 			 List<Account> aclist = new ArrayList<Account>();  
 			  ResultSet rs = null; String sql = "";
 			    try{  
-			    	sql ="select * from accounts ";
+			    	sql ="select * from accounts " + filter;
 			        PreparedStatement ps=con.prepareStatement(sql);  
 			        rs=ps.executeQuery();  
 			        while(rs.next()){  

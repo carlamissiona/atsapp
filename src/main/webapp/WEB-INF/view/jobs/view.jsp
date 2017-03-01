@@ -221,26 +221,32 @@
 											<label class="col-sm-2 col-sm-2 control-label">
 												Job </label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control cm_name"
-													name="cm_name" disabled>
+												<input type="text" class="form-control jo_name"
+													name="jo_name" disabled>
 											</div>
 										</div>
 										
 										<div class="form-group">
 											<label class="col-sm-2 col-sm-2 control-label">Description</label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control cm_desc"
-													name="cm_desc" disabled>
+												<textarea class="form-control jo_desc"
+													name="jo_desc" disabled> </textarea>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-sm-2 col-sm-2 control-label">Contact Person</label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control cm_contact_linked"
-													name="cm_contact_linked" disabled>
+												<input type="text" class="form-control jo_contact_linked"
+													name="jo_contact_linked" disabled>
 											</div>
 										</div>
-										
+										<div class="form-group">
+											<label class="col-sm-2 col-sm-2 control-label">Client</label>
+											<div class="col-sm-10">
+												<input type="text" class="form-control jo_client"
+													name="jo_client" disabled>
+											</div>
+										</div>
 										
 										<div class="form-group">
 											<label class="col-sm-2 col-sm-2 control-label">
@@ -402,8 +408,8 @@
 					});
 		 
 			});
-            //*********** Ccandidates list table
-			var jobForm =${jobs};
+            //*********** Job list table
+			var jobForm =${job};
 			var whose_online = ${whose_online};
 			populateForm(jobForm); 
 			
@@ -413,9 +419,10 @@
         function populateForm(jobs){
             console.log("!!");
             console.log(jobs);
-			$("input.cm_name").attr("value" , jobs[0].cm_name);
-			$("input.cm_desc").attr("value" ,  jobs[0].cm_desc);
-			$("input.cm_contact_linked").attr("value" ,  jobs[0].cm_contact);
+			$("input.jo_name").attr("value" , jobs[0].jo_name);
+			$("input.jo_desc").attr("value" ,  jobs[0].jo_desc);
+			$("input.jo_contact_linked").attr("value" ,  jobs[0].jo_contact);
+			$("input.jo_client").attr("value" ,  jobs[0].jo_client);
 		    
 			
         }

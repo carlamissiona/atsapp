@@ -51,6 +51,16 @@ public class FrontController {
 
 		return mv;
 	}
+	@RequestMapping("/login/submit")
+	public @ResponseBody
+	String ajaxLogin(HttpServletRequest request) {
+			
+       DataPlugin DataPlug = new DataPlugin();
+       String params = " WHERE password='"+ request.getParameter("ac_password") +"'  AND  email ='" + request.getParameter("ac_email")  + "' "; 
+	        
+       return "Result "+ DataPlug.getList("Accounts" ,params );
+	   
+	}
 
 	@RequestMapping("/calendar")
 	public ModelAndView calendar() {
@@ -245,5 +255,7 @@ public class FrontController {
 
 		return new ModelAndView("email/inbox");
 	}
+	
+ 
 
 }

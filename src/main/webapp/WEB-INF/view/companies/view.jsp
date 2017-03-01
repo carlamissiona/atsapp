@@ -348,9 +348,6 @@
 		
 		
 		
-		
-		
-		
         $(document).ready(function () {
             $("#date-popover").popover({html: true, trigger: "manual"});
             $("#date-popover").hide();
