@@ -133,7 +133,7 @@
   			$(".btn-submit").click(function(event){
 				console.log("I clicked edit submit");
 				 var form = $("form").serialize();
-				 console.log(form);
+				 console.log(form); 
 				 $.post( window.location.origin + "/login/submit", form , function( data ) {
 					  alert( "Data Loaded: " + data );
 					  console.log(data);

@@ -214,7 +214,7 @@
 								<div class="content-panel">
 									<h4>
 										<i class="fa fa-angle-right"></i> Candidates  <span class="pull-right span-email" >
-											<a href="#compose-modal" data-toggle="modal" id="compose-button" class="btn btn-primary pull-right btn-email " disabled>Test Email</a>
+											<a href="#compose-modal" data-toggle="modal" id="compose-button" class="btn btn-primary pull-right btn-email " disabled>Mass Email</a>
 										 </span>
 									</h4>
 									<section id="unseen">
@@ -330,6 +330,7 @@
 
 						$( ".cb_email" ).change(function() {
 							  if( $(".cb_email").length > 0){
+								 console.log("----- disabled ------");
 	                             $(".btn-email").removeAttr("disabled");
 							  }else{
 								 $(".btn-email").attr("disabled","");
@@ -338,7 +339,7 @@
 
 						$(".btn-email").click(function(){
 							if( $(".cb_email").length > 0){
-
+								$(".btn-email").removeAttr("disabled");
 						    }
 	
 						});
@@ -375,7 +376,7 @@
 
             //*********** candidates list table
 			var candidatesStore  =  ${candidates};
-			 var whose_online = ${whose_online};
+			var whose_online = ${whose_online};
 			
 			for (i = 0; i < candidatesStore.length; i++) { 
 				$(".table-candidates tbody").append(

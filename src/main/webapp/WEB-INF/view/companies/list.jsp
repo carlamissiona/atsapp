@@ -221,10 +221,9 @@
 											<thead class="cf">
 												<tr>
 													<th class="numeric">Name</th>
-													<th class="numeric">Contact</th>
-													<th class="numeric">Description</th>
-													<th class="numeric">Notes</th>
-													<th class="numeric">Status</th>
+													<th class="numeric">Description  </th>
+													<th class="numeric">Contact </th>
+													 
 													<th class="numeric">Action</th>
 												</tr>
 											</thead>
@@ -358,7 +357,16 @@
 				  "<tr> " +
 				  " <td>" + companiesStore[i].cm_name +  " </td>" +
 				  " <td>" + companiesStore[i].cm_desc +"</td> " +
-				  " <td>" + companiesStore[i].cm_contact+ "</td>" 
+				  " <td>" + companiesStore[i].cm_contact+ "</td>" +
+				  " <td>  <div class='btn-group open action-drop'> " +
+			      " <button type='button' class='btn btn-theme03'>Action</button> " + 
+			      " <button type='button' class='btn btn-theme03 dropdown-toggle' data-toggle='dropdown'> <span class='caret'></span> "+
+			      " <span class='sr-only'>Toggle Dropdown</span>"+
+			      " </button>"+
+			      " <ul class='dropdown-menu' role='menu'>" +
+			         "<li><a href='/companies/view/"+ companiesStore[i].cm_id +"'>View</a></li>" +
+			         "<li><a href='/companies/delete/"+ companiesStore[i].cm_id +"'>View</a></li>" +
+			  	   " </ul> </div> </td> </tr>"
 				 );
 				       
 				   

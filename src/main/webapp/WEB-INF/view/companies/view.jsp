@@ -214,7 +214,8 @@
 									<h4 class="mb">
 										<i class="fa fa-angle-right"></i> Form Elements <span
 											class="pull-right"><button type="button"
-												class="btn btn-info btn-sm btn-edit-cnd" style="margin: 10px;">Edit</button></span>
+												class="btn btn-info btn-sm btn-edit-cnd"
+												style="margin: 10px;">Edit</button></span>
 									</h4>
 									<form class="form-horizontal style-form" method="post">
 										<div class="form-group">
@@ -225,7 +226,7 @@
 													name="cm_name" disabled>
 											</div>
 										</div>
-										
+
 										<div class="form-group">
 											<label class="col-sm-2 col-sm-2 control-label">Description</label>
 											<div class="col-sm-10">
@@ -234,24 +235,26 @@
 											</div>
 										</div>
 										<div class="form-group">
-											<label class="col-sm-2 col-sm-2 control-label">Contact Person</label>
+											<label class="col-sm-2 col-sm-2 control-label">Contact
+												Person</label>
 											<div class="col-sm-10">
 												<input type="text" class="form-control cm_contact_linked"
 													name="cm_contact_linked" disabled>
 											</div>
 										</div>
-										
-										
+
+
 										<div class="form-group">
 											<label class="col-sm-2 col-sm-2 control-label">
 												Update </label>
 											<div class="col-sm-10">
 												<button type="button"
 													class="btn btn-info btn-sm btn-edit-company pull-right"
-													style="margin: 10px;">Submit</button> <br>
+													style="margin: 10px;">Submit</button>
+												<br>
 											</div>
 										</div>
-									 
+
 
 									</form>
 								</div>
@@ -348,6 +351,7 @@
 		
 		
 		
+		
         $(document).ready(function () {
             $("#date-popover").popover({html: true, trigger: "manual"});
             $("#date-popover").hide();
@@ -437,6 +441,7 @@
         }
     	
 		
+	
 	
 	
 	
