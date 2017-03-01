@@ -61,7 +61,7 @@
 		<div id="login-page">
 			<div class="container">
 
-				<form class="form-login" action="index.html">
+	 
 					<h2 class="form-login-heading">sign in now</h2>
 					<div class="login-wrap">
 						<input type="text" class="form-control" placeholder="User ID"
@@ -108,7 +108,7 @@
 					</div>
 					<!-- modal -->
 
-				</form>
+ 
 
 			</div>
 		</div>
@@ -132,7 +132,7 @@
   	 
 
 
-  			$(".btn-submit").click(function(){
+  			$(".btn-submit").click(function(event){
 				console.log("I clicked edit submit");
 				 var form = $("form").serialize();
 				 console.log(form);
