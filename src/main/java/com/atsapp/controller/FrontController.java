@@ -220,6 +220,13 @@ public class FrontController {
 		return mv;
 
 	}
+	@RequestMapping("/companies/form/edit")
+	public @ResponseBody
+	String formEditCompanies(HttpServletRequest req) {
+		DataPlugin DataPlug = new DataPlugin();
+		return "Result "+ DataPlug.edit(req, "companies");
+	    
+	}
 	//*********************Companies
 
 	@RequestMapping("/contacts")
@@ -249,6 +256,13 @@ public class FrontController {
 
 		return mv;
 
+	}
+	@RequestMapping("/jobs/form/edit")
+	public @ResponseBody
+	String formEditJobs(HttpServletRequest req) {
+		DataPlugin DataPlug = new DataPlugin();
+		return "Result "+ DataPlug.edit(req, "jobs");
+	    
 	}
 	@RequestMapping("/jobs/view/{job_id}")
 	public ModelAndView viewJobs(@PathVariable(value = "job_id") String id) {

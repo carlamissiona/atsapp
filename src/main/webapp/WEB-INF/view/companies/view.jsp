@@ -394,7 +394,7 @@
 					console.log("I clicked edit submit");
 				 var form = $("form").serialize();
 				 console.log(form);
-				 $.post( window.location.origin + "/company/form/edit", form , function( data ) {
+				 $.post( window.location.origin + "/companies/form/edit", form , function( data ) {
 					  alert( "Data Loaded: " + data );
 					});
 		 
