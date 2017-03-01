@@ -362,7 +362,7 @@
 				  " <td>" + jobsStore[i].jo_contact_linked + "</td>" +
 				  " <td>" + jobsStore[i].jo_desc + "</td>" +  
 				  " <td>" + jobsStore[i].jo_notes + "</td>" +
-				  " <td>" + jobsStore[i].jo_status+ "</td> </tr>"+
+				  " <td>" + jobsStore[i].jo_status+ "</td> "+
 				  " <td>  <div class='btn-group open action-drop'> " +
 			      " <button type='button' class='btn btn-theme03'>Action</button> " + 
 			      " <button type='button' class='btn btn-theme03 dropdown-toggle' data-toggle='dropdown'>   <span class='caret'></span> "+
@@ -370,7 +370,7 @@
 			      " </button>"+
 			      " <ul class='dropdown-menu' role='menu'>" +
 			         "<li><a href='/jobs/view/"+ jobsStore[i].jo_id +"'>View</a></li>" +
-			         "<li><a href='/jobs/delete/"+ jobsStore[i].jo_id +"'>View</a></li>" +
+			         "<li><a href='/jobs/delete/"+ jobsStore[i].jo_id +"'>Delete</a></li>" +
 			  	   " </ul> </div> </td> </tr>"
 				 );
 				       

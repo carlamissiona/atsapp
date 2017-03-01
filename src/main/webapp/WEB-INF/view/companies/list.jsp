@@ -365,11 +365,10 @@
 			      " </button>"+
 			      " <ul class='dropdown-menu' role='menu'>" +
 			         "<li><a href='/companies/view/"+ companiesStore[i].cm_id +"'>View</a></li>" +
-			         "<li><a href='/companies/delete/"+ companiesStore[i].cm_id +"'>View</a></li>" +
+			         "<li><a href='/companies/delete/"+ companiesStore[i].cm_id +"'>Delete</a></li>" +
 			  	   " </ul> </div> </td> </tr>"
 				 );
-				       
-				   
+				       			   
 			}
 			
 			  console.log(companiesStore[i]);

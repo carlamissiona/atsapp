@@ -328,7 +328,7 @@
 						*/
 						
 
-						$( ".cb_email" ).change(function() {
+						$( ".cb_email" ).click(function() {
 							  if( $(".cb_email").length > 0){
 								 console.log("----- disabled ------");
 	                             $(".btn-email").removeAttr("disabled");
