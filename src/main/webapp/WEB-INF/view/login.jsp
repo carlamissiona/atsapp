@@ -69,7 +69,7 @@
 							class="form-control" placeholder="Password"> <label
 							class="checkbox"> 
 						</label>
-						<button class="btn btn-theme btn-block" href="index.html"
+						<button class="btn btn-theme btn-block btn-submit"
 							type="submit">
 							<i class="fa fa-lock"></i> SIGN IN
 						</button>
