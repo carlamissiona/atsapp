@@ -60,7 +60,7 @@
 
 		<div id="login-page">
 			<div class="container">
-
+				<form>
 	 
 					<h2 class="form-login-heading">sign in now</h2>
 					<div class="login-wrap">
@@ -81,7 +81,7 @@
 						</div>
 
 					</div>
-
+</form>
 					<!-- Modal -->
 					<div aria-hidden="true" aria-labelledby="myModalLabel"
 						role="dialog" tabindex="-1" id="myModal" class="modal fade">
@@ -130,8 +130,6 @@
 
 	 $(document).ready(function () {
   	 
-
-
   			$(".btn-submit").click(function(event){
 				console.log("I clicked edit submit");
 				 var form = $("form").serialize();

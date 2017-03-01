@@ -192,7 +192,7 @@ public class FrontController {
 	}
 	//********************USERS
  
-
+	//********************Companies
 	@RequestMapping("/companies")
 	public ModelAndView companyList() {
 		DataPlugin DataPlug = new DataPlugin();
@@ -205,6 +205,22 @@ public class FrontController {
 		mv.addObject("whose_online", signedin);
 		return mv;
 	}
+	@RequestMapping("/companies/view/{co_id}")
+	public ModelAndView viewCompanies(@PathVariable(value = "co_id") String id) {
+		DataPlugin DataPlug = new DataPlugin();
+ 
+		String company = DataPlug.getOne("Company", id);
+		String signedin = new DataPlugin()
+				.getList("Users", " ac_signed_in = 1");
+
+		ModelAndView mv = new ModelAndView("companies/view");
+		mv.addObject("company", company);
+		mv.addObject("whose_online", signedin);
+
+		return mv;
+
+	}
+	//*********************Companies
 
 	@RequestMapping("/contacts")
 	public ModelAndView contactslist() {
@@ -221,6 +237,7 @@ public class FrontController {
 
  
 	//***************************************** JOBS
+	
 	@RequestMapping("/jobs")
 	public ModelAndView jobslist() {
 		DataPlugin DataPlug = new DataPlugin();
@@ -248,6 +265,7 @@ public class FrontController {
 		return mv;
 
 	}
+	
 	//***************************************** JOBS
 
 	@RequestMapping("/email")
