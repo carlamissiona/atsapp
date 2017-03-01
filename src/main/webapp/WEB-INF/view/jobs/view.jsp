@@ -245,6 +245,8 @@
 											<div class="col-sm-10">
 												<input type="text" class="form-control jo_client"
 													name="jo_client" disabled>
+												<input type="hidden" class="form-control jo_id"
+													name="jo_id" disabled>
 											</div>
 										</div>
 										
@@ -419,6 +421,7 @@
 			$("input.jo_name").attr("value" , jobs[0].jo_name);
 			$("input.jo_desc").attr("value" ,  jobs[0].jo_desc);
 			$("input.jo_contact_linked").attr("value" ,  jobs[0].jo_contact);
+			$("input.jo_id").attr("value" ,  jobs[0].jo_id);
 			$("input.jo_client").attr("value" ,  jobs[0].jo_client);
 		    
 			

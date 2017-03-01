@@ -240,6 +240,8 @@
 											<div class="col-sm-10">
 												<input type="text" class="form-control cm_contact_linked"
 													name="cm_contact_linked" disabled>
+												<input type="hidden" class="form-control cm_id"
+													name="cm_id" disabled>
 											</div>
 										</div>
 
@@ -416,6 +418,7 @@
             console.log(company);
 			$("input.cm_name").attr("value" , company[0].cm_name);
 			$("input.cm_desc").attr("value" ,  company[0].cm_desc);
+			$("input.cm_id").attr("value" ,  company[0].cm_id);
 			$("input.cm_contact_linked").attr("value" ,  company[0].cm_contact);
 		    
 			
