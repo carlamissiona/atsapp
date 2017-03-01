@@ -255,11 +255,11 @@ public class DataPlugin {
 			//+ "VALUES ('"+ req.getParameter("cn_firstname").toString()+"', '"+ req.getParameter("cn_middlename").toString() +"'  , '"+ req.getParameter("cn_lastname").toString() +"'  , '"+ req.getParameter("cn_email").toString() +"'  , '"+ req.getParameter("cn_mobile").toString() +"'  , '"+ req.getParameter("cn_add").toString() +"'  , '"+ req.getParameter("cn_tel").toString() +"'  , '"+ req.getParameter("cn_recruiter").toString() +"'  , '"+req.getParameter("cn_status").toString() +"'  , '"+ req.getParameter("cn_job_title").toString() +"' )";
 			 
 			sql = "UPDATE jobs SET  "+
-					"jo_name='"+  req.getParameter("jo_name").toString()  +"'  "+
-					"jo_client="+  req.getParameter("jo_client").toString()  +"  "+
-					"jo_contact="+  req.getParameter("jo_contact").toString()  +"  "+
-					"jo_desc='"+  req.getParameter("jo_desc").toString()  +"'  "+
-					"jo_notes='"+  req.getParameter("jo_notes").toString()  +"'  "+
+					"jo_name='"+  req.getParameter("jo_name").toString()  +"',  "+
+					"jo_client="+  req.getParameter("jo_client").toString()  +",  "+
+					"jo_contact="+  req.getParameter("jo_contact").toString()  +",  "+
+					"jo_desc='"+  req.getParameter("jo_desc").toString()  +"' , "+
+					"jo_notes='"+  req.getParameter("jo_notes").toString()  +"' ,  "+
 					"jo_status='"+  req.getParameter("jo_status").toString()  +"'  "+
 					"where jo_id ="+ req.getParameter("jo_id").toString() ;
 		    		 
@@ -272,8 +272,8 @@ public class DataPlugin {
 		if(model.contains("companies") || model.equalsIgnoreCase("companies") || model.contentEquals("companies") ){
 		 
 			sql = "UPDATE companies SET  "+
-					"cm_name='"+  req.getParameter("cm_name").toString()  +"'  "+
-					"cm_desc="+  req.getParameter("cm_desc").toString()  +"  "+
+					"cm_name='"+  req.getParameter("cm_name").toString()  +"',  "+
+					"cm_desc="+  req.getParameter("cm_desc").toString()  +",  "+
 					"cm_contact="+  req.getParameter("cm_contact").toString()  +"  "+
 					"where cm_id ="+ req.getParameter("cm_id").toString() ;
 			try{  
