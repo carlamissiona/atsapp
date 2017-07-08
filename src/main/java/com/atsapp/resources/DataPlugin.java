@@ -80,12 +80,42 @@ public class DataPlugin {
 		return rt;
 		
 	}
+	public String delete(String objModel, String id){ 
+		Connection con = connect();				
+		Gson gson = new Gson();
+		String sql = "";  
+		
+		if( objModel.equalsIgnoreCase("Company") ||  objModel.contains("Company") || objModel.contentEquals("Company") ){
+			  sql = "Delete from companies where cm_id = "+ id ;
+		}
+		if( objModel.equalsIgnoreCase("Job") ||  objModel.contains("Job") || objModel.contentEquals("Job") ){
+			  sql = "Delete from jobs where jo_id = "+ id ;
+		}
+		if( objModel.equalsIgnoreCase("Candidate") ||  objModel.contains("Candidate") || objModel.contentEquals("Candidate") ){
+			  sql = "Delete from candidates where ca_id = "+ id ;
+		}
+		
+			  try{
+				 
+				PreparedStatement ps=con.prepareStatement(sql); 
+				ResultSet rs=ps.executeQuery(); 
+			        
+			  }catch(Exception e){
+				  
+				  
+			  }
+	        
+			
+			
+ 
+		
+		return "ok";
+		
+	}
 	public String getOne(String objModel, String id){ 
 		// get One by id
-		 Connection con = connect();	 
-			
-		 Gson gson = new Gson();
-	 
+		 Connection con = connect();			
+		 Gson gson = new Gson();	 
 		 String rt = "";
 		
 		// ***************************** CANDIDATE 

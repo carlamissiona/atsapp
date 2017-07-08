@@ -94,6 +94,7 @@ public class FrontController {
 		return mv;
 
 	}
+
 	//********************Candidates
 	@RequestMapping("/candidates")
 	public ModelAndView candidatelist() {
@@ -204,6 +205,19 @@ public class FrontController {
 	 
 		mv.addObject("whose_online", signedin);
 		return mv;
+	}
+	@RequestMapping("/companies/delete/{cm_id}")
+	public ModelAndView deleteCompany(@PathVariable(value = "cm_id") String id) {
+		DataPlugin DataPlug = new DataPlugin();
+
+		String message = "Company Deleted";
+		String company = DataPlug.delete("Company", id);
+		ModelAndView mv = new ModelAndView("companies/view");
+		mv.addObject("company", company);
+		mv.addObject("msg", message);
+
+		return mv;
+
 	}
 	@RequestMapping("/companies/view/{co_id}")
 	public ModelAndView viewCompanies(@PathVariable(value = "co_id") String id) {

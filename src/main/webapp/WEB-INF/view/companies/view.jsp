@@ -396,8 +396,8 @@
 			});
 			//*********** Submit update form 
 			
-			$(".btn-edit-company).click(function(){
-					console.log("I clicked edit submit");
+			$(".btn-edit-company").click(function(){
+				  
 				 var form = $("form").serialize();
 				 console.log(form);
 				 $.post( window.location.origin + "/companies/form/edit", form , function( data ) {
