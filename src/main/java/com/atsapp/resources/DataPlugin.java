@@ -225,14 +225,14 @@ public class DataPlugin {
 		 return rt;
 		
 	}
-	public int edit(HttpServletRequest req , String model){ 
+	public String edit(HttpServletRequest req , String model){ 
 		 Connection con = connect();	 
 		 ResultSet rs = null;
 		 Gson gson = new Gson();
 		 String sql ="";
 		 String rt = "";
-		 int res = -1 ;
-		 if(model.contains("user") || model.equalsIgnoreCase("user") || model.contentEquals("user") ){
+		 String res = "";
+		 if(model.contains("users") || model.equalsIgnoreCase("users") || model.contentEquals("users") ){
 			    sql = "UPDATE accounts SET  ac_firstname='"+ req.getParameter("ac_firstname").toString() +"', "+
 			    		"ac_middlename='"+  req.getParameter("ac_middlename").toString()  +"' , "+
 			    		"ac_lastname='"+  req.getParameter("ac_lastname").toString()  +"' , "+
@@ -245,7 +245,7 @@ public class DataPlugin {
 			    		 
 				try{  
 			    	PreparedStatement ps=con.prepareStatement(sql);  
-			    	 res = ps.executeUpdate()  ;
+			    	res =  sql ;// ps.executeUpdate();
 			    }catch(Exception e){System.out.println(e);}  
 			 
 		 }
@@ -266,7 +266,7 @@ public class DataPlugin {
 		    		 
 			try{  
 				PreparedStatement ps=con.prepareStatement(sql);  
- 		        res = ps.executeUpdate() ;  
+ 		        //res = ps.executeUpdate() ;  
  		    }catch(Exception e){System.out.println(e);}  
 			
 		}
@@ -290,7 +290,7 @@ public class DataPlugin {
 		    		 
 			try{  
 				PreparedStatement ps=con.prepareStatement(sql);  
- 		        res = ps.executeUpdate() ;  
+ 		     //   res = ps.executeUpdate() ;  
  		    }catch(Exception e){System.out.println(e);}  
 			
 		}
@@ -303,7 +303,7 @@ public class DataPlugin {
 					"where cm_id ="+ req.getParameter("cm_id").toString() ;
 			try{  
 				PreparedStatement ps=con.prepareStatement(sql);  
-			        res = ps.executeUpdate() ;  
+			    //    res = ps.executeUpdate() ;  
 			    }catch(Exception e){System.out.println(e);}  
 			
 		}

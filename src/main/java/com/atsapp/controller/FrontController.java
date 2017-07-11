@@ -188,7 +188,7 @@ public class FrontController {
 		DataPlugin DataPlug = new DataPlugin();
 		return "Result "+ DataPlug.edit(request, "users");
 
-		// return request.getParameter("cn_lastname") ;
+ 
 
 	}
 	//********************USERS
