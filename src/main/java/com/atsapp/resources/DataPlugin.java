@@ -235,8 +235,9 @@ public class DataPlugin {
 		 String rt = "";
 		 String res = "d";
 		 String date_employment =" - ";
+		 date_employment = "1990-01-01 00:00:01";
 //	s 
-		 if(req.getParameter("ac_employement_date").toString().isEmpty() || req.getParameter("ac_employement_date").toString() == null  ){
+		 if(req.getParameter("ac_employement_date").toString().isEmpty() || req.getParameter("ac_employement_date").toString().contentEquals(null)  ){
 			  date_employment = "1990-01-01 00:00:01";
 		 }
 		 if(model.contains("users") || model.equalsIgnoreCase("users") || model.contentEquals("users") ){
@@ -251,9 +252,11 @@ public class DataPlugin {
 			    		
 			    		 
 				try{  
-			    	//PreparedStatement ps=con.prepareStatement(sql);  
-			    	res =  sql + "  date ";// ps.executeUpdate();
-			    }catch(Exception e){System.out.println(e);}  
+			    	//PreparedStatement ps=con.prepareStatement(sql);  // ps.executeUpdate();
+			    	res =  sql + "  date ";     
+			    }catch(Exception e){
+			    	System.out.println(e);
+			    }  
 			 
 		 }
 		if(model.contains("candidate") || model.equalsIgnoreCase("candidate") || model.contentEquals("candidate") ){

@@ -186,10 +186,10 @@ public class FrontController {
 	String formUsersUpdate(HttpServletRequest request) {
 
 		DataPlugin DataPlug = new DataPlugin();
-		return  "Hi ";//"Result "+DataPlug.edit(request, "users");
+		return  "Hi Result "+DataPlug.edit(request, "users");
 
  
-
+  
 	}
 	//********************USERS
  
