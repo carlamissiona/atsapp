@@ -459,7 +459,7 @@
 			$("input.ac_email").attr("value" ,  user[0].ac_email);
 			$("input.ac_mobile").attr("value" ,  user[0].ac_mobile);			
 			$("textarea.ac_addresss").attr("value" ,  user[0].ac_address);
-			$("input.ac_employement_date").attr("value" ,  user[0].ac_employement_date);
+			$("input.ac_employement_date").attr("value" ,  user[0].ac_employment_date);
 			$("input.ac_status").attr("value" ,  user[0].ac_status);						
 			$("input.ac_id").attr("value" ,  user[0].ac_id);
         }

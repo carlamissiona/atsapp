@@ -225,27 +225,31 @@ public class DataPlugin {
 		 return rt;
 		
 	}
-	public String edit(HttpServletRequest req , String model){ 
+	public int edit(HttpServletRequest req , String model){ 
 		 Connection con = connect();	 
 		 ResultSet rs = null;
 		 Gson gson = new Gson();
 		 String sql ="";
 		 String rt = "";
-		 String res = "d";
+		 int res = -1;
+		 String date_employment = req.getParameter("ac_employement_date").toString();
+		 if(req.getParameter("ac_employement_date").toString().isEmpty() || req.getParameter("ac_employement_date").toString() == null  ){
+			  date_employment = "1990-01-01 00:00:01";
+		 }
 		 if(model.contains("users") || model.equalsIgnoreCase("users") || model.contentEquals("users") ){
 			    sql = "UPDATE accounts SET  ac_firstname='"+ req.getParameter("ac_firstname").toString() +"', "+
 			    		"ac_middlename='"+  req.getParameter("ac_middlename").toString()  +"' , "+
 			    		"ac_lastname='"+  req.getParameter("ac_lastname").toString()  +"' , "+
 			    		"ac_mobile='"+  req.getParameter("ac_mobile").toString()  +"' , "+
 			    		"ac_address='"+  req.getParameter("ac_address").toString()  +"' , "+
-			    		"ac_employement_date ='"+  req.getParameter("ac_employement_date").toString()  +"' , "+
+			    		"ac_employement_date ='"+ date_employment  +"' , "+
 			    		"ac_status='"+  req.getParameter("ac_status").toString()  +"' , "+
 			    		"where ac_id ="+ req.getParameter("ac_id").toString() + " "; 
 			    		
 			    		 
 				try{  
-			    	//PreparedStatement ps=con.prepareStatement(sql);  
-			    	res =  sql + "  date "+  req.getParameter("ac_employement_date").toString()  ;// ps.executeUpdate();
+			    	PreparedStatement ps=con.prepareStatement(sql);  
+			    	res = ps.executeUpdate(); // sql + "  date "+  req.getParameter("ac_employement_date").toString()  ;// ps.executeUpdate();
 			    }catch(Exception e){System.out.println(e);}  
 			 
 		 }
