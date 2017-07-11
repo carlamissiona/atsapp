@@ -252,7 +252,7 @@ public class DataPlugin {
 			    		 
 				try{  
 			    	//PreparedStatement ps=con.prepareStatement(sql);  
-			    	res =  sql + "  date "+  req.getParameter("ac_employement_date").toString()  ;// ps.executeUpdate();
+			    	res =  sql + "  date ";// ps.executeUpdate();
 			    }catch(Exception e){System.out.println(e);}  
 			 
 		 }
