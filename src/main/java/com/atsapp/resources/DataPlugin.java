@@ -1,6 +1,7 @@
 package com.atsapp.resources;
 
    
+import java.io.UnsupportedEncodingException;
 import java.lang.reflect.InvocationTargetException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.net.URLDecoder;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -232,7 +234,13 @@ public class DataPlugin {
 		 String sql ="";
 		 String rt = "";
 		 String res = "d";
-		 String date_employment = req.getParameter("ac_employement_date").toString();
+		 String date_employment ="";
+		try {
+			date_employment = URLDecoder.decode(req.getParameter("ac_employement_date").toString() , "UTF-8").toString();
+		} catch (UnsupportedEncodingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}  
 		 if(req.getParameter("ac_employement_date").toString().isEmpty() || req.getParameter("ac_employement_date").toString() == null  ){
 			  date_employment = "1990-01-01 00:00:01";
 		 }
