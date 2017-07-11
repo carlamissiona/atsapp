@@ -235,12 +235,7 @@ public class DataPlugin {
 		 String rt = "";
 		 String res = "d";
 		 String date_employment ="";
-		try {
-			date_employment = URLDecoder.decode(req.getParameter("ac_employement_date").toString() , "UTF-8").toString();
-		} catch (UnsupportedEncodingException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}  
+//	s 
 		 if(req.getParameter("ac_employement_date").toString().isEmpty() || req.getParameter("ac_employement_date").toString() == null  ){
 			  date_employment = "1990-01-01 00:00:01";
 		 }
