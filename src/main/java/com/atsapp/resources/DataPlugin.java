@@ -239,18 +239,18 @@ public class DataPlugin {
  
 		 
 		 if(model.contains("users") || model.equalsIgnoreCase("users") || model.contentEquals("users") ){
-		 
-//			
-//			    sql = "UPDATE accounts SET  ac_firstname='"+ req.getParameter("ac_firstname").toString() +"', "+
-//			    		"ac_middlename='"+  req.getParameter("ac_middlename").toString()  +"' , "+
-//			    		"ac_lastname='"+  req.getParameter("ac_lastname").toString()  +"' , "+
-//			    		"ac_mobile='"+  req.getParameter("ac_mobile").toString()  +"' , "+
-//			    		"ac_address='"+  req.getParameter("ac_address").toString()  +"' , "+
-//			    		"ac_employement_date ='"+ date_employment  +"' , "+
-//			    		"ac_status='"+  req.getParameter("ac_status").toString()  +"' , "+
-//			    		"where ac_id ="+ req.getParameter("ac_id").toString(); 
-//			    		
-//			    		 
+	 
+			
+			    sql = "UPDATE accounts SET  ac_firstname='"+ req.getParameter("ac_firstname").toString() +"', "+
+			    		"ac_middlename='"+  req.getParameter("ac_middlename").toString()  +"' , "+
+			    		"ac_lastname='"+  req.getParameter("ac_lastname").toString()  +"' , "+
+			    		"ac_mobile='"+  req.getParameter("ac_mobile").toString()  +"' , "+
+			    		"ac_address='"+  req.getParameter("ac_address").toString()  +"' , "+
+			    		"ac_employement_date ='"+ date_employment  +"' , "+
+			    		"ac_status='"+  req.getParameter("ac_status").toString()+"'  "+
+			    		"where ac_id ="+ req.getParameter("ac_id").toString(); 
+			    		
+			    		 
 			res = sql;
 			 
 		 }
