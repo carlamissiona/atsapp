@@ -234,13 +234,14 @@ public class DataPlugin {
 		 String sql ="";
 		 String rt = "";
 		 String res = "d";
-		 String date_employment =" - ";
+		 String date_employment = " - ";
 		 date_employment = "1990-01-01 00:00:01";
-//	s 
-		 if(req.getParameter("ac_employement_date").toString().isEmpty() || req.getParameter("ac_employement_date").toString().contentEquals(null)  ){
-			  date_employment = "1990-01-01 00:00:01";
-		 }
+ 
+		 
 		 if(model.contains("users") || model.equalsIgnoreCase("users") || model.contentEquals("users") ){
+			 if( req.getParameter("ac_employement_date").toString().isEmpty() || req.getParameter("ac_employement_date").toString().length() == 0  ){
+				  date_employment = "1990-01-01 00:00:01";
+			 }
 			    sql = "UPDATE accounts SET  ac_firstname='"+ req.getParameter("ac_firstname").toString() +"', "+
 			    		"ac_middlename='"+  req.getParameter("ac_middlename").toString()  +"' , "+
 			    		"ac_lastname='"+  req.getParameter("ac_lastname").toString()  +"' , "+
@@ -253,7 +254,7 @@ public class DataPlugin {
 			    		 
 				try{  
 			    	//PreparedStatement ps=con.prepareStatement(sql);  // ps.executeUpdate();
-			    	res =  sql + "  date ";     
+			    	res =  sql+"  date ";     
 			    }catch(Exception e){
 			    	System.out.println(e);
 			    }  
