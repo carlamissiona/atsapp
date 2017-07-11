@@ -184,7 +184,7 @@ public class FrontController {
 	@RequestMapping("/users/form/edit")
 	public @ResponseBody
 	String formUsersUpdate(HttpServletRequest request) {
-
+		 
 		DataPlugin DataPlug = new DataPlugin();
 		return "Result "+DataPlug.edit(request, "users");
 
