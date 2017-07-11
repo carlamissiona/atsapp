@@ -234,7 +234,7 @@ public class DataPlugin {
 		 String sql ="";
 		 String rt = "";
 		 String res = "d";
-		 String date_employment ="";
+		 String date_employment =" - ";
 //	s 
 		 if(req.getParameter("ac_employement_date").toString().isEmpty() || req.getParameter("ac_employement_date").toString() == null  ){
 			  date_employment = "1990-01-01 00:00:01";
