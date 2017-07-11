@@ -225,13 +225,13 @@ public class DataPlugin {
 		 return rt;
 		
 	}
-	public int edit(HttpServletRequest req , String model){ 
+	public String edit(HttpServletRequest req , String model){ 
 		 Connection con = connect();	 
 		 ResultSet rs = null;
 		 Gson gson = new Gson();
 		 String sql ="";
 		 String rt = "";
-		 int res = -1;
+		 String res = "d";
 		 String date_employment = req.getParameter("ac_employement_date").toString();
 		 if(req.getParameter("ac_employement_date").toString().isEmpty() || req.getParameter("ac_employement_date").toString() == null  ){
 			  date_employment = "1990-01-01 00:00:01";
@@ -248,8 +248,8 @@ public class DataPlugin {
 			    		
 			    		 
 				try{  
-			    	PreparedStatement ps=con.prepareStatement(sql);  
-			    	res = ps.executeUpdate(); // sql + "  date "+  req.getParameter("ac_employement_date").toString()  ;// ps.executeUpdate();
+			    	//PreparedStatement ps=con.prepareStatement(sql);  
+			    	res =  sql + "  date "+  req.getParameter("ac_employement_date").toString()  ;// ps.executeUpdate();
 			    }catch(Exception e){System.out.println(e);}  
 			 
 		 }
