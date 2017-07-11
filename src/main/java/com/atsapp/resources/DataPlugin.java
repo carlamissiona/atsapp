@@ -227,13 +227,13 @@ public class DataPlugin {
 		 return rt;
 		
 	}
-	public String edit(HttpServletRequest req , String model){ 
+	public int edit(HttpServletRequest req , String model){ 
 		 Connection con = connect();	 
 		 ResultSet rs = null;
 		 Gson gson = new Gson();
 		 String sql ="";
 		 String rt = "";
-		 String res = "d";
+		 int res = -1;
 		 String date_employment = " - ";
 		 date_employment = "1990-01-01 00:00:01";
  
@@ -241,21 +241,20 @@ public class DataPlugin {
 		 if(model.contains("users") || model.equalsIgnoreCase("users") || model.contentEquals("users") ){
 			 if( req.getParameter("ac_employment_date").toString().isEmpty() ){
 				  date_employment = "1990-01-01 00:00:01";
-			 }
-			 
-			
+			 } 
 			    sql = "UPDATE accounts SET  ac_firstname='"+ req.getParameter("ac_firstname").toString() +"', "+
 			    		"ac_middlename='"+  req.getParameter("ac_middlename").toString()  +"' , "+
 			    		"ac_lastname='"+  req.getParameter("ac_lastname").toString()  +"' , "+
 			    		"ac_mobile='"+  req.getParameter("ac_mobile").toString()  +"' , "+
 			    		"ac_address='"+  req.getParameter("ac_address").toString()  +"' , "+
 			    		"ac_employement_date ='"+ date_employment  +"' , "+
-			    		"ac_status='"+  req.getParameter("ac_status").toString()  +"' , "+
+			    		"ac_status='"+  req.getParameter("ac_status").toString()  +"'  "+
 			    		"where ac_id ="+ req.getParameter("ac_id").toString(); 
 			    		
-			    		 
-			res = sql;
-			 
+				try{  
+					PreparedStatement ps=con.prepareStatement(sql);  
+	 		      res = ps.executeUpdate() ;  
+	 		    }catch(Exception e){System.out.println(e);}  
 		 }
 		if(model.contains("candidate") || model.equalsIgnoreCase("candidate") || model.contentEquals("candidate") ){
 			 
@@ -274,7 +273,7 @@ public class DataPlugin {
 		    		 
 			try{  
 				PreparedStatement ps=con.prepareStatement(sql);  
- 		        //res = ps.executeUpdate() ;  
+ 		        res = ps.executeUpdate() ;  
  		    }catch(Exception e){System.out.println(e);}  
 			
 		}
@@ -293,7 +292,7 @@ public class DataPlugin {
 		    		 
 			try{  
 				PreparedStatement ps=con.prepareStatement(sql);  
- 		     //   res = ps.executeUpdate() ;  
+ 		      res = ps.executeUpdate() ;  
  		    }catch(Exception e){System.out.println(e);}  
 			
 		}
@@ -306,7 +305,7 @@ public class DataPlugin {
 					"where cm_id ="+ req.getParameter("cm_id").toString() ;
 			try{  
 				PreparedStatement ps=con.prepareStatement(sql);  
-			    //    res = ps.executeUpdate() ;  
+			   res = ps.executeUpdate() ;  
 			    }catch(Exception e){System.out.println(e);}  
 			
 		}
