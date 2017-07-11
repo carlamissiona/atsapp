@@ -98,7 +98,7 @@ public class DataPlugin {
 			  try{
 				 
 				PreparedStatement ps=con.prepareStatement(sql); 
-				ResultSet rs=ps.executeQuery(); 
+				ResultSet rs=ps.executeQuery();  ps.close();
 			        
 			  }catch(Exception e){
 				  
@@ -124,7 +124,7 @@ public class DataPlugin {
 		       
 			    try{  
 			    	String sql = "select * , concat(accounts.ac_firstname,' ' , accounts.ac_lastname ) as  ca_recruiter from candidates , accounts   where candidates.ca_id = "+ id + " and  ac_id = ca_recruiter_id" ;
-			        PreparedStatement ps=con.prepareStatement(sql); 
+			        PreparedStatement ps=con.prepareStatement(sql);   ps.close();
 			        ResultSet rs=ps.executeQuery(); 
 			        while(rs.next()){  
 			            Candidate c=new Candidate();    
@@ -156,7 +156,7 @@ public class DataPlugin {
 			    try{  
 			        // 
 			        PreparedStatement ps=con.prepareStatement("select j.*,  cm_name as jo_client_name,  concat(c.co_firstname, ' ', c.co_lastname) as jo_contact_linked  from jobs j left join contacts c on j.jo_contact = c.co_id  left join companies cm on cm.cm_id = j.jo_client where j.jo_id ="+ id ); 
-			        ResultSet rs=ps.executeQuery(); 
+			        ResultSet rs=ps.executeQuery();   ps.close();
 			        while(rs.next()){  
 			            Job j = new Job();    
 			            j.setJo_client(rs.getString("jo_client_name"));
@@ -179,7 +179,7 @@ public class DataPlugin {
 			    try{  
 			        // 
 			        PreparedStatement ps=con.prepareStatement("Select * from accounts where ac_id = "+ id ); 
-			        ResultSet rs=ps.executeQuery(); 
+			        ResultSet rs=ps.executeQuery();   ps.close();
 			        while(rs.next()){  
 			            Account a = new Account();    
 			            a.setAc_address(rs.getString("ac_address"));
@@ -206,7 +206,7 @@ public class DataPlugin {
 			    	
 			        // 
 			        PreparedStatement ps=con.prepareStatement(sql);
-			        ResultSet rs=ps.executeQuery(); 
+			        ResultSet rs=ps.executeQuery();   ps.close();
 			        while(rs.next()){  
 			            Company cm = new Company();  
 			            
@@ -245,17 +245,12 @@ public class DataPlugin {
 			    		 
 				try{  
 			    	PreparedStatement ps=con.prepareStatement(sql);  
-			    	rs=ps.executeQuery();  
+			    	 res = ps.executeUpdate()  ;
+			    	 ps.close();
 			    }catch(Exception e){System.out.println(e);}  
 			 
 		 }
 		if(model.contains("candidate") || model.equalsIgnoreCase("candidate") || model.contentEquals("candidate") ){
-			
-			// edit Candidate
-	    	//	cn_firstname=Carla&cn_middlename=A&cn_lastname=Wi&cn_email=missiona.carla%40gmail.com&cn_mobile=09990991&cn_add=qc+qcs&cn_tel=12345&cn_recruiter=1&cn_recruiter=QC&cn_status=interviewed&cn_job_title=Software+Developer
-					
-		 	//sql ="INSERT INTO Candidates (cn_firstname, cn_middlename,cn_lastname, cn_email, cn_mobile, cn_add, cn_tel , cn_recruiter ,cn_status ,cn_job_title)"
-			//+ "VALUES ('"+ req.getParameter("cn_firstname").toString()+"', '"+ req.getParameter("cn_middlename").toString() +"'  , '"+ req.getParameter("cn_lastname").toString() +"'  , '"+ req.getParameter("cn_email").toString() +"'  , '"+ req.getParameter("cn_mobile").toString() +"'  , '"+ req.getParameter("cn_add").toString() +"'  , '"+ req.getParameter("cn_tel").toString() +"'  , '"+ req.getParameter("cn_recruiter").toString() +"'  , '"+req.getParameter("cn_status").toString() +"'  , '"+ req.getParameter("cn_job_title").toString() +"' )";
 			 
 			sql = "UPDATE candidates SET ca_firstname='"+ req.getParameter("ca_firstname").toString() +"', "+
 			        "ca_middlename='"+  req.getParameter("ca_middlename").toString()  +"' , "+
@@ -272,6 +267,7 @@ public class DataPlugin {
 			try{  
 				PreparedStatement ps=con.prepareStatement(sql);  
  		        res = ps.executeUpdate() ;  
+ 		       ps.close();
  		    }catch(Exception e){System.out.println(e);}  
 			
 		}
@@ -284,7 +280,7 @@ public class DataPlugin {
 		 	//sql ="INSERT INTO Candidates (cn_firstname, cn_middlename,cn_lastname, cn_email, cn_mobile, cn_add, cn_tel , cn_recruiter ,cn_status ,cn_job_title)"
 			//+ "VALUES ('"+ req.getParameter("cn_firstname").toString()+"', '"+ req.getParameter("cn_middlename").toString() +"'  , '"+ req.getParameter("cn_lastname").toString() +"'  , '"+ req.getParameter("cn_email").toString() +"'  , '"+ req.getParameter("cn_mobile").toString() +"'  , '"+ req.getParameter("cn_add").toString() +"'  , '"+ req.getParameter("cn_tel").toString() +"'  , '"+ req.getParameter("cn_recruiter").toString() +"'  , '"+req.getParameter("cn_status").toString() +"'  , '"+ req.getParameter("cn_job_title").toString() +"' )";
 			 
-			sql = "UPDATE jobs SET  "+
+			sql = "UPDATE jobs SET "+
 					"jo_name='"+  req.getParameter("jo_name").toString()  +"',  "+
 					"jo_client="+  req.getParameter("jo_client").toString()  +",  "+
 					"jo_contact="+  req.getParameter("jo_contact").toString()  +",  "+
@@ -295,7 +291,8 @@ public class DataPlugin {
 		    		 
 			try{  
 				PreparedStatement ps=con.prepareStatement(sql);  
- 		        res = ps.executeUpdate() ;  
+ 		        res = ps.executeUpdate() ; 
+ 		       ps.close();
  		    }catch(Exception e){System.out.println(e);}  
 			
 		}
@@ -309,6 +306,7 @@ public class DataPlugin {
 			try{  
 				PreparedStatement ps=con.prepareStatement(sql);  
 			        res = ps.executeUpdate() ;  
+			        ps.close();
 			    }catch(Exception e){System.out.println(e);}  
 			
 		}
@@ -329,7 +327,7 @@ public class DataPlugin {
 			    try{  
 			     
 			        PreparedStatement ps=con.prepareStatement("select * from candidates " + filter);  
-			        ResultSet rs=ps.executeQuery();  
+			        ResultSet rs=ps.executeQuery();   ps.close();
 			        while(rs.next()){  
 			            Candidate c = new Candidate();    
 			            c.setCa_id(rs.getInt("ca_id"));
@@ -363,6 +361,7 @@ public class DataPlugin {
 			    	sql ="select * from accounts " + filter;
 			        PreparedStatement ps=con.prepareStatement(sql);  
 			        rs=ps.executeQuery();  
+			        ps.close();
 			        while(rs.next()){  
 			            Account a =new Account();    
 			             a.setAc_address(rs.getString("ac_address"));

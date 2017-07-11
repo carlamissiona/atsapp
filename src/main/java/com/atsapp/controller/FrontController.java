@@ -186,7 +186,7 @@ public class FrontController {
 	String formUsersUpdate(HttpServletRequest request) {
 
 		DataPlugin DataPlug = new DataPlugin();
-		return "Result "+ DataPlug.edit(request, "Users");
+		return "Result "+ DataPlug.edit(request, "users");
 
 		// return request.getParameter("cn_lastname") ;
 
@@ -274,7 +274,7 @@ public class FrontController {
 	@RequestMapping("/jobs/form/edit")
 	public @ResponseBody
 	String formEditJobs(HttpServletRequest req) {
-		DataPlugin DataPlug = new DataPlugin();
+		DataPlugin DataPlug = new DataPlugin(); 
 		return "Result "+ DataPlug.edit(req, "jobs");
 	    
 	}

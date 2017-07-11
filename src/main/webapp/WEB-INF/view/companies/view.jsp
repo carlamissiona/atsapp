@@ -401,7 +401,7 @@
 				 var form = $("form").serialize();
 				 console.log(form);
 				 $.post( window.location.origin + "/companies/form/edit", form , function( data ) {
-					  alert( "Data Loaded: " + data );
+					  console.log(data);
 					});
 		 
 			});
