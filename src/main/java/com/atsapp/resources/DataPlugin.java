@@ -242,6 +242,8 @@ public class DataPlugin {
 			 if( req.getParameter("ac_employement_date").toString().isEmpty() || req.getParameter("ac_employement_date").toString().length() == 0  ){
 				  date_employment = "1990-01-01 00:00:01";
 			 }
+			 
+			
 			    sql = "UPDATE accounts SET  ac_firstname='"+ req.getParameter("ac_firstname").toString() +"', "+
 			    		"ac_middlename='"+  req.getParameter("ac_middlename").toString()  +"' , "+
 			    		"ac_lastname='"+  req.getParameter("ac_lastname").toString()  +"' , "+
@@ -252,7 +254,7 @@ public class DataPlugin {
 			    		"where ac_id ="+ req.getParameter("ac_id").toString(); 
 			    		
 			    		 
-			res =sql;
+			res = sql;
 			 
 		 }
 		if(model.contains("candidate") || model.equalsIgnoreCase("candidate") || model.contentEquals("candidate") ){
