@@ -239,9 +239,7 @@ public class DataPlugin {
  
 		 
 		 if(model.contains("users") || model.equalsIgnoreCase("users") || model.contentEquals("users") ){
-			 sql = req.getRequestURI()+" - "+ req.getParameterNames().toString() + " "  + req.getParameter("ac_middlename").toString()+
-					 req.getParameter("ac_middlename").toString()+
-					  req.getParameter("ac_middlename").toString() +
+			 sql =
 					  "UPDATE accounts SET  ac_firstname='"+ req.getParameter("ac_firstname").toString() +"', "+
 			    		"ac_middlename='"+  req.getParameter("ac_middlename").toString()  +"' , "+
 			    		"ac_lastname='"+  req.getParameter("ac_lastname").toString()  +"' , "+
