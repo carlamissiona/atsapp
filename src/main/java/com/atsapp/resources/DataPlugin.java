@@ -231,7 +231,7 @@ public class DataPlugin {
 		 Gson gson = new Gson();
 		 String sql ="";
 		 String rt = "";
-		 String res = "";
+		 String res = "d";
 		 if(model.contains("users") || model.equalsIgnoreCase("users") || model.contentEquals("users") ){
 			    sql = "UPDATE accounts SET  ac_firstname='"+ req.getParameter("ac_firstname").toString() +"', "+
 			    		"ac_middlename='"+  req.getParameter("ac_middlename").toString()  +"' , "+
@@ -244,8 +244,8 @@ public class DataPlugin {
 			    		
 			    		 
 				try{  
-			    	PreparedStatement ps=con.prepareStatement(sql);  
-			    	res =  sql ;// ps.executeUpdate();
+			    	//PreparedStatement ps=con.prepareStatement(sql);  
+			    	res =  sql + "  date "+  req.getParameter("ac_employement_date").toString()  ;// ps.executeUpdate();
 			    }catch(Exception e){System.out.println(e);}  
 			 
 		 }
