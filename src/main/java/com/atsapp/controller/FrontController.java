@@ -274,7 +274,7 @@ public class FrontController {
 	@RequestMapping("/jobs/form/edit")
 	public @ResponseBody
 	String formEditJobs(HttpServletRequest req) {
-		DataPlugin DataPlug = new DataPlugin(); 
+		DataPlugin DataPlug = new DataPlugin();  
 		return "Result "+ DataPlug.edit(req, "jobs");
 	    
 	}
