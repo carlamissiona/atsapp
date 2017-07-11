@@ -239,7 +239,7 @@ public class DataPlugin {
  
 		 
 		 if(model.contains("users") || model.equalsIgnoreCase("users") || model.contentEquals("users") ){
-			 if( req.getParameter("ac_employement_date").toString().isEmpty() || req.getParameter("ac_employement_date").toString().length() == 0  ){
+			 if( req.getParameter("ac_employement_date").toString().isEmpty() ){
 				  date_employment = "1990-01-01 00:00:01";
 			 }
 			 
