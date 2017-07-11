@@ -239,10 +239,7 @@ public class DataPlugin {
  
 		 
 		 if(model.contains("users") || model.equalsIgnoreCase("users") || model.contentEquals("users") ){
-			 if( req.getParameter("ac_employement_date").toString().isEmpty() ){
-				  date_employment = "1990-01-01 00:00:01";
-			 }
-			 
+		 
 			
 			    sql = "UPDATE accounts SET  ac_firstname='"+ req.getParameter("ac_firstname").toString() +"', "+
 			    		"ac_middlename='"+  req.getParameter("ac_middlename").toString()  +"' , "+
