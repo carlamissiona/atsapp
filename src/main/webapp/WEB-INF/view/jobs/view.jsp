@@ -403,6 +403,7 @@
 				 var form = $("form").serialize();
 				 console.log(form);
 				 $.post( window.location.origin + "/jobs/form/edit", form , function( data ) {
+					 console.log(data);
 					  alert( "Data Loaded: " + data );
 					});
 		 

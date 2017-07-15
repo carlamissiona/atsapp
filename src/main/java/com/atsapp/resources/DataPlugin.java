@@ -163,6 +163,7 @@ public class DataPlugin {
 			            Job j = new Job();    
 			            j.setJo_client(rs.getString("jo_client_name"));
 			            j.setJo_contact(rs.getString("jo_contact_linked"));
+			            j.setJo_contact_id(rs.getInt("jo_contact"));
 			            j.setJo_desc(rs.getString("jo_desc"));
 			            j.setJo_id(rs.getInt("jo_id"));
 			            j.setJo_name(rs.getString("jo_name"));
@@ -203,7 +204,7 @@ public class DataPlugin {
 		 if( objModel.equalsIgnoreCase("Company") ||  objModel.contains("Company") || objModel.contentEquals("Company") ){
 			 	String sql ="";
 			 	List<Company> colist = new ArrayList<Company>();  
-			 	sql = "SELECT cm.cm_name AS cm_name, cm.cm_desc AS cm_desc, cm.cm_id AS cm_id, CONCAT( cn.co_firstname,  ' ', cn.co_lastname ) AS cm_contact_linked FROM companies cm LEFT JOIN contacts cn ON cm_contact = cn.co_id WHERE cm_id = " + id;
+			 	sql = "SELECT cm.*, cm.cm_name AS cm_name, cm.cm_desc AS cm_desc, cm.cm_id AS cm_id, CONCAT( cn.co_firstname,  ' ', cn.co_lastname ) AS cm_contact_linked FROM companies cm LEFT JOIN contacts cn ON cm_contact = cn.co_id WHERE cm_id = " + id;
 			 	try{  
 			    	
 			        // 
@@ -215,6 +216,7 @@ public class DataPlugin {
 			            cm.setCm_contact(rs.getString("cm_contact_linked"));
 			            cm.setCm_name(rs.getString("cm_name"));
 			            cm.setCm_desc(rs.getString("cm_desc"));
+			            cm.setCm_email(rs.getString("cm_email"));
 			            cm.setCm_id(rs.getInt("cm_id"));
 			            			       
 			            colist.add(cm);

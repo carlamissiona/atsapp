@@ -11,6 +11,8 @@ public class Company {
 	
 	private String cm_contact;
 
+	private String cm_email;
+
 	public int getCm_id() {
 		return cm_id;
 	}
@@ -42,7 +44,16 @@ public class Company {
 	public void setCm_contact(String cm_contact) {
 		this.cm_contact = cm_contact;
 	}
+
+	public void setCm_email(String cm_email) {
+		this.cm_email = cm_email;
+		
+	}
 	
+	public String getCm_email() {
+		return cm_email;
+		
+	}
 	
 	
 }

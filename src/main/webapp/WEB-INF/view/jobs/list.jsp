@@ -353,7 +353,7 @@
 
             //*********** candidates list table
 			var jobsStore  =  ${jobs}; 
-			
+			console.log(jobsStore);
 			for (i = 0; i < jobsStore.length; i++) { 
 				$(".table-candidates tbody").append(
 				  "<tr> " +
