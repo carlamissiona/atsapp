@@ -3,6 +3,7 @@ package com.atsapp.model;
 public class Job {
 
 	public int jo_id =0 ;
+	public int jo_contact_id;
 	public String jo_name = "";
 	public String jo_client = "";
 	public String jo_contact = "";
@@ -30,6 +31,10 @@ public class Job {
 	public String getJo_contact() {
 		return jo_contact;
 	}
+	public int setJo_contact_id() {
+		return jo_contact_id; 
+		
+	}
 	public void setJo_contact(String jo_contact) {
 		this.jo_contact = jo_contact;
 	}
@@ -50,6 +55,10 @@ public class Job {
 	}
 	public void setJo_status(String jo_status) {
 		this.jo_status = jo_status;
+	}
+	public void setJo_contact_id(int jo_contact_id) {
+		this.jo_contact_id = jo_contact_id;
+		
 	}
 	
 	

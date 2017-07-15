@@ -256,7 +256,7 @@ public class DataPlugin {
 	 		      res = ps.executeUpdate() ;  
 	 		    }catch(Exception e){System.out.println(e);}  
 		 }
-		if(model.contains("candidate") || model.equalsIgnoreCase("candidate") || model.contentEquals("candidate") ){
+		if(model.contains("candidates") || model.equalsIgnoreCase("candidates") || model.contentEquals("candidates") ){
 			 
 		 
 			sql = "UPDATE candidates SET ca_firstname='"+ req.getParameter("ca_firstname").toString() +"', "+
@@ -279,12 +279,13 @@ public class DataPlugin {
 		}
 		
 	if(model.contains("jobs") || model.equalsIgnoreCase("jobs") || model.contentEquals("jobs") ){
-			
+		   // For now 
+		   int client =1, contact =1;
 		 
 			sql = "UPDATE jobs SET "+
 					"jo_name='"+  req.getParameter("jo_name").toString()  +"',  "+
-					"jo_client="+  req.getParameter("jo_client").toString()  +",  "+
-					"jo_contact="+  req.getParameter("jo_contact").toString()  +",  "+
+					"jo_client="+ client +",  "+
+					"jo_contact="+  contact  +",  "+
 					"jo_desc='"+  req.getParameter("jo_desc").toString()  +"' , "+
 					"jo_notes='"+  req.getParameter("jo_notes").toString()  +"' ,  "+
 					"jo_status='"+  req.getParameter("jo_status").toString()  +"'  "+
@@ -292,7 +293,7 @@ public class DataPlugin {
 		    		 
 			try{  
 				PreparedStatement ps=con.prepareStatement(sql);  
- 		      res = ps.executeUpdate() ;  
+ 		        res = ps.executeUpdate() ;  
  		    }catch(Exception e){System.out.println(e);}  
 			
 		}
@@ -392,6 +393,7 @@ public class DataPlugin {
 			            Job j = new Job();    
 			            j.setJo_client(rs.getString("jo_client"));
 			            j.setJo_contact(rs.getString("jo_contact_linked"));
+			            j.setJo_contact_id(rs.getInt("jo_contact"));
 			            j.setJo_desc(rs.getString("jo_desc"));
 			            j.setJo_id(rs.getInt("jo_id"));
 			            j.setJo_name(rs.getString("jo_name"));

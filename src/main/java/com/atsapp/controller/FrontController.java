@@ -134,7 +134,7 @@ public class FrontController {
 	public @ResponseBody
 	String formEditCandidate(HttpServletRequest req) {
 		DataPlugin DataPlug = new DataPlugin();
-		return "Result "+ DataPlug.edit(req, "candidate");
+		return "Result "+ DataPlug.edit(req, "candidates");
 	    
 	}
 	@RequestMapping("/candidates/form/add")
